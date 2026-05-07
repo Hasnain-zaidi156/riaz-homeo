@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riaz Homeo Clinic — Dr. Syed Fawad Ahmed Zaidi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1a12;--bg2:#0f2219;--bg3:#132b1e;--card:#ffffff;--gold:#c9a84c;--gold2:#e8c96b;--gold3:#f5e4a8;--green:#2a7a50;--green2:#1d5a3a;--white:#ffffff;--cream:#f9f5ec;--text:#1a1a1a;--muted:#6b7c6e;--nav-h:72px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:999;background:var(--bg);border-bottom:1px solid rgba(201,168,76,0.18);height:var(--nav-h);display:flex;align-items:center;}
+.nav-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-img{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 2px 12px rgba(201,168,76,0.35);}
+.nav-logo-text h1{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--white);line-height:1.1;}
+.nav-logo-text p{font-size:10px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{color:rgba(255,255,255,0.72);text-decoration:none;font-size:13.5px;padding:7px 13px;border-radius:50px;transition:.2s;font-weight:400;}
+.nav-links a:hover{color:var(--gold2);background:rgba(201,168,76,0.08);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-wa{display:flex;align-items:center;gap:6px;background:#25D366;color:white;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:.2s;}
+.nav-wa:hover{background:#1db954;transform:translateY(-1px);}
+.cart-btn{display:flex;align-items:center;gap:7px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold2);padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
+.cart-btn:hover{background:rgba(201,168,76,0.2);}
+.cart-count{background:var(--gold);color:var(--bg);width:18px;height:18px;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;}
+.mobile-nav{display:none;flex-direction:column;background:var(--bg2);border-top:1px solid rgba(255,255,255,0.08);padding:14px 24px;gap:4px;position:sticky;top:var(--nav-h);z-index:998;}
+.mobile-nav a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.mobile-nav.open{display:flex;}
+/* HERO */
+.hero{background:var(--bg);padding:80px 28px 60px;text-align:center;position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center;justify-content:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 70%),radial-gradient(circle at 15% 80%,rgba(42,122,80,0.08) 0%,transparent 50%),radial-gradient(circle at 85% 80%,rgba(42,122,80,0.08) 0%,transparent 50%);}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:50px 50px;}
+.hero-inner{position:relative;z-index:1;max-width:860px;width:100%;}
+.hero-est{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;}
+.hero-est span{color:var(--gold);font-size:10px;}
+.hero-brand{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,9vw,96px);font-weight:700;line-height:1.0;color:var(--white);letter-spacing:-1px;margin-bottom:8px;}
+.hero-brand em{color:var(--gold);font-style:normal;}
+.hd{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px 0;}
+.hd-line{width:60px;height:1px;background:rgba(201,168,76,0.4);}
+.hd-star{color:var(--gold);font-size:14px;}
+.hero-tagline{color:rgba(255,255,255,0.55);font-size:14px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:32px;}
+.hero-pills{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+.hero-pill{background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);color:rgba(255,255,255,0.7);padding:8px 18px;border-radius:50px;font-size:13px;}
+.hero-pill strong{color:var(--gold2);}
+.hero-imgs{display:flex;align-items:flex-end;justify-content:center;gap:24px;margin-top:10px;}
+.h-slot{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:16px;overflow:hidden;transition:transform .3s;}
+.h-slot:hover{transform:translateY(-8px);}
+.h-slot.main{width:200px;height:240px;}
+.h-slot.side{width:150px;height:180px;}
+.h-slot img{width:100%;height:100%;object-fit:cover;display:none;}
+.h-slot img.show{display:block;}
+.h-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:12px;gap:8px;padding:16px;text-align:center;}
+.h-ph .ic{font-size:32px;}
+/* SECTIONS */
+.sec{padding:80px 28px;}
+.si{max-width:1280px;margin:0 auto;}
+.s-tag{display:inline-block;color:var(--gold);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,50px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:12px;}
+.s-desc{color:rgba(255,255,255,0.45);font-size:15px;max-width:520px;line-height:1.75;}
+.sdiv{display:flex;align-items:center;gap:12px;margin:16px 0 0;}
+.sdiv-line{width:40px;height:1px;background:rgba(201,168,76,0.5);}
+.sdiv-star{color:var(--gold);font-size:12px;}
+/* ABOUT */
+.about-sec{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;}
+.a-img-wrap{position:relative;}
+.a-img-box{background:var(--bg3);border:1px solid rgba(201,168,76,0.15);border-radius:20px;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.a-img-box img{width:100%;height:100%;object-fit:cover;display:none;}
+.a-img-box img.show{display:block;}
+.a-img-ph{text-align:center;color:rgba(255,255,255,0.25);padding:30px;}
+.a-img-ph .ic{font-size:48px;display:block;margin-bottom:10px;}
+.a-float{position:absolute;bottom:-18px;right:-18px;background:var(--gold);color:var(--bg);padding:16px 20px;border-radius:14px;box-shadow:0 8px 32px rgba(201,168,76,0.3);}
+.a-float .big{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:1;}
+.a-float .sm{font-size:11px;font-weight:600;margin-top:3px;opacity:.8;}
+.a-text .s-title{font-size:clamp(28px,4vw,42px);}
+.a-text p{color:rgba(255,255,255,0.55);font-size:15px;line-height:1.85;margin-bottom:14px;}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 30px;}
+.chip{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px;}
+.chip .ci{font-size:20px;}
+.chip .cl strong{display:block;font-size:13px;color:var(--white);font-weight:500;}
+.chip .cl span{font-size:12px;color:rgba(255,255,255,0.45);}
+/* PRODUCTS */
+.prod-sec{background:var(--bg);}
+.curated{text-align:center;margin-bottom:44px;}
+.curated h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--white);margin-bottom:6px;}
+.filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.fb{padding:9px 22px;border-radius:50px;border:1px solid rgba(201,168,76,0.3);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
+.fb.active,.fb:hover{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;}
+.pc{background:var(--white);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s;border:1px solid rgba(0,0,0,0.06);}
+.pc:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.35);}
+.pc-img{aspect-ratio:1/1;background:#f0f7f3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:none;}
+.pc-img img.show{display:block;}
+.pc-ph{text-align:center;color:#aaa;padding:20px;}
+.pc-ph .ic{font-size:44px;display:block;margin-bottom:6px;}
+.pc-ph p{font-size:11px;line-height:1.5;}
+.pbadge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 10px;border-radius:50px;text-transform:uppercase;}
+.pbadge.clinic{background:#1a4a2e;color:#fff;}
+.pbadge.dxn{background:#c0392b;color:#fff;}
+.pc-body{padding:16px 18px 18px;}
+.pc-body h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.pc-body p{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.acb{width:100%;background:var(--bg);color:var(--white);border:none;border-radius:50px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;}
+.acb:hover{background:var(--green);}
+/* DXN */
+.dxn-sec{background:var(--bg2);}
+.dxn-banner{background:linear-gradient(135deg,#8b1a1a,#c0392b);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:48px;}
+.dxn-banner .s-tag{color:rgba(255,255,255,0.7);}
+.dxn-banner .s-title{color:var(--white);}
+.dxn-banner .s-desc{color:rgba(255,255,255,0.65);}
+.dxn-img{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:16px;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.dxn-img img{width:100%;height:100%;object-fit:cover;display:none;}
+.dxn-img img.show{display:block;}
+.dxn-ph{text-align:center;color:rgba(255,255,255,0.35);padding:30px;}
+.dxn-ph .ic{font-size:48px;display:block;margin-bottom:10px;}
+/* GALLERY */
+.gal-sec{background:var(--bg);}
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:14px;}
+.gi{background:var(--bg3);border-radius:14px;overflow:hidden;cursor:pointer;position:relative;border:1px solid rgba(201,168,76,0.1);display:flex;align-items:center;justify-content:center;transition:transform .25s;}
+.gi:hover{transform:scale(1.02);}
+.gi.lg{grid-column:span 2;grid-row:span 2;}
+.gi img{width:100%;height:100%;object-fit:cover;display:none;position:absolute;inset:0;}
+.gi img.show{display:block;}
+.gph{text-align:center;color:rgba(255,255,255,0.2);padding:20px;position:relative;z-index:1;}
+.gph .ic{font-size:30px;display:block;margin-bottom:6px;}
+.gph p{font-size:11px;}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,26,18,0.85) 0%,transparent 50%);opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:14px;}
+.gi:hover .gov{opacity:1;}
+.gov span{color:var(--white);font-size:13px;font-weight:500;}
+/* ORDER */
+.ord-sec{background:var(--bg2);}
+.ord-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.ord-left p{color:rgba(255,255,255,0.5);font-size:15px;line-height:1.85;margin-bottom:28px;}
+.wa-big{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:15px 34px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;transition:.2s;box-shadow:0 4px 20px rgba(37,211,102,0.25);}
+.wa-big:hover{background:#1db954;transform:translateY(-2px);}
+.osteps{margin-top:32px;display:flex;flex-direction:column;gap:12px;}
+.ostep{display:flex;align-items:center;gap:14px;color:rgba(255,255,255,0.55);font-size:14px;}
+.ostep .sn{width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;}
+.ocard{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:30px;}
+.ocard h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--white);margin-bottom:22px;text-align:center;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:500;letter-spacing:.3px;}
+.fg input,.fg textarea{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 14px;color:var(--white);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.25);}
+.fg input:focus,.fg textarea:focus{border-color:var(--gold);}
+.fg textarea{resize:vertical;min-height:72px;}
+.sub-btn{width:100%;background:#25D366;color:white;border:none;border-radius:50px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;font-family:'DM Sans',sans-serif;}
+.sub-btn:hover{background:#1db954;transform:translateY(-1px);}
+/* LOCATION */
+.loc-sec{background:var(--bg);}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.loc-card{background:var(--bg2);border:1px solid rgba(201,168,76,0.12);border-radius:20px;padding:34px;}
+.loc-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--white);margin-bottom:24px;}
+.litem{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
+.licon{width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ltext strong{display:block;font-size:13.5px;color:var(--white);font-weight:600;margin-bottom:2px;}
+.ltext span{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.ltext a{color:var(--gold);text-decoration:none;}
+.map-box{background:var(--bg2);border:1px solid rgba(201,168,76,0.1);border-radius:20px;height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.map-ph{text-align:center;color:rgba(255,255,255,0.3);padding:40px;}
+.map-ph .ic{font-size:52px;display:block;margin-bottom:12px;}
+.map-ph p{font-size:14px;line-height:1.7;}
+/* CART */
+.c-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;opacity:0;pointer-events:none;transition:opacity .3s;}
+.c-overlay.open{opacity:1;pointer-events:auto;}
+.c-sidebar{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:var(--bg2);border-left:1px solid rgba(201,168,76,0.15);z-index:10001;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,0.5);}
+.c-sidebar.open{right:0;}
+.c-head{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.c-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);}
+.c-close{background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;padding:4px;transition:color .2s;}
+.c-close:hover{color:var(--white);}
+.c-items{flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:12px;}
+.c-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);gap:10px;padding:40px;text-align:center;}
+.c-empty .ic{font-size:48px;}
+.c-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;}
+.c-item-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,0.1);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.c-item-info{flex:1;}
+.c-item-info strong{font-size:14px;color:var(--white);display:block;margin-bottom:3px;}
+.c-item-info span{font-size:12px;color:rgba(255,255,255,0.4);}
+.c-item-rm{background:none;border:none;color:rgba(255,255,255,0.3);font-size:18px;cursor:pointer;transition:color .2s;padding:4px;}
+.c-item-rm:hover{color:#e74c3c;}
+.c-foot{padding:20px 24px;border-top:1px solid rgba(255,255,255,0.08);}
+.c-totals{margin-bottom:16px;}
+.c-row{display:flex;justify-content:space-between;font-size:13.5px;color:rgba(255,255,255,0.5);padding:5px 0;}
+.c-row.tot{color:var(--white);font-weight:600;font-size:15px;border-top:1px solid rgba(255,255,255,0.1);margin-top:6px;padding-top:10px;}
+.cwab{width:100%;background:#25D366;color:white;border:none;border-radius:50px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;font-family:'DM Sans',sans-serif;}
+.cwab:hover{background:#1db954;}
+/* MODAL */
+.m-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10002;display:none;align-items:center;justify-content:center;padding:20px;}
+.m-overlay.open{display:flex;}
+.modal{background:var(--bg2);border:1px solid rgba(201,168,76,0.2);border-radius:20px;padding:32px;width:100%;max-width:420px;position:relative;}
+.modal h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--white);margin-bottom:20px;}
+.m-close{position:absolute;top:16px;right:18px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;}
+.m-close:hover{color:var(--white);}
+/* FOOTER */
+footer{background:var(--bg2);padding:56px 28px 24px;}
+.fi{max-width:1280px;margin:0 auto;}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:44px;}
+.fb-brand h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);margin-bottom:4px;}
+.fb-brand .ft{color:var(--gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+.fb-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.75;max-width:260px;}
+.fcol h4{font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;}
+.fcol ul{list-style:none;}
+.fcol ul li{margin-bottom:9px;}
+.fcol ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:13.5px;transition:.2s;}
+.fcol ul li a:hover{color:var(--gold2);}
+.fci{display:flex;gap:10px;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.45);align-items:flex-start;}
+.fci span:first-child{flex-shrink:0;}
+.fci a{color:var(--gold);text-decoration:none;}
+.fbot{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.28);flex-wrap:wrap;gap:10px;}
+/* FLOAT WA */
+.waf{position:fixed;bottom:26px;right:26px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;z-index:9998;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:wap 2.5s infinite;}
+.waf:hover{transform:scale(1.1);animation:none;}
+@keyframes wap{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.2);}50%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 14px rgba(37,211,102,0);}}
+/* PROCESSING */
+.proc{position:fixed;inset:0;background:rgba(11,26,18,0.92);z-index:99999;display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
+.proc.show{display:flex;}
+.spinner{width:48px;height:48px;border:3px solid rgba(201,168,76,0.2);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.proc p{color:rgba(255,255,255,0.6);font-size:15px;}
+/* UTILS */
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--bg);padding:13px 30px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-og{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);padding:12px 28px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid rgba(201,168,76,0.5);transition:.2s;}
+.btn-og:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
+.hint{font-size:11px;color:rgba(255,255,255,0.2);text-align:center;margin-top:8px;font-style:italic;}
+/* RESPONSIVE */
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .h-slot.side{display:none;}
+  .about-grid,.ord-grid,.loc-grid,.dxn-banner{grid-template-columns:1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+  .ggrid{grid-template-columns:1fr 1fr;}
+  .gi.lg{grid-column:span 2;grid-row:span 1;}
+  .c-sidebar{width:100%;right:-100%;}
+}
+@media(max-width:600px){
+  .hero-brand{font-size:44px;}
+  .pgrid{grid-template-columns:1fr 1fr;gap:12px;}
+  .ggrid{grid-template-columns:1fr 1fr;}
+  .fgrid{grid-template-columns:1fr;}
+  .chips{grid-template-columns:1fr;}
+  .sec{padding:56px 18px;}
+  .a-float{bottom:-10px;right:-10px;}
+}
+@media(max-width:420px){.pgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-img">🌿</div>
+      <div class="nav-logo-text">
+        <h1>Riaz Homeo Clinic</h1>
+        <p>Rohri · Sindh</p>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#dxn">DXN</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#order">Order</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/923337189748" target="_blank" class="nav-wa">💬 WhatsApp</a>
+      <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+    <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobNav">
+  <a href="#about" onclick="toggleMob()">About Doctor</a>
+  <a href="#products" onclick="toggleMob()">Products</a>
+  <a href="#dxn" onclick="toggleMob()">DXN Products</a>
+  <a href="#gallery" onclick="toggleMob()">Gallery</a>
+  <a href="#location" onclick="toggleMob()">Location</a>
+  <a href="#order" onclick="toggleMob()">Order</a>
+  <a href="https://wa.me/923337189748" target="_blank">💬 Order on WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <p class="hero-est">Est. Rohri · Pakistan <span>✦</span></p>
+    <h1 class="hero-brand">RIAZ <em>HOMEO</em><br>CLINIC</h1>
+    <div class="hd"><div class="hd-line"></div><span class="hd-star">✦</span><div class="hd-line"></div></div>
+    <p class="hero-tagline">Homeopathic Medicines · DXN Products · Natural Healing</p>
+    <div class="hero-pills">
+      <div class="hero-pill">🌿 <strong>100% Natural</strong></div>
+      <div class="hero-pill">🍄 <strong>DXN Authorized</strong></div>
+      <div class="hero-pill">🚚 <strong>Cash on Delivery</strong></div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/923337189748?text=Assalamu+Alaikum%2C+I+want+to+order" target="_blank" class="btn-gold">💬 Order Now</a>
+      <a href="#products" class="btn-og">View Products</a>
+    </div>
+    <div class="hero-imgs" style="margin-top:44px;">
+      <div class="h-slot side"><img id="hi1" alt=""><div class="h-ph"><span class="ic">💊</span><p>Product photo</p></div></div>
+      <div class="h-slot main"><img id="hi2" alt=""><div class="h-ph"><span class="ic">🏥</span><p>Clinic photo</p></div></div>
+      <div class="h-slot side"><img id="hi3" alt=""><div class="h-ph"><span class="ic">🍄</span><p>DXN product</p></div></div>
+    </div>
+    <p class="hint">Apni clinic/product ki photos add karne ke liye img src change karein</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about-sec" id="about">
+  <div class="si">
+    <div class="about-grid">
+      <div class="a-img-wrap">
+        <div class="a-img-box"><img id="docImg" alt="Dr. Syed Fawad Ahmed Zaidi"><div class="a-img-ph"><span class="ic">👨‍⚕️</span><p>Doctor ki photo yahan</p></div></div>
+        <div class="a-float"><div class="big">✦</div><div class="sm">Verified Doctor</div></div>
+      </div>
+      <div class="a-text">
+        <p class="s-tag">Meet Our Doctor</p>
+        <h2 class="s-title">Dr. Syed Fawad<br>Ahmed Zaidi</h2>
+        <div class="sdiv"><div class="sdiv-line"></div><span class="sdiv-star">✦</span></div><br>
+        <p>Dr. Syed Fawad Ahmed Zaidi is a qualified and experienced homeopathic physician based in Rohri, Sindh — providing safe and effective natural treatments with dedication.</p>
+        <p>Specializing in chronic diseases, skin conditions, and general health through the power of homeopathy. No side effects, completely natural.</p>
+        <div class="chips">
+          <div class="chip"><span class="ci">🏥</span><div class="cl"><strong>Riaz Homeo Clinic</strong><span>Clinic Name</span></div></div>
+          <div class="chip"><span class="ci">📍</span><div class="cl"><strong>Dhak Bazar, Rohri</strong><span>Location</span></div></div>
+          <div class="chip"><span class="ci">📞</span><div class="cl"><strong>0333-7189748</strong><span>WhatsApp</span></div></div>
+          <div class="chip"><span class="ci">🌿</span><div class="cl"><strong>Homeopathy + DXN</strong><span>Specialty</span></div></div>
+        </div>
+        <a href="https://wa.me/923337189748?text=Assalamu+Alaikum+Doctor%2C+I+need+a+consultation" target="_blank" class="btn-gold">💬 Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec prod-sec" id="products">
+  <div class="si">
+    <div class="curated">
+      <p class="s-tag" style="display:block;text-align:center;">Curated for You</p>
+      <h2>Our Premium Collection</h2>
+      <div class="hd" style="margin:14px 0 0;"><div class="hd-line"></div><span class="hd-star">✦</span><div class="hd-line"></div></div>
+    </div>
+    <div class="filter-bar">
+      <button class="fb active" onclick="filterP('all',this)">All Products</button>
+      <button class="fb" onclick="filterP('clinic',this)">Clinic Products</button>
+      <button class="fb" onclick="filterP('dxn',this)">DXN Products</button>
+    </div>
+    <div class="pgrid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- DXN -->
+<section class="sec dxn-sec" id="dxn">
+  <div class="si">
+    <div class="dxn-banner">
+      <div>
+        <p class="s-tag">Authorized Seller</p>
+        <h2 class="s-title">DXN Health Products</h2>
+        <p class="s-desc" style="margin-bottom:24px;">We are authorized sellers of DXN products in Rohri. World-renowned Ganoderma (Reishi mushroom) based supplements — pure, natural, certified.</p>
+        <a href="https://wa.me/923337189748?text=Assalamu+Alaikum%2C+I+want+to+order+DXN+products" target="_blank" class="btn-gold" style="background:white;color:#c0392b;">🛒 Order DXN Now</a>
+      </div>
+      <div class="dxn-img"><img id="dxnImg" alt="DXN Products"><div class="dxn-ph"><span class="ic">🍄</span><p>DXN product photo</p></div></div>
+    </div>
+    <div class="pgrid" id="dxnGrid"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec gal-sec" id="gallery">
+  <div class="si">
+    <div style="margin-bottom:40px;">
+      <p class="s-tag">Gallery</p>
+      <h2 class="s-title">Clinic &amp; Product Gallery</h2>
+      <div class="sdiv"><div class="sdiv-line"></div><span class="sdiv-star">✦</span></div>
+    </div>
+    <div class="ggrid">
+      <div class="gi lg"><img id="g1" alt=""><div class="gph"><span class="ic">🏥</span><p>Clinic front (large)</p></div><div class="gov"><span>Riaz Homeo Clinic</span></div></div>
+      <div class="gi"><img id="g2" alt=""><div class="gph"><span class="ic">👨‍⚕️</span><p>Doctor</p></div><div class="gov"><span>Dr. Zaidi</span></div></div>
+      <div class="gi"><img id="g3" alt=""><div class="gph"><span class="ic">💊</span><p>Products</p></div><div class="gov"><span>Our Products</span></div></div>
+      <div class="gi"><img id="g4" alt=""><div class="gph"><span class="ic">🍄</span><p>DXN</p></div><div class="gov"><span>DXN Range</span></div></div>
+      <div class="gi"><img id="g5" alt=""><div class="gph"><span class="ic">🌿</span><p>Herbal</p></div><div class="gov"><span>Herbal Medicines</span></div></div>
+      <div class="gi"><img id="g6" alt=""><div class="gph"><span class="ic">🏠</span><p>Interior</p></div><div class="gov"><span>Inside Clinic</span></div></div>
+    </div>
+    <p class="hint" style="margin-top:14px;">g1–g6 img src mein apni photos ka URL lagaein</p>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="sec ord-sec" id="order">
+  <div class="si">
+    <div class="ord-grid">
+      <div class="ord-left">
+        <p class="s-tag">Place Your Order</p>
+        <h2 class="s-title">Order via<br>WhatsApp</h2>
+        <div class="sdiv"><div class="sdiv-line"></div><span class="sdiv-star">✦</span></div><br>
+        <p>Products ko WhatsApp par order karein — name, phone, address ke saath. Poora Pakistan mein delivery. Cash on Delivery.</p>
+        <a href="https://wa.me/923337189748" target="_blank" class="wa-big">💬 0333-7189748</a>
+        <div class="osteps">
+          <div class="ostep"><div class="sn">1</div><span>WhatsApp par apna order message karein</span></div>
+          <div class="ostep"><div class="sn">2</div><span>Name, phone aur delivery address share karein</span></div>
+          <div class="ostep"><div class="sn">3</div><span>Ghar par delivery — Cash on Delivery</span></div>
+        </div>
+      </div>
+      <div class="ocard">
+        <h3>📋 Order Form</h3>
+        <div class="fg"><label>Full Name *</label><input type="text" id="oName" placeholder="Apna poora naam"></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" id="oPhone" placeholder="03XX-XXXXXXX"></div>
+        <div class="fg"><label>Delivery Address *</label><input type="text" id="oAddr" placeholder="Sheher, mohalla, gali..."></div>
+        <div class="fg"><label>Product / Order Details</label><textarea id="oDetail" placeholder="Kaun sa product chahiye? Kitni quantity?"></textarea></div>
+        <button class="sub-btn" onclick="sendOrder()">💬 WhatsApp par Order Bhejein</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec loc-sec" id="location">
+  <div class="si">
+    <div style="margin-bottom:44px;text-align:center;">
+      <p class="s-tag">Find Us</p>
+      <h2 class="s-title" style="text-align:center;">Visit Our Clinic</h2>
+      <div class="hd"><div class="hd-line"></div><span class="hd-star">✦</span><div class="hd-line"></div></div>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>📍 Riaz Homeo Clinic</h3>
+        <div class="litem"><div class="licon">👨‍⚕️</div><div class="ltext"><strong>Doctor</strong><span>Dr. Syed Fawad Ahmed Zaidi</span></div></div>
+        <div class="litem"><div class="licon">📍</div><div class="ltext"><strong>Address</strong><span>Near Zaidi Homeo Clinic,<br>Dhak Bazar, Rohri, Sindh</span></div></div>
+        <div class="litem"><div class="licon">📞</div><div class="ltext"><strong>Phone / WhatsApp</strong><span><a href="tel:03337189748">0333-7189748</a></span></div></div>
+        <div class="litem"><div class="licon">⏰</div><div class="ltext"><strong>Timing</strong><span>Morning &amp; Evening<br>(Call for appointment)</span></div></div>
+        <br><a href="https://wa.me/923337189748?text=Clinic+ka+address+bataein" target="_blank" class="btn-gold">💬 Location WhatsApp par</a>
+      </div>
+      <div class="map-box">
+        <div class="map-ph">
+          <span class="ic">🗺️</span>
+          <p><strong style="color:rgba(255,255,255,0.6);">Rohri, Sindh</strong><br>Near Zaidi Homeo Clinic<br>Dhak Bazar, Rohri</p><br>
+          <a href="https://maps.google.com/?q=Rohri+Sindh" target="_blank" class="btn-gold" style="font-size:13px;padding:10px 22px;margin-top:8px;display:inline-flex;">🗺️ Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fgrid">
+      <div class="fb-brand">
+        <h3>Riaz Homeo Clinic</h3>
+        <p class="ft">Dr. Syed Fawad Ahmed Zaidi</p>
+        <p>Rohri, Sindh ki trusted homeopathic clinic. Quality treatment, DXN products, aur natural medicines.</p>
+      </div>
+      <div class="fcol"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Doctor</a></li><li><a href="#products">Products</a></li><li><a href="#dxn">DXN Products</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
+      <div class="fcol"><h4>Products</h4><ul><li><a href="#dxn">DXN Ganoderma</a></li><li><a href="#dxn">DXN RG/GL</a></li><li><a href="#dxn">DXN Spirulina</a></li><li><a href="#products">Clinic Medicines</a></li><li><a href="#order">Order Now</a></li></ul></div>
+      <div class="fcol"><h4>Contact</h4>
+        <div class="fci"><span>📍</span><span>Near Zaidi Homeo Clinic, Dhak Bazar, Rohri, Sindh</span></div>
+        <div class="fci"><span>📞</span><span><a href="tel:03337189748">0333-7189748</a></span></div>
+        <div class="fci"><span>💬</span><span><a href="https://wa.me/923337189748" target="_blank">WhatsApp Order</a></span></div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2025 Riaz Homeo Clinic — All rights reserved</span>
+      <span>Dr. Syed Fawad Ahmed Zaidi | Rohri, Sindh</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923337189748?text=Assalamu+Alaikum%2C+I+want+to+order" target="_blank" class="waf" title="Order on WhatsApp">💬</a>
+
+<!-- CART SIDEBAR -->
+<div class="c-overlay" id="cOverlay" onclick="closeCart()"></div>
+<div class="c-sidebar" id="cSidebar">
+  <div class="c-head"><h3>🛒 Your Cart</h3><button class="c-close" onclick="closeCart()">✕</button></div>
+  <div class="c-items" id="cItems"><div class="c-empty" id="cEmpty"><span class="ic">🛒</span><p>Cart empty hai<br>Koi product add karein</p></div></div>
+  <div class="c-foot">
+    <div class="c-totals">
+      <div class="c-row"><span>Subtotal</span><span id="cSub">0 PKR</span></div>
+      <div class="c-row"><span>Delivery</span><span>250 PKR</span></div>
+      <div class="c-row tot"><span>Total</span><span id="cTot">250 PKR</span></div>
+    </div>
+    <button class="cwab" onclick="checkoutWA()">💬 Complete Order via WhatsApp</button>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="m-overlay" id="mOverlay">
+  <div class="modal">
+    <button class="m-close" onclick="closeModal()">✕</button>
+    <h3>📞 Contact Details</h3>
+    <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:20px;">WhatsApp order ke liye apni details fill karein</p>
+    <div class="fg"><label>Full Name *</label><input type="text" id="mName" placeholder="Apna naam"></div>
+    <div class="fg"><label>Phone Number *</label><input type="tel" id="mPhone" placeholder="03XX-XXXXXXX"></div>
+    <div class="fg"><label>Delivery Address *</label><input type="text" id="mAddr" placeholder="City, Area..."></div>
+    <button class="sub-btn" onclick="submitModal()">💬 WhatsApp par Bhejein</button>
+  </div>
+</div>
+
+<!-- PROCESSING -->
+<div class="proc" id="proc"><div class="spinner"></div><p>Order process ho raha hai...</p></div>
+
+<script>
+const allProds=[
+  {id:1,cat:'clinic',name:'Homeo Classic Set',desc:'Essential homeopathic medicines for common ailments.',icon:'💊',badge:'Clinic',bc:'clinic'},
+  {id:2,cat:'clinic',name:'Liver Herbal Tonic',desc:'Natural formula for liver health and digestion.',icon:'🌿',badge:'Clinic',bc:'clinic'},
+  {id:3,cat:'clinic',name:'Immunity Booster',desc:'Homeopathic drops to strengthen immune system.',icon:'🛡️',badge:'Clinic',bc:'clinic'},
+  {id:4,cat:'clinic',name:'Skin Treatment Pack',desc:'For skin problems and allergies — natural relief.',icon:'✨',badge:'Clinic',bc:'clinic'},
+  {id:5,cat:'dxn',name:'DXN RG/GL Capsules',desc:'Premium Ganoderma capsules for health and vitality.',icon:'🍄',badge:'DXN',bc:'dxn'},
+  {id:6,cat:'dxn',name:'DXN Spirulina',desc:'Pure spirulina — protein, vitamins, minerals.',icon:'🟢',badge:'DXN',bc:'dxn'},
+  {id:7,cat:'dxn',name:'DXN Morinzhi Juice',desc:'Noni juice — powerful antioxidant & immune support.',icon:'🍹',badge:'DXN',bc:'dxn'},
+  {id:8,cat:'dxn',name:'DXN Lingzhi Coffee',desc:'Healthy Ganoderma coffee — energy & wellness.',icon:'☕',badge:'DXN',bc:'dxn'},
+  {id:9,cat:'clinic',name:'Joint Pain Relief',desc:'Homeopathic treatment for joint pain and arthritis.',icon:'🦴',badge:'Clinic',bc:'clinic'},
+  {id:10,cat:'clinic',name:'Digestive Health Kit',desc:'Complete kit for stomach and digestive issues.',icon:'🏥',badge:'Clinic',bc:'clinic'},
+];
+let cart=[];
+
+function renderProds(list,gid){
+  const g=document.getElementById(gid);
+  if(!g)return;
+  g.innerHTML=list.map(p=>`
+    <div class="pc">
+      <div class="pc-img">
+        <div class="pc-ph"><span class="ic">${p.icon}</span><p>Photo add karein</p></div>
+        <span class="pbadge ${p.bc}">${p.badge}</span>
+      </div>
+      <div class="pc-body">
+        <h4>${p.name}</h4>
+        <p>${p.desc}</p>
+        <button class="acb" onclick="addCart(${p.id})">+ Add to Cart</button>
+      </div>
+    </div>`).join('');
+}
+
+function filterP(cat,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProds(cat==='all'?allProds:allProds.filter(p=>p.cat===cat),'prodGrid');
+}
+
+function addCart(id){
+  const p=allProds.find(x=>x.id===id);
+  if(!p)return;
+  const ex=cart.find(c=>c.id===id);
+  if(ex){ex.qty++;}else{cart.push({...p,qty:1});}
+  updateCart();openCart();
+}
+function removeCart(id){cart=cart.filter(c=>c.id!==id);updateCart();}
+function updateCart(){
+  const cnt=cart.reduce((s,c)=>s+c.qty,0);
+  document.getElementById('cartCount').textContent=cnt;
+  const items=document.getElementById('cItems');
+  const empty=document.getElementById('cEmpty');
+  if(!cart.length){
+    items.innerHTML='';items.appendChild(empty);empty.style.display='flex';
+    document.getElementById('cSub').textContent='0 PKR';
+    document.getElementById('cTot').textContent='250 PKR';return;
+  }
+  empty.style.display='none';
+  items.innerHTML=cart.map(c=>`
+    <div class="c-item">
+      <div class="c-item-icon">${c.icon}</div>
+      <div class="c-item-info"><strong>${c.name}</strong><span>Qty: ${c.qty}</span></div>
+      <button class="c-item-rm" onclick="removeCart(${c.id})">✕</button>
+    </div>`).join('');
+  const sub=cart.length*200;
+  document.getElementById('cSub').textContent=sub+' PKR';
+  document.getElementById('cTot').textContent=(sub+250)+' PKR';
+}
+function openCart(){document.getElementById('cSidebar').classList.add('open');document.getElementById('cOverlay').classList.add('open');}
+function closeCart(){document.getElementById('cSidebar').classList.remove('open');document.getElementById('cOverlay').classList.remove('open');}
+function checkoutWA(){
+  if(!cart.length){alert('Cart empty hai! Pehle koi product add karein.');return;}
+  document.getElementById('mOverlay').classList.add('open');
+}
+function closeModal(){document.getElementById('mOverlay').classList.remove('open');}
+function submitModal(){
+  const name=document.getElementById('mName').value.trim();
+  const phone=document.getElementById('mPhone').value.trim();
+  const addr=document.getElementById('mAddr').value.trim();
+  if(!name||!phone||!addr){alert('Sab fields zaroor bharein.');return;}
+  closeModal();closeCart();
+  document.getElementById('proc').classList.add('show');
+  const items=cart.map(c=>`• ${c.name} (x${c.qty})`).join('\n');
+  const sub=cart.length*200;
+  const msg=`Assalamu Alaikum,\n\n*Order from Riaz Homeo Clinic*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Address: ${addr}\n\n🛒 *Order:*\n${items}\n\n💰 Subtotal: ${sub} PKR\n🚚 Delivery: 250 PKR\n✅ Total: ${sub+250} PKR`;
+  setTimeout(()=>{
+    document.getElementById('proc').classList.remove('show');
+    window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank');
+    cart=[];updateCart();
+  },1500);
+}
+function sendOrder(){
+  const name=document.getElementById('oName').value.trim();
+  const phone=document.getElementById('oPhone').value.trim();
+  const addr=document.getElementById('oAddr').value.trim();
+  const detail=document.getElementById('oDetail').value.trim();
+  if(!name||!phone||!addr){alert('Name, phone aur address zaroor bharein.');return;}
+  const msg=`Assalamu Alaikum,\n\n*Order from Riaz Homeo Clinic Website*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Address: ${addr}\n🛒 Order: ${detail||'To be discussed'}`;
+  window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function toggleMob(){document.getElementById('mobNav').classList.toggle('open');}
+renderProds(allProds,'prodGrid');
+renderProds(allProds.filter(p=>p.cat==='dxn'),'dxnGrid');
+updateCart();
+</script>
+</body>
+</html>

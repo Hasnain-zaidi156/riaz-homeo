@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Riaz Homeo Clinic | Dr. Syed Fawad Ahmed Zaidi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e3bc5e;
+            --dark: #0a1510;
+            --dark2: #0f1c16;
+            --green: #1e4a33;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a2a20;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 0 rgba(201, 168, 76, 0.15) inset, 0 -2px 0 rgba(0, 0, 0, 0.3) inset;
+            transform-style: preserve-3d;
+        }
+
+        .gold {
+            color: var(--gold-light);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.15);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 7vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 520px;
+        }
+
+        .divider-line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .waves-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .waves-bg svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            animation: waveMove 8s ease-in-out infinite;
+        }
+
+        .waves-bg svg:nth-child(2) {
+            animation: waveMove2 10s ease-in-out infinite;
+            opacity: 0.5;
+        }
+
+        .waves-bg svg:nth-child(3) {
+            animation: waveMove 12s ease-in-out infinite reverse;
+            opacity: 0.3;
+        }
+
+        @keyframes waveMove {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-3%);
+            }
+        }
+
+        @keyframes waveMove2 {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(3%);
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 21, 16, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(201, 168, 76, 0.1) inset;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1.25rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img-circle {
+            width: 90px;
+            height: 48px;
+            border-radius: 10% 20% 10% 20%;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 12px rgba(201, 168, 76, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .logo-text p {
+            font-size: 0.58rem;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+        }
+
+        .logo-since {
+            font-size: 0.55rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.45rem 0.9rem;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-light);
+        }
+
+        .nav-links a.fb-link {
+            color: #7aabff;
+        }
+
+        .nav-links a.fb-link:hover {
+            background: rgba(66, 103, 178, 0.15);
+            color: #a8c8ff;
+        }
+
+        .cart-icon {
+            background: rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 0.45rem 1rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-count {
+            background: var(--gold);
+            color: var(--dark);
+            border-radius: 30px;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #0e1c16;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu a {
+            color: #ddd;
+            padding: 0.7rem 0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201, 168, 76, 0.06), transparent);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .since-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.05));
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            border-radius: 60px;
+            padding: 0.4rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2), 0 0 0 1px rgba(201, 168, 76, 0.1) inset;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0.5rem 0 1.5rem;
+            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .hero-doctor-img {
+            width: 220px;
+            height: 320px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 8rem 8rem 5rem 5rem;
+            border: 2px solid rgba(201, 168, 76, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 6px rgba(201, 168, 76, 0.08), 0 0 80px rgba(201, 168, 76, 0.1), 8px 8px 0 rgba(201, 168, 76, 0.15);
+            transition: transform 0.4s ease;
+            filter: brightness(0.95) contrast(1.05);
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        .hero-doctor-img:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .hero-doctor-img.mirror {
+            transform: scaleX(-1);
+        }
+
+        .hero-doctor-img.mirror:hover {
+            transform: scaleX(-1) translateY(-8px) scale(1.02);
+        }
+
+        .hero-img-left {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-img-right {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .hero-title-3d {
+            text-shadow: 0 1px 0 rgba(201, 168, 76, 0.6), 0 2px 0 rgba(201, 168, 76, 0.4), 0 3px 0 rgba(201, 168, 76, 0.3), 0 4px 0 rgba(201, 168, 76, 0.2), 0 5px 0 rgba(201, 168, 76, 0.1), 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin: 1.5rem 0;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            transition: 0.2s;
+        }
+
+        .pill:hover {
+            border-color: rgba(201, 168, 76, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4a832, #c9a84c, #b8952e);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35), 0 2px 0 rgba(255, 255, 255, 0.2) inset, 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(201, 168, 76, 0.6);
+            color: var(--gold-light);
+            padding: 0.75rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(201, 168, 76, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .doctor-profile {
+            background: linear-gradient(145deg, #152b20, #0f2018);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(201, 168, 76, 0.2) inset, 12px 12px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-profile::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 70% 30%, rgba(201, 168, 76, 0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .doctor-photo-about {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.12), 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 168, 76, 0.2);
+            display: block;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1rem;
+            padding: 0.7rem;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            transition: 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(135deg, #d4a832, #c9a84c);
+            color: var(--dark);
+            border-color: transparent;
+            box-shadow: 0 6px 16px rgba(201, 168, 76, 0.3);
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 6px 6px 0 rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4), 6px 6px 0 rgba(201, 168, 76, 0.2);
+        }
+
+        .product-img-box {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: #eef4ea;
+            position: relative;
+        }
+
+        .product-cat-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(10, 21, 16, 0.8);
+            color: var(--gold-light);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-info h4 {
+            color: #1a2a1f;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-info .product-desc {
+            color: #5a6e5b;
+            font-size: 0.72rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-price {
+            color: #1a2a1f;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .add-cart {
+            background: linear-gradient(135deg, #0d1f17, #1e4a33);
+            color: white;
+            width: 100%;
+            border: none;
+            border-radius: 60px;
+            padding: 0.6rem;
+            font-weight: 600;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+        }
+
+        .add-cart:hover {
+            background: linear-gradient(135deg, #1e4a33, #2a6644);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ======= IMAGE SLIDER ======= */
+        .img-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .img-slider img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: 0.2s;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .slider-btn:hover {
+            background: rgba(201, 168, 76, 0.85);
+        }
+
+        .slider-btn.prev {
+            left: 7px;
+        }
+
+        .slider-btn.next {
+            right: 7px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 7px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+
+        .sdot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .sdot.active {
+            background: var(--gold);
+            width: 14px;
+            border-radius: 4px;
+        }
+
+        .single-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .single-img {
+            transform: scale(1.06);
+        }
+
+        .dxn-banner {
+            background: linear-gradient(115deg, #7a1f1f, #a33333, #8f2b2b);
+            border-radius: 2rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(255, 255, 255, 0.1) inset, 8px 8px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dxn-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent);
+            pointer-events: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-tile {
+            background: #1a2f25;
+            border-radius: 1.2rem;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-tile:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.1);
+        }
+
+        .gallery-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.2rem;
+        }
+
+        .order-loc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .input-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 0.8rem 1rem;
+            color: white;
+            margin: 0.5rem 0;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: rgba(201, 168, 76, 0.5);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        textarea.input-field {
+            border-radius: 1.2rem;
+        }
+
+        .map {
+            width: 100%;
+            border-radius: 40px 5px 40px 5px;
+            border: 0;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 8px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+            backdrop-filter: blur(4px);
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 90%;
+            max-width: 380px;
+            height: 100vh;
+            background: linear-gradient(160deg, #0f2018, #0a1510);
+            border-left: 1px solid rgba(201, 168, 76, 0.3);
+            z-index: 1101;
+            transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: flex;
+            flex-direction: column;
+            padding: 1.2rem;
+            overflow-y: auto;
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .contact-box {
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            border-radius: 1rem;
+            padding: 0.9rem 1rem;
+            margin: 0.8rem 0 1rem 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(201, 168, 76, 0.1) inset;
+        }
+
+        .contact-box-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box-header span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .edit-info-btn {
+            background: none;
+            border: 1px solid rgba(201, 168, 76, 0.5);
+            color: var(--gold);
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .edit-info-btn:hover {
+            background: rgba(201, 168, 76, 0.15);
+        }
+
+        .contact-detail-line {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.85);
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
+
+        .contact-detail-line i {
+            color: var(--gold);
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 14px;
+        }
+
+        .qty-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .qty-btn:hover {
+            background: rgba(201, 168, 76, 0.25);
+            border-color: rgba(201, 168, 76, 0.5);
+            transform: scale(1.1);
+        }
+
+        .qty-btn.minus:hover {
+            background: rgba(231, 76, 60, 0.2);
+            border-color: rgba(231, 76, 60, 0.4);
+        }
+
+        .trash-btn {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.25);
+            color: #e74c3c;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            flex-shrink: 0;
+        }
+
+        .trash-btn:hover {
+            background: rgba(231, 76, 60, 0.3);
+            transform: scale(1.1);
+        }
+
+        #addedToast {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1aaa4a, #25D366);
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border-radius: 60px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 0 rgba(255, 255, 255, 0.15) inset;
+            transition: opacity 0.35s, transform 0.35s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #addedToast.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .info-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+            backdrop-filter: blur(8px);
+        }
+
+        .info-modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .info-modal {
+            background: linear-gradient(145deg, #0f2018, #0a1510);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            width: 100%;
+            max-width: 380px;
+            transform: scale(0.95);
+            transition: 0.25s;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 2px 0 rgba(201, 168, 76, 0.2) inset;
+        }
+
+        .info-modal-overlay.open .info-modal {
+            transform: scale(1);
+        }
+
+        .info-modal h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-modal p {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 50px;
+            padding: 0.75rem 1rem;
+            color: white;
+            margin-bottom: 0.7rem;
+            outline: none;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+        }
+
+        .modal-input:focus {
+            border-color: rgba(201, 168, 76, 0.7);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        .modal-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        textarea.modal-input {
+            border-radius: 1rem;
+            resize: none;
+        }
+
+        .modal-save-btn {
+            background: linear-gradient(135deg, #d4a832, #c9a84c);
+            color: var(--dark);
+            border: none;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 0.3rem;
+            transition: 0.2s;
+            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .modal-save-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 28px rgba(201, 168, 76, 0.4);
+        }
+
+        .modal-skip-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.75rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 0.6rem;
+            padding: 0.4rem;
+            text-decoration: underline;
+        }
+
+        .visit {
+            width: 20px;
+            height: 20px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #060f0b, #07120d);
+            padding: 3rem 0 2rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201, 168, 76, 0.04), transparent);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-end;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .footer-social a.wa {
+            background: rgba(37, 211, 102, 0.12);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            color: #25D366;
+        }
+
+        .footer-social a.fb {
+            background: rgba(66, 103, 178, 0.12);
+            border: 1px solid rgba(66, 103, 178, 0.3);
+            color: #7aabff;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        @media(max-width:900px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img-left,
+            .hero-img-right {
+                display: none;
+            }
+        }
+
+        @media(max-width:820px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .about-grid,
+            .order-loc-grid,
+            .dxn-banner {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2.8rem 0;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 1rem 0;
+            }
+
+            .prod-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+        @media(max-width:480px) {
+            .pill-group {
+                gap: 0.5rem;
+            }
+
+            .pill {
+                font-size: 0.7rem;
+            }
+
+            .cart-icon span:first-child {
+                display: none;
+            }
+
+            .cart-icon {
+                padding: 0.45rem 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content>* {
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .hero-content .since-badge {
+            animation-delay: 0.1s;
+        }
+
+        .hero-content h1 {
+            animation-delay: 0.25s;
+        }
+
+        .hero-content .pill-group {
+            animation-delay: 0.4s;
+        }
+
+        .hero-content .hero-btns {
+            animation-delay: 0.55s;
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="addedToast"><i class="fas fa-check-circle"></i><span id="toastText">Cart mein add ho gaya!</span></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://i.ibb.co/Q7NhK34X/logo.jpg" alt="Dr. Fawad" class="logo-img-circle">
+                <div class="logo-text">
+                    <h2>Riaz Homeo Clinic</h2>
+                    <p>Rohri · Sindh</p>
+                    <div class="logo-since">Est. Since 1967</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#dxn">DXN</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#order">Order</a>
+                <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank" class="fb-link"><i
+                        class="fab fa-facebook-f"></i> Facebook</a>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <div class="cart-icon" onclick="openCart()">
+                    <img src="https://cdn-icons-png.flaticon.com/128/15254/15254072.png" alt="Cart" class="visit">
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about" onclick="toggleMobile()">About Doctor</a>
+            <a href="#products" onclick="toggleMobile()">Products</a>
+            <a href="#dxn" onclick="toggleMobile()">DXN Range</a>
+            <a href="#gallery" onclick="toggleMobile()">Gallery</a>
+            <a href="#location" onclick="toggleMobile()">Location</a>
+            <a href="#order" onclick="toggleMobile()">Order</a>
+            <a href="https://wa.me/923337189748" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+            <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank"><i
+                    class="fab fa-facebook-f"></i> Facebook</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="waves-bg">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0,80 C180,160 360,0 540,80 C720,160 900,0 1080,80 C1260,160 1350,40 1440,80 L1440,200 L0,200 Z"
+                        fill="rgba(201,168,76,0.06)" />
+                </svg>
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    style="bottom:30px;">
+                    <path
+                        d="M0,100 C200,20 400,160 600,100 C800,40 1000,160 1200,100 C1320,60 1380,120 1440,100 L1440,200 L0,200 Z"
+                        fill="rgba(201,168,76,0.04)" />
+                </svg>
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    style="bottom:60px;">
+                    <path d="M0,60 C240,140 480,20 720,60 C960,100 1200,20 1440,60 L1440,200 L0,200 Z"
+                        fill="rgba(201,168,76,0.03)" />
+                </svg>
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    style="bottom:auto;top:0;transform:rotate(180deg);">
+                    <path
+                        d="M0,80 C180,160 360,0 540,80 C720,160 900,0 1080,80 C1260,160 1350,40 1440,80 L1440,200 L0,200 Z"
+                        fill="rgba(201,168,76,0.04)" />
+                </svg>
+            </div>
+            <div class="container hero-content">
+                <div class="since-badge">✦ Legacy Since 1967 — Serving Since 2026 ✦</div>
+                <div class="hero-layout">
+                    <div class="hero-img-left">
+                        <img src="https://i.ibb.co/Mk5HYgZt/Untitled-design-1.png" alt="Dr. Syed Fawad Ahmed Zaidi"
+                            class="hero-doctor-img">
+                    </div>
+                    <div>
+                        <h1 class="hero-title-3d">RIAZ <span class="gold">HOMEO</span><br>CLINIC</h1>
+                        <div class="pill-group">
+                            <div class="pill">✦ 100% Natural</div>
+                            <div class="pill">✦ DXN Authorized</div>
+                            <div class="pill">✦ Cash on Delivery</div>
+                        </div>
+                        <div class="hero-btns" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                            <a href="https://wa.me/923337189748?text=Assalamu+Alaikum,+I+need+order"
+                                class="btn-primary">
+                                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
+                                    class="visit"> Order Now
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank"
+                                class="btn-outline"><i class="fab fa-facebook-f"></i> Facebook</a>
+                            <a href="#products" class="btn-outline">View Products</a>
+                        </div>
+                    </div>
+                    <div class="hero-img-right">
+                        <img src="https://i.ibb.co/vxs62L2N/Gemini-Generated-Image-1tn9by1tn9by1tn9-1.png"
+                            alt="Dr. Syed Fawad Ahmed Zaidi" class="hero-doctor-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="background:var(--dark2);">
+            <div class="container about-grid">
+                <div class="doctor-profile">
+                    <img src="https://i.ibb.co/Mk5HYgZt/Untitled-design-1.png" alt="Dr. Syed Fawad Ahmed Zaidi"
+                        class="doctor-photo-about">
+                    <h3 style="font-family:'Cormorant Garamond';font-size:1.8rem;">Dr. Syed Fawad<br>Ahmed Zaidi</h3>
+                    <p style="color:var(--gold);font-weight:500;margin-bottom:1rem;">DHMS · Homeopathic Consultant</p>
+                    <div class="info-row">
+                        <div class="info-item"><i class="fas fa-stethoscope gold"></i> 20+ Years experience</div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt gold"></i> Dhak Bazar, Rohri</div>
+                        <div class="info-item"><i class="fab fa-whatsapp gold"></i> 0333-7189748</div>
+                        <div class="info-item"><i class="fas fa-seedling gold"></i> Homeopathy & DXN Specialist</div>
+                    </div>
+                    <a href="https://wa.me/923337189748?text=Doctor+Sahab+consultation+chahiye" class="btn-primary"
+                        style="background:linear-gradient(135deg,#1aaa4a,#25D366);width:100%;justify-content:center;">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Book Consultation
+                    </a>
+                </div>
+                <div>
+                    <div class="badge"><i class="fas fa-heartbeat"></i> Holistic Healing</div>
+                    <h2 class="section-title">Natural Medicine <br>Trusted Since <span class="gold">1967</span></h2>
+                    <div class="divider-line"></div>
+                    <p class="section-desc">Dr. Syed Fawad Ahmed Zaidi provides premium homeopathic treatments in Rohri,
+                        specializing in chronic diseases, skin issues, and immune support. We also offer authentic DXN
+                        Ganoderma products for complete wellness — safe, natural, side-effect-free.</p>
+                    <p class="section-desc" style="margin-top:1rem;"><i class="fas fa-check-circle gold"></i> 100%
+                        natural remedies · Cash on delivery · All over Pakistan</p>
+                    <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+                        <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank"
+                            class="btn-outline" style="border-color:rgba(66,103,178,0.5);color:#7aabff;"><i
+                                class="fab fa-facebook-f"></i> Follow on Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products">
+            <div class="container" style="text-align:center;">
+                <div class="badge" style="margin:0 auto 1rem auto;width:fit-content;">✨ Curated Collection</div>
+                <h2 class="section-title">Premium Products</h2>
+                <div class="filter-bar" id="filterBar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="clinic">Clinic Range</button>
+                    <button class="filter-btn" data-filter="dxn">DXN Range</button>
+                </div>
+                <div class="prod-grid" id="productGrid"></div>
+            </div>
+        </section>
+
+        <section id="dxn" style="background:var(--dark2);">
+            <div class="container">
+                <div class="dxn-banner">
+                    <div>
+                        <div class="badge" style="background:#fff0d0;color:#a23b2e;">🍄 Authorized Seller</div>
+                        <h2 class="section-title" style="color:white;">DXN Ganoderma</h2>
+                        <p style="color:rgba(255,255,255,0.75);">Reishi mushroom based supplements — immunity, energy &
+                            longevity</p>
+                        <a href="https://wa.me/923337189748" class="btn-primary"
+                            style="background:white;color:#b13b3b;margin-top:1rem;">
+                            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
+                                class="visit"> Buy DXN
+                        </a>
+                    </div>
+                    <div style="display:flex;justify-content:center;align-items:center;">
+                        <i class="fas fa-seedling"
+                            style="font-size:4rem;color:#ffdd99;filter:drop-shadow(0 0 20px rgba(255,221,153,0.4));"></i>
+                    </div>
+                </div>
+                <div class="prod-grid" id="dxnProductGrid"></div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container" style="text-align:center;">
+                <div class="badge">Moments</div>
+                <h2 class="section-title">Clinic & Product Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-tile"><img
+                            src="https://i.ibb.co/Z1m8VqN9/Whats-App-Image-2026-05-05-at-1-14-15-PM.jpg"
+                            alt="Clinic Front"></div>
+                    <div class="gallery-tile"><img
+                            src="https://i.ibb.co/KphVKBms/Whats-App-Image-2026-05-05-at-1-14-14-PM.jpg"
+                            alt="Dr. Fawad"></div>
+                    <div class="gallery-tile"><img
+                            src="https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg"
+                            alt="Homeopathy"></div>
+                    <div class="gallery-tile"><img
+                            src="https://i.ibb.co/kgcY7GtT/Whats-App-Image-2026-05-05-at-1-14-16-PM.jpg"
+                            alt="DXN Range"></div>
+                    <div class="gallery-tile"><img
+                            src="https://i.ibb.co/zHjPmyf0/Whats-App-Image-2026-05-05-at-1-14-13-PM.jpg"
+                            alt="Herbal Meds"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" style="background:var(--dark2);">
+            <div class="container order-loc-grid">
+                <div>
+                    <div class="badge"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt=""
+                            class="visit"> Easy Order</div>
+                    <h2 class="section-title">Order via WhatsApp</h2>
+                    <p style="color:#b9c7bd;margin:1rem 0;">Send product name, quantity, address — delivery across
+                        Pakistan, cash on delivery.</p>
+                    <div style="margin:1.2rem 0;"><i class="fab fa-whatsapp gold" style="font-size:1.4rem;"></i>
+                        <strong>0333-7189748</strong>
+                    </div>
+                    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+                        <a href="https://wa.me/923337189748" class="btn-primary"
+                            style="background:linear-gradient(135deg,#1aaa4a,#25D366);">
+                            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
+                                class="visit"> Direct WhatsApp
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank"
+                            class="btn-outline" style="border-color:rgba(66,103,178,0.5);color:#7aabff;"><i
+                                class="fab fa-facebook-f"></i> Facebook Page</a>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <h3 style="font-family:'Cormorant Garamond';font-size:1.5rem;">📋 Quick Order Form</h3>
+                    <input type="text" id="orderName" class="input-field" placeholder="Full Name">
+                    <input type="tel" id="orderPhone" class="input-field" placeholder="Phone Number">
+                    <input type="text" id="orderAddress" class="input-field" placeholder="Delivery Address">
+                    <textarea id="orderProducts" class="input-field" rows="2"
+                        placeholder="Product name & quantity"></textarea>
+                    <button class="btn-primary" style="width:100%;background:linear-gradient(135deg,#1aaa4a,#25D366);"
+                        onclick="sendDirectOrder()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Send Order on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <div class="container order-loc-grid">
+                <div>
+                    <div class="badge"><i class="fas fa-location-dot"></i> Visit Us</div>
+                    <h2 class="section-title">Riaz Homeo Clinic</h2>
+                    <br><br>
+                    <p><img src="https://cdn-icons-png.flaticon.com/128/2991/2991231.png" alt="Location" class="visit">
+                        Near Zaidi Homeo Clinic, Dhak Bazar, Rohri, Sindh</p>
+                    <br><br>
+                    <p><img src="https://cdn-icons-png.flaticon.com/128/862/862358.png" alt="Timing" class="visit">
+                        Morning 10:00(AM) - 1:30(PM)<br><br>Evening 5:30(PM) - 9:30(PM)<br><br>
+                    <h4>(Call for appointment)</h4>
+                    </p>
+                    <br><br>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="Phone" class="visit">
+                        0333-7189748<br><br>
+                        <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Phone" class="visit">
+                        0312-3875580<br><br>
+                        <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Phone" class="visit">
+                        0308-3773026
+                    </p>
+                    <br><br>
+                    <a href="https://maps.app.goo.gl/s87mgaDXwtQs2crEA" class="btn-outline"
+                        style="display:inline-block;">Open Maps</a>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.0086842398955!2d68.89045397525325!3d27.692293376191238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5db3efa2dd9%3A0x641357d1a9db8144!2sHomeo%20Dr.%20Syed%20Fawad%20Ahmed%20Zaidi!5e1!3m2!1sen!2s!4v1777822312791!5m2!1sen!2s"
+                    height="550" class="map" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div
+                    style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold-light);">
+                    Riaz Homeo Clinic</div>
+                <div style="font-size:0.65rem;color:rgba(255,255,255,0.35);margin-top:0.3rem;">Est. Since 1967 · Rohri,
+                    Sindh</div>
+            </div>
+            <div style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.4);">
+                © 2025 Riaz Homeo Clinic · Dr. Syed Fawad Ahmed Zaidi<br>
+                <span style="color:var(--gold);font-size:0.65rem;">Since 1967 — 2026</span>
+            </div>
+            <div class="footer-social">
+                <a href="https://wa.me/923337189748" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank" class="fb"><i
+                        class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+            <h3 style="font-size:1rem;"><i class="fas fa-shopping-bag" style="color:var(--gold);"></i> Your Cart</h3>
+            <button onclick="closeCart()"
+                style="background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.2rem;cursor:pointer;"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <div class="contact-box" id="contactInfoBox">
+            <div class="contact-box-header">
+                <span><i class="fas fa-user" style="margin-right:5px;"></i>For Contact</span>
+                <button class="edit-info-btn" onclick="openInfoModal(true)"><i class="fas fa-pencil-alt"></i>
+                    Edit</button>
+            </div>
+            <div id="contactInfoLines"></div>
+        </div>
+        <div id="cartItemsList" style="flex:1;margin:0.5rem 0;overflow-y:auto;"></div>
+        <div id="cartTotalBox" style="margin-top:auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;">
+        </div>
+        <button class="btn-primary"
+            style="width:100%;background:linear-gradient(135deg,#1aaa4a,#25D366);margin-top:1rem;"
+            onclick="checkoutCartWhatsapp()">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit"> Complete
+            Order
+        </button>
+        <button class="btn-outline" style="width:100%;margin-top:0.5rem;" onclick="closeCart()">Close</button>
+    </div>
+
+    <div class="info-modal-overlay" id="infoModalOverlay">
+        <div class="info-modal">
+            <h3>📋 Delivery Information</h3>
+            <p>Ek baar bhar dein — hum save kar lein ge aapki info</p>
+            <input type="text" id="modalName" class="modal-input" placeholder="Aapka Name (Full Name)" maxlength="60">
+            <input type="tel" id="modalPhone" class="modal-input" placeholder="Phone Number (03xx-xxxxxxx)"
+                maxlength="20">
+            <textarea id="modalAddress" class="modal-input" rows="2"
+                placeholder="Delivery Address (ghar, gali, sheher)"></textarea>
+            <button class="modal-save-btn" onclick="saveCustomerInfo()"><i class="fas fa-save"></i> Save &
+                Continue</button>
+            <button class="modal-skip-btn" onclick="skipInfoModal()">Skip (order without saving)</button>
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // PRODUCTS DATABASE
+        // Clinic products mein: img (single string)
+        // DXN products mein:    imgs (array of strings)
+        // Jitni marzi pics daalo DXN mein — slider automatically banta hai
+        // =====================================================
+        const productsDB = [
+            // ===== CLINIC RANGE — single img =====
+            {
+                id: 1, cat: 'clinic',
+                name: 'For Asthma',
+                desc: 'Relief in Asthma Problem',
+                price: 800,
+                img: 'https://i.ibb.co/C3jgsv80/asthama.png'
+            },
+            {
+                id: 2, cat: 'clinic',
+                name: 'For Bladder Stone',
+                desc: 'Remove pain from Bladder and Stone',
+                price: 800,
+                img: 'https://i.ibb.co/rGwbtD3t/bladdar-stone.png'
+            },
+            {
+                id: 3, cat: 'clinic',
+                name: 'For Both Sides Stones',
+                desc: 'Effective stone removal formula',
+                price: 800,
+                img: 'https://i.ibb.co/Dgfrm6mD/both-sides.png'
+            },
+            {
+                id: 7, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+
+
+
+            {
+                id: 17, cat: 'clinic',
+                name: 'For Cough',
+                desc: 'Relief in Cough and Respiratory Issues',
+                price: 800,
+                img: 'https://i.ibb.co/wrz968FF/cough.png'
+            },
+            {
+                id: 18, cat: 'clinic',
+                name: 'For Dust Allergy',
+                desc: 'Relief from Dust Allergy Symptoms',
+                price: 800,
+                img: 'https://i.ibb.co/nqQChFfg/dust-allergy.png'
+            },
+            {
+                id: 18, cat: 'clinic',
+                name: 'For Fatty Liver',
+                desc: 'Support for Liver Health',
+                price: 800,
+                img: 'https://i.ibb.co/jvdwHMV3/fatty-liver.png'
+            },
+            {
+                id: 20, cat: 'clinic',
+                name: 'For Bed Waiting',
+                desc: 'for patients who are bed ridden and need support for recovery and strength',
+                price: 800,
+                img: 'https://i.ibb.co/ch0ChVZT/for-bed.png'
+            },
+            {
+                id: 21, cat: 'clinic',
+                name: 'For kidney infection',
+                desc: 'Relief from Kidney Infection Symptoms',
+                price: 800,
+                img: 'https://i.ibb.co/Y7ThXvZd/for-infection.png'
+            },
+            {
+                id: 22, cat: 'clinic',
+                name: 'For Gall Stone',
+                desc: 'Relief from Gall Stone Symptoms',
+                price: 800,
+                img: 'https://i.ibb.co/JWHxQxhy/gall-stone.png'
+            },
+            {
+                id: 23, cat: 'clinic',
+                name: 'For Left Side Stone',
+                desc: 'Relief from Left Side Stone Symptoms',
+                price: 800,
+                img: 'https://i.ibb.co/Y4JppMG6/left-side.png'
+            },
+            {
+                id: 24, cat: 'clinic',
+                name: 'For Migraine',
+                desc: 'Relief from Migraine Headache Symptoms',
+                price: 800,
+                img: 'https://i.ibb.co/v4BchTSK/migrane.png'
+            },
+            {
+                id: 25, cat: 'clinic',
+                name: '',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 26, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 27, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 28, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 29, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 30, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 31, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+            {
+                id: 32, cat: 'clinic',
+                name: 'For Constipation',
+                desc: 'Digestive health & constipation relief',
+                price: 800,
+                img: 'https://i.ibb.co/Q3cYvVL5/costipation.png'
+            },
+
+            // ===== DXN RANGE — imgs array (slider) =====
+            // YAHAN APNI DXN IMAGES KI LINKS DAALO
+            // Jitni marzi pics daalo — slider khud ban jaye ga
+            {
+                id: 4, cat: 'dxn',
+                name: 'Lemonzhi Ganoderma',
+                desc: 'Tea Mix with Lemon and Ganoderma Extract',
+                price: 2020,
+                imgs: [
+                    'https://i.ibb.co/wFp3KNR0/lemonzhi.jpg'
+                ]
+            },
+            {
+                id: 5, cat: 'dxn',
+                name: 'Morinzhi',
+                desc: 'Morinda Citrifolia juice',
+                price: 4220,
+                imgs: [
+                    'https://i.ibb.co/V0nWDQky/morinzhi-1.png'
+                ]
+            },
+            {
+                id: 6, cat: 'dxn',
+                name: 'Cocozhi box',
+                desc: 'Cocoa Drink Mix with Ganoderma Extract',
+                price: 4395,
+                imgs: [
+                    'https://i.ibb.co/Y7mTHXzn/Cocozhi.jpg'
+                ]
+            },
+            {
+                id: 8, cat: 'dxn',
+                name: 'Gano massage oil',
+                desc: 'Ganoderma based herbal massage oil for pain relief',
+                price: 2570,
+                imgs: [
+                    'https://i.ibb.co/27GVq9Kv/Gano-Oil.jpg'
+                ]
+            },
+            {
+                id: 9, cat: 'dxn',
+                name: 'Ganozhi shampoo',
+                desc: 'Ganoderma based herbal shampoo for hair care',
+                price: 2045,
+                imgs: [
+                    'https://i.ibb.co/RGfHbv2v/ganozhi-shampoo.jpg'
+                ]
+            },
+            {
+                id: 10, cat: 'dxn',
+                name: 'Ganozhi Toothpaste 150g Tube',
+                desc: 'natural toothpaste enhanced with Ganoderma',
+                price: 1780,
+                imgs: [
+                    'https://i.ibb.co/vCNGC6YC/Ganozhi-big.jpg'
+                ]
+            },
+            {
+                id: 11, cat: 'dxn',
+                name: 'Toothpaste Box ',
+                desc: 'Ganoderma infused toothpaste box with 40g x 6 tubes',
+                price: 3240,
+                imgs: [
+                    'https://i.ibb.co/PsZ7pk3L/Ganozhi-mini.jpg'
+                ]
+            },
+            {
+                id: 12, cat: 'dxn',
+                name: 'Spirulina 120 tablets',
+                desc: 'Nutritional supplement rich in proteins and vitamins',
+                price: 3600,
+                imgs: [
+                    'https://i.ibb.co/fz8WP18q/Spirolina.jpg'
+                ]
+            },
+            {
+                id: 13, cat: 'dxn',
+                name: 'Potenzhi 30 capsules',
+                desc: 'Ganoderma infused energy supplement',
+                price: 4015,
+                imgs: [
+                    'https://i.ibb.co/Hpq8cx4N/potenzhi.jpg.jpg'
+                ]
+            },
+            {
+                id: 14, cat: 'dxn',
+                name: 'Black coffee Box',
+                desc: 'Ganoderma infused black coffee',
+                price: 2370,
+                imgs: [
+                    'https://i.ibb.co/jkMRxNHd/Black-coffee.jpg'
+                ]
+            },
+            {
+                id: 15, cat: 'dxn',
+                name: '3 in 1 coffee Box',
+                desc: 'Premix Coffee with Ganoderma extract',
+                price: 2505,
+                imgs: [
+                    'https://i.ibb.co/m5T2gz08/3-in-1-coffee.jpg'
+                ]
+            },
+            {
+                id: 16, cat: 'dxn',
+                name: 'Roselle 120 Tablets ',
+                desc: 'Providing a rich source of Vitamin C and antioxidants',
+                price: 3220,
+                imgs: [
+                    'https://i.ibb.co/q3Td2zpD/Roselle.jpg'
+                ]
+            }
+
+        ];
+
+        // =====================================================
+        // SLIDER LOGIC
+        // =====================================================
+        const sliderState = {};
+
+        function slideImg(productId, dir) {
+            const slider = document.getElementById('slider-' + productId);
+            if (!slider) return;
+            const imgs = slider.querySelectorAll('img');
+            const dots = slider.querySelectorAll('.sdot');
+            if (imgs.length <= 1) return;
+
+            if (sliderState[productId] === undefined) sliderState[productId] = 0;
+
+            imgs[sliderState[productId]].classList.remove('active');
+            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.remove('active');
+
+            sliderState[productId] = (sliderState[productId] + dir + imgs.length) % imgs.length;
+
+            imgs[sliderState[productId]].classList.add('active');
+            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.add('active');
+        }
+
+        function goToSlide(productId, index) {
+            const slider = document.getElementById('slider-' + productId);
+            if (!slider) return;
+            const imgs = slider.querySelectorAll('img');
+            const dots = slider.querySelectorAll('.sdot');
+
+            if (sliderState[productId] === undefined) sliderState[productId] = 0;
+            imgs[sliderState[productId]].classList.remove('active');
+            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.remove('active');
+
+            sliderState[productId] = index;
+            imgs[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
+        }
+
+        // =====================================================
+        // BUILD PRODUCT CARD
+        // Clinic = single image, DXN = slider with multiple images
+        // =====================================================
+        function buildProductCard(product) {
+            const catLabel = product.cat === 'dxn' ? 'DXN Range' : 'Clinic';
+            const fallback = '';
+
+            let imgHTML = '';
+
+            if (product.imgs && product.imgs.length > 0) {
+                // === MULTIPLE IMAGES — Slider ===
+                const imgsMarkup = product.imgs.map((src, i) =>
+                    `<img src="${src}" alt="${product.name} - pic ${i + 1}" loading="lazy"
+                  class="${i === 0 ? 'active' : ''}"
+                  onerror="this.src='${fallback}'">`
+                ).join('');
+
+                const dotsMarkup = product.imgs.length > 1
+                    ? `<div class="slider-dots">${product.imgs.map((_, i) =>
+                        `<span class="sdot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${product.id}, ${i})"></span>`
+                    ).join('')}</div>`
+                    : '';
+
+                const arrowsMarkup = product.imgs.length > 1 ? `
+            <button class="slider-btn prev" onclick="slideImg(${product.id}, -1)">&#8249;</button>
+            <button class="slider-btn next" onclick="slideImg(${product.id}, 1)">&#8250;</button>
+        ` : '';
+
+                imgHTML = `
+            <div class="img-slider" id="slider-${product.id}">
+                ${imgsMarkup}
+                ${arrowsMarkup}
+                ${dotsMarkup}
+            </div>`;
+
+            } else if (product.img) {
+                // === SINGLE IMAGE ===
+                imgHTML = `<img src="${product.img}" alt="${product.name}" loading="lazy" class="single-img"
+                        onerror="this.src='${fallback}'">`;
+            } else {
+                imgHTML = `<img src="${fallback}" alt="${product.name}" class="single-img">`;
+            }
+
+            return `<div class="product-card">
+        <div class="product-img-box">
+            ${imgHTML}
+            <span class="product-cat-label">${catLabel}</span>
+        </div>
+        <div class="product-info">
+            <h4>${product.name}</h4>
+            <p class="product-desc">${product.desc}</p>
+            <div class="product-price-row"><span class="product-price">PKR ${product.price}</span></div>
+            <button class="add-cart" onclick="addToCart(${product.id})">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    </div>`;
+        }
+
+        // =====================================================
+        // CART & OTHER FUNCTIONS (same as before)
+        // =====================================================
+        let cart = [];
+        const INFO_KEY = 'rhc_customer_info';
+        let toastTimer = null;
+
+        function getCustomerInfo() { try { const s = localStorage.getItem(INFO_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
+        function setCustomerInfo(name, phone, address) { localStorage.setItem(INFO_KEY, JSON.stringify({ name, phone, address })); }
+
+        function renderContactBox() {
+            const info = getCustomerInfo();
+            const linesDiv = document.getElementById('contactInfoLines');
+            if (!linesDiv) return;
+            if (info && (info.name || info.phone || info.address)) {
+                linesDiv.innerHTML = `
+            ${info.name ? `<div class="contact-detail-line"><i class="fas fa-user"></i><span>${info.name}</span></div>` : ''}
+            ${info.phone ? `<div class="contact-detail-line"><i class="fas fa-phone"></i><span>${info.phone}</span></div>` : ''}
+            ${info.address ? `<div class="contact-detail-line"><i class="fas fa-map-marker-alt"></i><span>${info.address}</span></div>` : ''}
+        `;
+            } else {
+                linesDiv.innerHTML = `<div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.2rem;"><i class="fas fa-info-circle" style="margin-right:5px;"></i>Abhi koi info save nahi</div>`;
+            }
+        }
+
+        let _pendingCheckout = false;
+
+        function openInfoModal(editMode = false) {
+            _pendingCheckout = !editMode;
+            const info = getCustomerInfo();
+            if (info) {
+                document.getElementById('modalName').value = info.name || '';
+                document.getElementById('modalPhone').value = info.phone || '';
+                document.getElementById('modalAddress').value = info.address || '';
+            } else {
+                document.getElementById('modalName').value = '';
+                document.getElementById('modalPhone').value = '';
+                document.getElementById('modalAddress').value = '';
+            }
+            document.getElementById('infoModalOverlay').classList.add('open');
+        }
+
+        function closeInfoModal() { document.getElementById('infoModalOverlay').classList.remove('open'); }
+
+        function saveCustomerInfo() {
+            const name = document.getElementById('modalName').value.trim();
+            const phone = document.getElementById('modalPhone').value.trim();
+            const address = document.getElementById('modalAddress').value.trim();
+            if (!name || !phone) { alert('Name aur Phone number zaroori hain'); return; }
+            setCustomerInfo(name, phone, address);
+            closeInfoModal();
+            renderContactBox();
+            if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout(); }
+        }
+
+        function skipInfoModal() { closeInfoModal(); if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout(); } }
+
+        function showAddedToast(productName) {
+            const toast = document.getElementById('addedToast');
+            document.getElementById('toastText').textContent = productName + ' — Cart mein add ho gaya!';
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+        }
+
+        function buildCartItemHTML(item) {
+            return `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;padding:10px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+        <div style="flex:1;min-width:0;">
+            <div style="font-size:0.83rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div>
+            <div style="font-size:0.78rem;color:var(--gold);margin-top:3px;font-weight:600;">${item.price * item.qty} PKR</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">
+            <button class="qty-btn minus" onclick="changeQty(${item.id}, -1)">−</button>
+            <span style="font-size:0.9rem;font-weight:700;min-width:22px;text-align:center;">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+            <button class="trash-btn" onclick="removeItem(${item.id})"><i class="fas fa-trash-alt" style="font-size:0.65rem;"></i></button>
+        </div>
+    </div>`;
+        }
+
+        function addToCart(id) {
+            const product = productsDB.find(p => p.id === id);
+            const existing = cart.find(i => i.id === id);
+            if (existing) { existing.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
+            updateCartUI();
+            showAddedToast(product.name);
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
+            updateCartUI();
+        }
+
+        function removeItem(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
+
+        function updateCartUI() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = totalQty;
+            const cartList = document.getElementById('cartItemsList');
+            if (cartList) {
+                if (cart.length === 0) {
+                    cartList.innerHTML = '<p style="opacity:0.5;margin-top:1.5rem;font-size:0.85rem;text-align:center;"><i class="fas fa-shopping-basket" style="font-size:2rem;display:block;margin-bottom:0.5rem;opacity:0.3;"></i>Cart khali hai</p>';
+                } else {
+                    cartList.innerHTML = cart.map(item => buildCartItemHTML(item)).join('');
+                }
+            }
+            const subtotal = cart.reduce((sum, item) => sum + (item.qty * item.price), 0);
+            const delivery = 250;
+            const total = subtotal + delivery;
+            document.getElementById('cartTotalBox').innerHTML = `
+        <div style="font-size:0.85rem;line-height:2.2;">
+            <div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Subtotal</span><span>${subtotal} PKR</span></div>
+            <div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Delivery</span><span>${delivery} PKR</span></div>
+            <div style="display:flex;justify-content:space-between;font-weight:700;font-size:0.95rem;color:var(--gold);border-top:1px solid rgba(201,168,76,0.2);padding-top:6px;margin-top:4px;"><span>Total</span><span>${total} PKR</span></div>
+        </div>`;
+        }
+
+        function openCart() { renderContactBox(); document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
+        function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+
+        function checkoutCartWhatsapp() {
+            if (cart.length === 0) { alert('Cart khali hai — pehle koi product add karein'); return; }
+            const info = getCustomerInfo();
+            if (!info || !info.name || !info.phone) { openInfoModal(false); return; }
+            doWhatsappCheckout();
+        }
+
+        function doWhatsappCheckout() {
+            const info = getCustomerInfo();
+            const subtotal = cart.reduce((sum, i) => sum + (i.qty * i.price), 0);
+            const delivery = 250;
+            const total = subtotal + delivery;
+            let msg = '*Order - Riaz Homeo Clinic*\n--------------------------------\n';
+            if (info && info.name) msg += `*Name:* ${info.name}\n`;
+            if (info && info.phone) msg += `*Phone:* ${info.phone}\n`;
+            if (info && info.address) msg += `*Address:* ${info.address}\n`;
+            msg += '--------------------------------\n*Products:*\n';
+            cart.forEach(item => { msg += `- ${item.name} x${item.qty} = ${item.price * item.qty} PKR\n`; });
+            msg += `--------------------------------\nSubtotal: ${subtotal} PKR\nDelivery: ${delivery} PKR\n*Total: ${total} PKR*\n--------------------------------\nPayment: Cash on Delivery (COD)`;
+            const anchor = document.createElement('a');
+            anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
+            anchor.target = '_blank';
+            anchor.click();
+        }
+
+        function sendDirectOrder() {
+            const name = document.getElementById('orderName')?.value.trim();
+            const phone = document.getElementById('orderPhone')?.value.trim();
+            const address = document.getElementById('orderAddress')?.value.trim();
+            const products = document.getElementById('orderProducts')?.value.trim();
+            if (!name || !phone) { alert('Please fill name and phone number'); return; }
+            let msg = `New Order - Riaz Homeo Clinic\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nProducts: ${products}`;
+            const anchor = document.createElement('a');
+            anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
+            anchor.target = '_blank';
+            anchor.click();
+        }
+
+        function renderProducts(filter = 'all') {
+            const filtered = filter === 'all' ? productsDB : productsDB.filter(p => p.cat === filter);
+            const grid = document.getElementById('productGrid');
+            if (grid) grid.innerHTML = filtered.map(p => buildProductCard(p)).join('');
+        }
+
+        function renderDXNProducts() {
+            const dxnOnly = productsDB.filter(p => p.cat === 'dxn');
+            const dxnGrid = document.getElementById('dxnProductGrid');
+            if (dxnGrid) dxnGrid.innerHTML = dxnOnly.map(p => buildProductCard(p)).join('');
+        }
+
+        function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('show'); }
+
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderProducts(this.dataset.filter);
+            });
+        });
+
+        document.getElementById('infoModalOverlay').addEventListener('click', function (e) {
+            if (e.target === this) skipInfoModal();
+        });
+
+        renderProducts('all');
+        renderDXNProducts();
+        updateCartUI();
+    </script>
+</body>
+
+</html>

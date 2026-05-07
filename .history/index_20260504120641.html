@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Riaz Homeo Clinic | Dr. Syed Fawad Ahmed Zaidi</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* =========================================
+           RESET & BASE
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a1510;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a2a20;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a84c;
+            border-radius: 10px;
+        }
+
+        /* =========================================
+           LAYOUT HELPERS
+        ========================================= */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 2rem;
+        }
+
+        /* =========================================
+           TYPOGRAPHY
+        ========================================= */
+        .gold {
+            color: #e3bc5e;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #e3bc5e;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 7vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 520px;
+        }
+
+        .divider-line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 21, 16, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1.25rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .logo-text p {
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: #e3bc5e;
+        }
+
+        /* Cart Button */
+        .cart-icon {
+            background: rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 0.45rem 1rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .cart-count {
+            background: #c9a84c;
+            color: #0a1510;
+            border-radius: 30px;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hamburger for Mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        /* Mobile Dropdown Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #0e1c16;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu a {
+            color: #ddd;
+            padding: 0.7rem 0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* =========================================
+           HERO SECTION
+        ========================================= */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(201, 168, 76, 0.08), transparent);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 12vw, 5.2rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 0.5rem;
+        }
+
+        .hero-badge {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Pill Tags */
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin: 2rem 0;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: #c9a84c;
+            color: #0a1510;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(201, 168, 76, 0.6);
+            color: #e3bc5e;
+            padding: 0.75rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        /* =========================================
+           ABOUT SECTION
+        ========================================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .doctor-profile {
+            background: #11271d;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .avatar-icon {
+            width: 130px;
+            height: 130px;
+            background: #2a553d;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border: 2px solid #c9a84c;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            padding: 0.7rem;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* =========================================
+           PRODUCTS SECTION
+        ========================================= */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #c9a84c;
+            color: #0a1510;
+            border-color: #c9a84c;
+        }
+
+        /* Products Grid */
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* =========================================
+           PRODUCT CARD — Updated with Image
+        ========================================= */
+        .product-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Product Image Container */
+        .product-img-box {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #eef4ea;
+            position: relative;
+        }
+
+        /* The actual product image */
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        /* Zoom image on hover */
+        .product-card:hover .product-img-box img {
+            transform: scale(1.05);
+        }
+
+        /* Category label on top of image */
+        .product-cat-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(10, 21, 16, 0.75);
+            color: #e3bc5e;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        /* Product Text Info */
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-info h4 {
+            color: #1a2a1f;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-info .product-desc {
+            color: #5a6e5b;
+            font-size: 0.72rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Price row */
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-price {
+            color: #1a2a1f;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* Add to Cart Button */
+        .add-cart {
+            background: #0a1510;
+            color: white;
+            width: 100%;
+            border: none;
+            border-radius: 60px;
+            padding: 0.6rem;
+            font-weight: 600;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .add-cart:hover {
+            background: #1e4a33;
+        }
+
+        /* =========================================
+           DXN SECTION
+        ========================================= */
+        .dxn-banner {
+            background: linear-gradient(115deg, #8f2b2b, #b33b3b);
+            border-radius: 2rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* =========================================
+           GALLERY SECTION
+        ========================================= */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-tile {
+            background: #1a2f25;
+            border-radius: 1.2rem;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .gallery-tile:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.2rem;
+        }
+
+        /* =========================================
+           ORDER & LOCATION SECTIONS
+        ========================================= */
+        .order-loc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .input-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 0.8rem 1rem;
+            color: white;
+            margin: 0.5rem 0;
+            outline: none;
+        }
+
+        textarea.input-field {
+            border-radius: 1.2rem;
+        }
+
+        /* Google Map */
+        .map {
+            width: 100%;
+            border-radius: 40px 5px 40px 5px;
+            border: 0;
+        }
+
+        /* =========================================
+           CART SIDEBAR
+        ========================================= */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 90%;
+            max-width: 360px;
+            height: 100vh;
+            background: #0f1f18;
+            border-left: 1px solid #c9a84c;
+            z-index: 1101;
+            transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: flex;
+            flex-direction: column;
+            padding: 1.2rem;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        /* =========================================
+           SMALL ICON HELPER
+        ========================================= */
+        .visit {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            background: #07120d;
+            padding: 2rem 0;
+            margin-top: 1rem;
+        }
+
+        /* =========================================
+           RESPONSIVE — TABLET & MOBILE
+        ========================================= */
+        @media (max-width: 820px) {
+
+            /* Hide desktop nav links, show hamburger */
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            /* Stack grids vertically */
+            .about-grid,
+            .order-loc-grid,
+            .dxn-banner {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2.8rem 0;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 1rem 0;
+            }
+
+            /* One column product grid on mobile */
+            .prod-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-profile {
+                padding: 1.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                padding: 0.7rem 1.4rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pill-group {
+                gap: 0.5rem;
+            }
+
+            .pill {
+                font-size: 0.7rem;
+            }
+
+            /* Hide "Cart" text, show only icon + count on very small screens */
+            .cart-icon span:first-child {
+                display: none;
+            }
+
+            .cart-icon {
+                padding: 0.45rem 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+    <nav>
+        <div class="nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <div class="logo-text">
+                    <h2>Riaz Homeo Clinic</h2>
+                    <p>Rohri · Sindh</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#dxn">DXN</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#order">Order</a>
+            </div>
+
+            <!-- Cart + Hamburger -->
+            <div style="display: flex; gap: 12px; align-items: center;">
+
+                <!-- Cart Button -->
+                <div class="cart-icon" onclick="openCart()">
+                    <img src="https://cdn-icons-png.flaticon.com/128/15254/15254072.png" alt="Cart" class="visit">
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <div class="hamburger" onclick="toggleMobile()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about" onclick="toggleMobile()">About Doctor</a>
+            <a href="#products" onclick="toggleMobile()">Products</a>
+            <a href="#dxn" onclick="toggleMobile()">DXN Range</a>
+            <a href="#gallery" onclick="toggleMobile()">Gallery</a>
+            <a href="#location" onclick="toggleMobile()">Location</a>
+            <a href="#order" onclick="toggleMobile()">Order</a>
+            <a href="https://wa.me/923337189748" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Order
+            </a>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================= -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge"><i class="fas fa-leaf"></i> Est. Rohri · Pakistan</div>
+                <h1>RIAZ <span class="gold">HOMEO</span><br>CLINIC</h1>
+                <div class="pill-group">
+                    <div class="pill">✦ 100% Natural</div>
+                    <div class="pill">✦ DXN Authorized</div>
+                    <div class="pill">✦ Cash on Delivery</div>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/923337189748?text=Assalamu+Alaikum,+I+need+order" class="btn-primary">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Order Now
+                    </a>
+                    <a href="#products" class="btn-outline">View Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / DOCTOR SECTION -->
+        <section id="about" style="background: #0f1c16;">
+            <div class="container about-grid">
+
+                <!-- Doctor Profile Card -->
+                <div class="doctor-profile">
+                    <div class="avatar-icon"><i class="fas fa-user-md"></i></div>
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;">Dr. Syed Fawad<br>Ahmed Zaidi</h3>
+                    <p style="color: #c9a84c; font-weight: 500; margin-bottom: 1rem;">BHMS · Homeopathic Consultant</p>
+                    <div class="info-row">
+                        <div class="info-item"><i class="fas fa-stethoscope gold"></i> 9+ Years exp</div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt gold"></i> Dhak Bazar, Rohri</div>
+                        <div class="info-item"><i class="fab fa-whatsapp gold"></i> 0333-7189748</div>
+                        <div class="info-item"><i class="fas fa-seedling gold"></i> DXN Specialist</div>
+                    </div>
+                    <a href="https://wa.me/923337189748?text=Doctor+Sahab+consultation+chahiye" class="btn-primary"
+                        style="background: #25D366; width: 100%; justify-content: center;">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <!-- About Text -->
+                <div>
+                    <div class="badge"><i class="fas fa-heartbeat"></i> Holistic Healing</div>
+                    <h2 class="section-title">Natural Medicine <br>Trusted Since Years</h2>
+                    <div class="divider-line"></div>
+                    <p class="section-desc">
+                        Dr. Syed Fawad Ahmed Zaidi provides premium homeopathic treatments in Rohri,
+                        specializing in chronic diseases, skin issues, and immune support. We also offer
+                        authentic DXN Ganoderma products for complete wellness — safe, natural, side-effect-free.
+                    </p>
+                    <p class="section-desc" style="margin-top: 1rem;">
+                        <i class="fas fa-check-circle gold"></i>
+                        100% natural remedies · Cash on delivery · All over Pakistan
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products">
+            <div class="container" style="text-align: center;">
+                <div class="badge" style="margin: 0 auto 1rem auto; width: fit-content;">✨ Curated Collection</div>
+                <h2 class="section-title">Premium Products</h2>
+
+                <!-- Filter Buttons -->
+                <div class="filter-bar" id="filterBar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="clinic">Clinic Range</button>
+                    <button class="filter-btn" data-filter="dxn">DXN Range</button>
+                </div>
+
+                <!-- Products will be rendered here by JavaScript -->
+                <div class="prod-grid" id="productGrid"></div>
+            </div>
+        </section>
+
+        <!-- DXN SECTION -->
+        <section id="dxn" style="background: #0f1c16;">
+            <div class="container">
+
+                <!-- DXN Banner -->
+                <div class="dxn-banner">
+                    <div>
+                        <div class="badge" style="background: #fff0d0; color:#a23b2e;">🍄 Authorized Seller</div>
+                        <h2 class="section-title" style="color:white;">DXN Ganoderma</h2>
+                        <p style="color: rgba(255,255,255,0.75);">
+                            Reishi mushroom based supplements — immunity, energy & longevity
+                        </p>
+                        <a href="https://wa.me/923337189748" class="btn-primary"
+                            style="background: white; color:#b13b3b; margin-top: 1rem;">
+                            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
+                                class="visit">
+                            Buy DXN
+                        </a>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <i class="fas fa-mushroom" style="font-size: 4rem; color: #ffdd99;"></i>
+                    </div>
+                </div>
+
+                <!-- DXN Products rendered by JS -->
+                <div class="prod-grid" id="dxnProductGrid"></div>
+
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery">
+            <div class="container" style="text-align: center;">
+                <div class="badge">Moments</div>
+                <h2 class="section-title">Clinic & Product Gallery</h2>
+
+                <!-- 
+                    Yahan apni real clinic photos lagayein.
+                    Abhi placeholder images use ki gayi hain.
+                    Bas src="..." mein apni image ka path ya URL daalein.
+                -->
+                <div class="gallery-grid">
+
+                    <div class="gallery-tile">
+                        <img src="clinic-front.jpg" alt="Clinic Front"
+                            onerror="this.src='https://images.unsplash.com/photo-1576671081837-49000212a370?w=300&q=80'">
+                    </div>
+
+                    <div class="gallery-tile">
+                        <img src="doctor.jpg" alt="Dr. Fawad"
+                            onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80'">
+                    </div>
+
+                    <div class="gallery-tile">
+                        <img src="homeo-meds.jpg" alt="Homeopathy"
+                            onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80'">
+                    </div>
+
+                    <div class="gallery-tile">
+                        <img src="dxn-products.jpg" alt="DXN Range"
+                            onerror="this.src='https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=80'">
+                    </div>
+
+                    <div class="gallery-tile">
+                        <img src="herbal.jpg" alt="Herbal Meds"
+                            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80'">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ORDER SECTION -->
+        <section id="order" style="background: #0f1c16;">
+            <div class="container order-loc-grid">
+
+                <!-- Left: WhatsApp Info -->
+                <div>
+                    <div class="badge">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="" class="visit">
+                        Easy Order
+                    </div>
+                    <h2 class="section-title">Order via WhatsApp</h2>
+                    <p style="color: #b9c7bd; margin: 1rem 0;">
+                        Send product name, quantity, address — delivery across Pakistan, cash on delivery.
+                    </p>
+                    <div style="margin: 1.2rem 0;">
+                        <i class="fab fa-whatsapp gold" style="font-size: 1.4rem;"></i>
+                        <strong>0333-7189748</strong>
+                    </div>
+                    <a href="https://wa.me/923337189748" class="btn-primary" style="background: #25D366;">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Direct WhatsApp
+                    </a>
+                </div>
+
+                <!-- Right: Quick Order Form -->
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.5rem;">📋 Quick Order Form</h3>
+                    <input type="text" id="orderName" class="input-field" placeholder="Full Name">
+                    <input type="tel" id="orderPhone" class="input-field" placeholder="Phone Number">
+                    <input type="text" id="orderAddress" class="input-field" placeholder="Delivery Address">
+                    <textarea id="orderProducts" class="input-field" rows="2"
+                        placeholder="Product name & quantity"></textarea>
+                    <button class="btn-primary" style="width: 100%; background: #25D366;" onclick="sendDirectOrder()">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+                        Send Order on WhatsApp
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section id="location">
+            <div class="container order-loc-grid">
+
+                <!-- Location Info -->
+                <div>
+                    <div class="badge"><i class="fas fa-location-dot"></i> Visit Us</div>
+                    <h2 class="section-title">Riaz Homeo Clinic</h2>
+                    <br><br>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/128/2991/2991231.png" alt="Location" class="visit">
+                        Near Zaidi Homeo Clinic, Dhak Bazar, Rohri, Sindh
+                    </p>
+                    <br><br>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/128/862/862358.png" alt="Timing" class="visit">
+                        Morning 10:00(AM) - 1:30(PM) <br><br>Evening 5:30(PM) - 9:30(PM) <br><br> <h4>(Call for appointment)</h4>
+                    </p>
+                    <br><br>
+                    <p>
+                        <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Phone" class="visit">
+                        0333-7189748
+                        <br>
+                        0312-
+                    </p>
+                    <br><br>
+                    <a href="https://maps.app.goo.gl/s87mgaDXwtQs2crEA" class="btn-outline"
+                        style="display: inline-block;">
+                        Open Maps
+                    </a>
+                </div>
+
+                <!-- Google Map Embed -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.0086842398955!2d68.89045397525325!3d27.692293376191238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5db3efa2dd9%3A0x641357d1a9db8144!2sHomeo%20Dr.%20Syed%20Fawad%20Ahmed%20Zaidi!5e1!3m2!1sen!2s!4v1777822312791!5m2!1sen!2s"
+                    height="450" class="map" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container" style="text-align: center; font-size: 0.75rem; opacity: 0.7;">
+            © 2025 Riaz Homeo Clinic — Dr. Syed Fawad Ahmed Zaidi | Rohri, Sindh
+        </div>
+    </footer>
+
+    <!-- =========================================
+         CART SIDEBAR
+    ========================================= -->
+
+    <!-- Dark overlay behind cart -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <!-- Cart Slide Panel -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+        <div id="cartItemsList" style="flex: 1; margin: 1rem 0; overflow-y: auto;"></div>
+        <div id="cartTotalBox"
+            style="margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;"></div>
+        <button class="btn-primary" style="width: 100%; background: #25D366; margin-top: 1rem;"
+            onclick="checkoutCartWhatsapp()">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
+            Complete Order
+        </button>
+        <button class="btn-outline" style="width: 100%; margin-top: 0.5rem;" onclick="closeCart()">Close</button>
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+    <script>
+
+        // =========================================
+        // PRODUCTS DATABASE
+        // Each product has: id, cat, name, desc, price, img
+        // img: real photo URL — apni product photo ka URL yahan daalein
+        // =========================================
+        const productsDB = [
+
+            // --- CLINIC RANGE ---
+            {
+                id: 1,
+                cat: 'clinic',
+                name: 'Classic Homeo Kit',
+                desc: 'Common ailments remedy kit',
+                price: 350,
+                img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80'
+            },
+            {
+                id: 2,
+                cat: 'clinic',
+                name: 'Liver Detox Formula',
+                desc: 'Natural liver cleansing drops',
+                price: 280,
+                img: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&q=80'
+            },
+            {
+                id: 3,
+                cat: 'clinic',
+                name: 'Immunity Booster',
+                desc: 'Seasonal defense formula',
+                price: 320,
+                img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80'
+            },
+            {
+                id: 7,
+                cat: 'clinic',
+                name: 'Joint Pain Care',
+                desc: 'Arthritis & joint support drops',
+                price: 400,
+                img: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400&q=80'
+            },
+
+            // --- DXN RANGE ---
+            {
+                id: 4,
+                cat: 'dxn',
+                name: 'DXN RG/GL Capsules',
+                desc: 'Ganoderma vitality blend',
+                price: 1200,
+                img: 'https://images.unsplash.com/photo-1618217580485-89b9bd1dc2f0?w=400&q=80'
+            },
+            {
+                id: 5,
+                cat: 'dxn',
+                name: 'DXN Spirulina',
+                desc: 'Rich in protein & nutrients',
+                price: 900,
+                img: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=400&q=80'
+            },
+            {
+                id: 6,
+                cat: 'dxn',
+                name: 'DXN Lingzhi Coffee',
+                desc: 'Energy + wellness blend',
+                price: 750,
+                img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80'
+            },
+            {
+                id: 8,
+                cat: 'dxn',
+                name: 'DXN Morinzhi',
+                desc: 'Noni juice for immunity',
+                price: 1100,
+                img: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400&q=80'
+            }
+
+        ];
+
+        // Cart array — stores items added by user
+        let cart = [];
+
+
+        // =========================================
+        // BUILD ONE PRODUCT CARD (HTML string)
+        // =========================================
+        function buildProductCard(product) {
+
+            // Category label text
+            const catLabel = product.cat === 'dxn' ? 'DXN Range' : 'Clinic';
+
+            return `
+                <div class="product-card">
+
+                    <!-- Product Image -->
+                    <div class="product-img-box">
+                        <img
+                            src="${product.img}"
+                            alt="${product.name}"
+                            loading="lazy"
+                            onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80'"
+                        >
+                        <span class="product-cat-label">${catLabel}</span>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h4>${product.name}</h4>
+                        <p class="product-desc">${product.desc}</p>
+                        <div class="product-price-row">
+                            <span class="product-price">PKR ${product.price}</span>
+                        </div>
+                        <button class="add-cart" onclick="addToCart(${product.id})">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                </div>
+            `;
+        }
+
+
+        // =========================================
+        // RENDER PRODUCTS IN MAIN GRID (with filter)
+        // =========================================
+        function renderProducts(filter = 'all') {
+
+            // Filter products by category
+            const filtered = filter === 'all'
+                ? productsDB
+                : productsDB.filter(p => p.cat === filter);
+
+            // Inject cards into the grid
+            const grid = document.getElementById('productGrid');
+            if (grid) {
+                grid.innerHTML = filtered.map(p => buildProductCard(p)).join('');
+            }
+        }
+
+
+        // =========================================
+        // RENDER DXN-ONLY PRODUCTS IN DXN SECTION
+        // =========================================
+        function renderDXNProducts() {
+
+            const dxnOnly = productsDB.filter(p => p.cat === 'dxn');
+            const dxnGrid = document.getElementById('dxnProductGrid');
+
+            if (dxnGrid) {
+                dxnGrid.innerHTML = dxnOnly.map(p => buildProductCard(p)).join('');
+            }
+        }
+
+
+        // =========================================
+        // CART FUNCTIONS
+        // =========================================
+
+        // Add item to cart or increase quantity
+        function addToCart(id) {
+            const product = productsDB.find(p => p.id === id);
+            const existing = cart.find(i => i.id === id);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            openCart();
+        }
+
+        // Remove item from cart
+        function removeItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        // Refresh all cart UI elements
+        function updateCartUI() {
+
+            // Update cart count badge
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = totalQty;
+
+            // Update cart items list
+            const cartList = document.getElementById('cartItemsList');
+            if (cartList) {
+                if (cart.length === 0) {
+                    cartList.innerHTML = '<p style="opacity:0.6; margin-top: 1rem;">Cart is empty</p>';
+                } else {
+                    cartList.innerHTML = cart.map(item => `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="font-size: 0.85rem;">${item.name} x${item.qty}</span>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 0.8rem; color: #c9a84c;">${item.price * item.qty} PKR</span>
+                                <button onclick="removeItem(${item.id})" style="background: none; border: none; color: #e74c3c; cursor: pointer;">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Update totals
+            const subtotal = cart.reduce((sum, item) => sum + (item.qty * item.price), 0);
+            const delivery = 250;
+            const total = subtotal + delivery;
+
+            document.getElementById('cartTotalBox').innerHTML = `
+                <div style="font-size: 0.85rem; line-height: 2;">
+                    <div style="display:flex; justify-content:space-between;"><span>Subtotal</span><span>${subtotal} PKR</span></div>
+                    <div style="display:flex; justify-content:space-between;"><span>Delivery</span><span>${delivery} PKR</span></div>
+                    <div style="display:flex; justify-content:space-between; font-weight: 700; color: #c9a84c;"><span>Total</span><span>${total} PKR</span></div>
+                </div>
+            `;
+        }
+
+        // Open cart sidebar
+        function openCart() {
+            document.getElementById('cartSidebar').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('open');
+        }
+
+        // Close cart sidebar
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+        }
+
+        // Send cart order via WhatsApp
+        function checkoutCartWhatsapp() {
+            if (cart.length === 0) {
+                alert('Cart is empty');
+                return;
+            }
+
+            let msg = '*Order from Riaz Homeo Clinic*\n\n';
+
+            cart.forEach(item => {
+                msg += `- ${item.name} x${item.qty} = ${item.price * item.qty} PKR\n`;
+            });
+
+            const subtotal = cart.reduce((sum, i) => sum + (i.qty * i.price), 0);
+            msg += `\nSubtotal: ${subtotal} PKR`;
+            msg += `\nDelivery: 250 PKR`;
+            msg += `\n*Total: ${subtotal + 250} PKR*`;
+
+            const waLink = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
+            const anchor = document.createElement('a');
+            anchor.href = waLink;
+            anchor.target = '_blank';
+            anchor.click();
+        }
+
+
+        // =========================================
+        // DIRECT ORDER FORM (Quick Order Section)
+        // =========================================
+        function sendDirectOrder() {
+            const name = document.getElementById('orderName')?.value.trim();
+            const phone = document.getElementById('orderPhone')?.value.trim();
+            const address = document.getElementById('orderAddress')?.value.trim();
+            const products = document.getElementById('orderProducts')?.value.trim();
+
+            if (!name || !phone) {
+                alert('Please fill name and phone number');
+                return;
+            }
+
+            let msg = `New Order\n\n`;
+            msg += `Name: ${name}\n`;
+            msg += `Phone: ${phone}\n`;
+            msg += `Address: ${address}\n`;
+            msg += `Products: ${products}`;
+
+            const anchor = document.createElement('a');
+            anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
+            anchor.target = '_blank';
+            anchor.click();
+        }
+
+
+        // =========================================
+        // MOBILE MENU TOGGLE
+        // =========================================
+        function toggleMobile() {
+            document.getElementById('mobileMenu').classList.toggle('show');
+        }
+
+
+        // =========================================
+        // FILTER BUTTONS EVENT LISTENER
+        // =========================================
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+
+                // Remove active from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+
+                // Add active to clicked button
+                this.classList.add('active');
+
+                // Re-render products with selected filter
+                renderProducts(this.dataset.filter);
+            });
+        });
+
+
+        // =========================================
+        // INITIALIZE ON PAGE LOAD
+        // =========================================
+        renderProducts('all');
+        renderDXNProducts();
+        updateCartUI();
+
+    </script>
+
+</body>
+
+</html>

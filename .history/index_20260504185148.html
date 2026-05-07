@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Riaz Homeo Clinic | Dr. Syed Fawad Ahmed Zaidi | Since 1967</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Three.js for 3D Background elements -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+
+    <style>
+        /* =========================================
+           RESET & BASE
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a1510;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a2a20;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a84c;
+            border-radius: 10px;
+        }
+
+        /* 3D Canvas Background (Waves & Depth) */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            background: radial-gradient(circle at center, #0e1f16 0%, #051009 100%);
+        }
+
+        /* floating subtle overlay for readability */
+        .content-overlay {
+            position: relative;
+            z-index: 5;
+            background: rgba(5, 16, 9, 0.3);
+            backdrop-filter: blur(2px);
+        }
+
+        /* =========================================
+           LAYOUT HELPERS
+        ========================================= */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Glassmorphism Card (3D transparent) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
+            border-color: rgba(201, 168, 76, 0.4);
+        }
+
+        /* =========================================
+           TYPOGRAPHY
+        ========================================= */
+        .gold {
+            color: #e3bc5e;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #e3bc5e;
+            backdrop-filter: blur(4px);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 7vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .divider-line {
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a84c, #e3bc5e, transparent);
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        /* =========================================
+           NAVBAR (3D GLOW)
+        ========================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 21, 16, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1.25rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Logo Image area updated */
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            background: rgba(201, 168, 76, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            border: 1px solid #c9a84c;
+            box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+        }
+
+        .logo-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(201, 168, 76, 0.15);
+            color: #e3bc5e;
+            text-shadow: 0 0 2px gold;
+        }
+
+        /* hero 3d button */
+        .btn-primary {
+            background: linear-gradient(135deg, #c9a84c, #b38f37);
+            color: #0a1510;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(201, 168, 76, 0.7);
+            color: #e3bc5e;
+            padding: 0.75rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Doctor name with side images (3D style) */
+        .doctor-hero-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 1rem;
+        }
+
+        .side-doctor-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #c9a84c;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .side-doctor-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .doctor-name-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #e3bc5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* since timeline */
+        .since-timeline {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(201,168,76,0.3);
+        }
+        .since-timeline i {
+            color: #c9a84c;
+            margin-right: 6px;
+        }
+
+        /* Products & Gallery same as polished */
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow: 0 25px 40px -12px black;
+        }
+
+        /* Gallery 3D tilt */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .gallery-tile {
+            background: #1a2f25;
+            border-radius: 1.2rem;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            transition: transform 0.25s ease, box-shadow 0.25s;
+            box-shadow: 0 12px 20px -10px black;
+        }
+
+        .gallery-tile:hover {
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 20px 30px -8px black;
+        }
+
+        /* fb icon */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1877f2;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin: 0 4px;
+            transition: transform 0.2s;
+        }
+        .social-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* map, contact style */
+        .map {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 30px -10px black;
+            border: 1px solid rgba(201,168,76,0.2);
+        }
+
+        /* cart etc unchanged but improve background */
+        .cart-sidebar {
+            background: #0f1f18e6;
+            backdrop-filter: blur(12px);
+        }
+
+        @media (max-width: 800px) {
+            .doctor-hero-wrap {
+                gap: 0.8rem;
+            }
+            .side-doctor-img {
+                width: 60px;
+                height: 60px;
+            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer;}
+            .hamburger span { width: 24px; height: 2px; background: white; }
+            .mobile-menu { display: none; flex-direction: column; background: #0e1c16; padding: 1rem; }
+            .mobile-menu.show { display: flex; }
+        }
+        /* mobile fix */
+        .mobile-menu a { color: #ddd; padding: 0.7rem 0; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.05);}
+        .cart-icon { background: rgba(201,168,76,0.2); padding: 0.45rem 1rem; border-radius: 40px; display: flex; gap: 6px; cursor: pointer;}
+        .hamburger { display: none; }
+        @media (max-width: 800px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+    <div class="content-overlay">
+
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <div class="logo-img">
+                        <i class="fas fa-leaf gold"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h2>Riaz Homeo Clinic</h2>
+                        <p>Rohri · Sindh</p>
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="#about">About</a><a href="#products">Products</a><a href="#dxn">DXN</a>
+                    <a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#order">Order</a>
+                    <a href="https://www.facebook.com" target="_blank" style="background:#1877f230;">
+                        <i class="fab fa-facebook-f"></i> FB
+                    </a>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <div class="cart-icon" onclick="openCart()">
+                        <i class="fas fa-shopping-cart"></i> <span>Cart</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#about" onclick="toggleMobile()">About</a><a href="#products" onclick="toggleMobile()">Products</a>
+                <a href="#dxn" onclick="toggleMobile()">DXN</a><a href="#gallery" onclick="toggleMobile()">Gallery</a>
+                <a href="#location" onclick="toggleMobile()">Location</a><a href="#order" onclick="toggleMobile()">Order</a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://wa.me/923337189748" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section with doctor name side images and since 1967-2026 -->
+            <section class="hero" style="min-height: 85vh; display: flex; align-items: center; text-align: center;">
+                <div class="container">
+                    <div class="hero-badge"><i class="fas fa-leaf"></i> Authentic Homeopathy & DXN</div>
+                    <div class="doctor-hero-wrap">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor Side" class="side-doctor-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                        <h1 class="doctor-name-large">Dr. Syed Fawad Ahmed Zaidi</h1>
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Doctor Side" class="side-doctor-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135768.png'">
+                    </div>
+                    <div class="since-timeline">
+                        <i class="fas fa-history"></i> Since 1967 — 2026 | 59 Years of Healing Legacy
+                    </div>
+                    <div class="pill-group" style="justify-content: center; gap:0.8rem; margin: 1.5rem 0;">
+                        <div class="pill">✦ 100% Natural</div>
+                        <div class="pill">✦ DXN Authorized</div>
+                        <div class="pill">✦ Cash on Delivery</div>
+                    </div>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/923337189748" class="btn-primary"><i class="fab fa-whatsapp"></i> Order Now</a>
+                        <a href="#products" class="btn-outline">View Products</a>
+                        <a href="https://www.facebook.com" class="btn-outline" style="background:#1877f220;"><i class="fab fa-facebook-f"></i> Facebook Page</a>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- About Doctor section with 3D card -->
+            <section id="about" style="background: rgba(15,28,22,0.7);">
+                <div class="container about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="glass-card" style="padding: 2rem; text-align: center;">
+                        <div class="avatar-icon" style="font-size: 4rem;"><i class="fas fa-user-md gold"></i></div>
+                        <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;">Dr. Syed Fawad Ahmed Zaidi</h3>
+                        <p style="color:#c9a84c;">BHMS · Homeopathic Consultant</p>
+                        <div class="info-row" style="display: grid; grid-template-columns: 1fr 1fr; gap:0.8rem; margin-top:1rem;">
+                            <div class="info-item"><i class="fas fa-stethoscope gold"></i> 9+ Years exp</div>
+                            <div class="info-item"><i class="fas fa-map-marker-alt gold"></i> Dhak Bazar, Rohri</div>
+                            <div class="info-item"><i class="fab fa-whatsapp gold"></i> 0333-7189748</div>
+                            <div class="info-item"><i class="fas fa-seedling gold"></i> DXN Specialist</div>
+                        </div>
+                        <a href="https://wa.me/923337189748" class="btn-primary" style="background:#25D366; width:100%;">Consult on WhatsApp</a>
+                    </div>
+                    <div>
+                        <div class="badge"><i class="fas fa-heartbeat"></i> Holistic Healing</div>
+                        <h2 class="section-title">Natural Medicine <br>Trusted Since Generations</h2>
+                        <div class="divider-line"></div>
+                        <p style="color: rgba(255,255,255,0.7);">Dr. Syed Fawad Ahmed Zaidi provides premium homeopathic treatments specializing in chronic diseases, skin issues, and immune support. Also offering authentic DXN Ganoderma products for complete wellness — safe, natural, side-effect-free. Legacy since 1967.</p>
+                        <p style="margin-top: 1rem;"><i class="fas fa-check-circle gold"></i> 59 years of trust · COD all over Pakistan</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRODUCTS -->
+            <section id="products">
+                <div class="container" style="text-align: center;">
+                    <div class="badge" style="margin:0 auto 1rem;">✨ Curated Collection</div>
+                    <h2 class="section-title">Premium Products</h2>
+                    <div class="filter-bar" id="filterBar" style="display: flex; justify-content: center; gap: 0.8rem; margin: 2rem 0;">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="clinic">Clinic Range</button>
+                        <button class="filter-btn" data-filter="dxn">DXN Range</button>
+                    </div>
+                    <div class="prod-grid" id="productGrid"></div>
+                </div>
+            </section>
+
+            <!-- DXN Highlight -->
+            <section id="dxn" style="background: rgba(20,35,25,0.8);">
+                <div class="container">
+                    <div class="glass-card" style="padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+                        <div><div class="badge">🍄 Authorized Seller</div><h2 class="section-title">DXN Ganoderma</h2><p>Reishi mushroom based supplements — immunity, energy & longevity</p><a href="https://wa.me/923337189748" class="btn-primary" style="background: white; color:#6b3e2a;">Buy DXN →</a></div>
+                        <div style="text-align:center;"><i class="fas fa-mushroom" style="font-size: 5rem; color:#e3bc5e;"></i></div>
+                    </div>
+                    <div class="prod-grid" id="dxnProductGrid" style="margin-top: 2rem;"></div>
+                </div>
+            </section>
+
+            <!-- Gallery with 3D -->
+            <section id="gallery">
+                <div class="container" style="text-align:center;">
+                    <div class="badge">Moments</div>
+                    <h2 class="section-title">Clinic & Product Gallery</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-tile"><img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=300&q=80" style="width:100%; height:100%; object-fit:cover;"></div>
+                        <div class="gallery-tile"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80" style="width:100%; height:100%; object-fit:cover;"></div>
+                        <div class="gallery-tile"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80" style="width:100%; height:100%; object-fit:cover;"></div>
+                        <div class="gallery-tile"><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=80" style="width:100%; height:100%; object-fit:cover;"></div>
+                        <div class="gallery-tile"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80" style="width:100%; height:100%; object-fit:cover;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORDER LOCATION combined -->
+            <section id="order" style="background: #0f1c16cc;">
+                <div class="container order-loc-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+                    <div class="glass-card" style="padding: 1.8rem;">
+                        <div class="badge"><i class="fab fa-whatsapp"></i> Easy Order</div>
+                        <h2 class="section-title">Order via WhatsApp</h2>
+                        <p>Send product name, quantity, address — delivery across Pakistan, cash on delivery.</p>
+                        <div style="margin:1rem 0;"><i class="fab fa-whatsapp gold" style="font-size:1.5rem;"></i> <strong>0333-7189748</strong></div>
+                        <a href="https://wa.me/923337189748" class="btn-primary" style="background:#25D366;">Direct WhatsApp</a>
+                        <div style="margin-top: 2rem;">
+                            <h3>📋 Quick Order Form</h3>
+                            <input type="text" id="orderName" class="input-field" placeholder="Full Name" style="width:100%; background:rgba(255,255,255,0.1); border-radius:2rem; padding:0.7rem; margin:0.3rem 0;">
+                            <input type="tel" id="orderPhone" class="input-field" placeholder="Phone Number">
+                            <input type="text" id="orderAddress" class="input-field" placeholder="Delivery Address">
+                            <textarea id="orderProducts" class="input-field" rows="2" placeholder="Product name & quantity"></textarea>
+                            <button class="btn-primary" style="width:100%; background:#25D366;" onclick="sendDirectOrder()"><i class="fab fa-whatsapp"></i> Send Order</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="badge"><i class="fas fa-location-dot"></i> Visit Us</div>
+                        <h2 class="section-title">Riaz Homeo Clinic</h2>
+                        <p><i class="fas fa-map-marker-alt gold"></i> Near Zaidi Homeo Clinic, Dhak Bazar, Rohri, Sindh</p>
+                        <p><i class="fas fa-clock gold"></i> Morning 10:00-1:30 PM & Evening 5:30-9:30 PM</p>
+                        <p><i class="fas fa-phone-alt gold"></i> 0333-7189748 , 0312-3875580</p>
+                        <a href="https://maps.app.goo.gl/s87mgaDXwtQs2crEA" class="btn-outline" style="margin: 1rem 0; display: inline-block;">Open Maps</a>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.0086842398955!2d68.89045397525325!3d27.692293376191238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3935d5db3efa2dd9%3A0x641357d1a9db8144!2sHomeo%20Dr.%20Syed%20Fawad%20Ahmed%20Zaidi!5e1!3m2!1sen!2s!4v1777822312791!5m2!1sen!2s" height="300" class="map" style="width:100%; border-radius: 24px;"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer style="padding:2rem 0; text-align: center; border-top:1px solid rgba(201,168,76,0.2);">
+            <div class="container">
+                <p>© 2026 Riaz Homeo Clinic — Dr. Syed Fawad Ahmed Zaidi | Rohri, Sindh | Since 1967</p>
+                <div style="margin-top: 0.6rem;"><a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a> <a href="https://wa.me/923337189748" class="social-icon" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a></div>
+            </div>
+        </footer>
+
+        <!-- Cart Sidebar (same as before but extra 3d) -->
+        <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+        <div class="cart-sidebar" id="cartSidebar">
+            <div style="display: flex; justify-content: space-between;"><h3><i class="fas fa-shopping-bag gold"></i> Cart</h3><button onclick="closeCart()" style="background:none; border:none; color:white; font-size:1.2rem;">✕</button></div>
+            <div class="contact-box" id="contactInfoBox"><div class="contact-box-header"><span>📦 Delivery Info</span><button class="edit-info-btn" onclick="openInfoModal(true)">Edit</button></div><div id="contactInfoLines"></div></div>
+            <div id="cartItemsList" style="flex:1; overflow-y:auto;"></div>
+            <div id="cartTotalBox" style="margin-top:auto; border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem;"></div>
+            <button class="btn-primary" style="width:100%; background:#25D366;" onclick="checkoutCartWhatsapp()"><i class="fab fa-whatsapp"></i> Complete Order</button>
+            <button class="btn-outline" style="width:100%; margin-top:0.5rem;" onclick="closeCart()">Close</button>
+        </div>
+        <!-- Info Modal -->
+        <div class="info-modal-overlay" id="infoModalOverlay"><div class="info-modal"><h3>📋 Delivery Information</h3><p>Ek baar bhar dein — hum save kar lein ge aapki info</p><input type="text" id="modalName" placeholder="Full Name"><input type="tel" id="modalPhone" placeholder="Phone Number"><textarea id="modalAddress" rows="2" placeholder="Address"></textarea><button class="modal-save-btn" onclick="saveCustomerInfo()">Save & Continue</button><button class="modal-skip-btn" onclick="skipInfoModal()">Skip</button></div></div>
+    </div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        const canvas = document.getElementById('bg-canvas');
+        const scene = new THREE.Scene();
+        scene.background = null;
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 2, 8);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        
+        // wave geometry / dynamic torus knots + particles
+        const geometry = new THREE.TorusKnotGeometry(1.2, 0.3, 128, 16, 3, 4);
+        const material = new THREE.MeshStandardMaterial({ color: 0xc9a84c, emissive: 0x2a3a2a, roughness: 0.4, metalness: 0.7 });
+        const knot = new THREE.Mesh(geometry, material);
+        scene.add(knot);
+        
+        const particleCount = 800;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        for(let i=0; i<particleCount; i++) {
+            positions[i*3] = (Math.random() - 0.5) * 20;
+            positions[i*3+1] = (Math.random() - 0.5) * 12;
+            positions[i*3+2] = (Math.random() - 0.5) * 15 - 5;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMat = new THREE.PointsMaterial({ color: 0xe3bc5e, size: 0.05, transparent: true, opacity: 0.5 });
+        const particleSys = new THREE.Points(particlesGeometry, particleMat);
+        scene.add(particleSys);
+        
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+        dirLight.position.set(2,5,3);
+        scene.add(ambientLight, dirLight);
+        const backLight = new THREE.PointLight(0xc9a84c, 0.4);
+        backLight.position.set(0,2,-3);
+        scene.add(backLight);
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            knot.rotation.x += 0.005;
+            knot.rotation.y += 0.008;
+            particleSys.rotation.y += 0.002;
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+    </script>
+    
+    <script>
+        // Product database & cart all functions integrated.
+        const productsDB = [
+            { id:1, cat:'clinic', name:'BM 65', desc:'Common ailments remedy', price:350, img:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400' },
+            { id:2, cat:'clinic', name:'Liver Detox Formula', desc:'Natural liver cleansing', price:280, img:'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400' },
+            { id:3, cat:'clinic', name:'Immunity Booster', desc:'Seasonal defense', price:320, img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+            { id:7, cat:'clinic', name:'Joint Pain Care', desc:'Arthritis support', price:400, img:'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400' },
+            { id:4, cat:'dxn', name:'DXN RG/GL Capsules', desc:'Ganoderma blend', price:1200, img:'https://images.unsplash.com/photo-1618217580485-89b9bd1dc2f0?w=400' },
+            { id:5, cat:'dxn', name:'DXN Spirulina', desc:'Rich in protein', price:900, img:'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=400' },
+            { id:6, cat:'dxn', name:'DXN Lingzhi Coffee', desc:'Energy+wellness', price:750, img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400' },
+            { id:8, cat:'dxn', name:'DXN Morinzhi', desc:'Noni juice', price:1100, img:'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400' }
+        ];
+        let cart = [];
+        const INFO_KEY = 'rhc_customer_info';
+        function getCustomerInfo() { try { return JSON.parse(localStorage.getItem(INFO_KEY)); } catch(e){return null;} }
+        function setCustomerInfo(n,p,a){ localStorage.setItem(INFO_KEY, JSON.stringify({name:n,phone:p,address:a})); }
+        function renderContactBox(){ const info=getCustomerInfo(); const linesDiv=document.getElementById('contactInfoLines'); if(!linesDiv)return; if(info&&(info.name||info.phone||info.address)){ linesDiv.innerHTML=`${info.name?`<div><i class="fas fa-user"></i> ${info.name}</div>`:''}${info.phone?`<div><i class="fas fa-phone"></i> ${info.phone}</div>`:''}${info.address?`<div><i class="fas fa-map-marker-alt"></i> ${info.address}</div>`:''}`; } else linesDiv.innerHTML='<div style="font-size:0.7rem;">No info saved</div>'; }
+        function updateCartUI(){ let totalQty=cart.reduce((s,i)=>s+i.qty,0); document.getElementById('cartCount').innerText=totalQty; const cartList=document.getElementById('cartItemsList'); if(cart.length===0) cartList.innerHTML='<p>Cart empty</p>'; else cartList.innerHTML=cart.map(i=>`<div style="display:flex; justify-content:space-between;"><span>${i.name} x${i.qty}</span><span>${i.price*i.qty} PKR <button onclick="removeItem(${i.id})" style="background:none;border:none;color:#e74c3c;">🗑️</button></span></div>`).join(''); const sub=cart.reduce((s,i)=>s+(i.qty*i.price),0); const total=sub+250; document.getElementById('cartTotalBox').innerHTML=`<div>Subtotal: ${sub} PKR<br>Delivery: 250 PKR<br><strong>Total: ${total} PKR</strong></div>`; }
+        function addToCart(id){ const p=productsDB.find(p=>p.id===id); const ex=cart.find(i=>i.id===id); if(ex) ex.qty+=1; else cart.push({...p,qty:1}); updateCartUI(); openCart(); }
+        function removeItem(id){ cart=cart.filter(i=>i.id!==id); updateCartUI(); }
+        function openCart(){ document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); renderContactBox(); }
+        function closeCart(){ document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+        function checkoutCartWhatsapp(){ if(cart.length===0) return alert('Cart empty'); const info=getCustomerInfo(); if(!info||!info.name||!info.phone) openInfoModal(false); else doWhatsappCheckout(); }
+        function doWhatsappCheckout(){ const info=getCustomerInfo(); const sub=cart.reduce((s,i)=>s+(i.qty*i.price),0); const total=sub+250; let msg=`Order - Riaz Homeo Clinic\nName: ${info?.name}\nPhone: ${info?.phone}\nAddress: ${info?.address}\nProducts:\n`; cart.forEach(i=>msg+=`- ${i.name} x${i.qty} = ${i.price*i.qty} PKR\n`); msg+=`Subtotal: ${sub}\nDelivery:250\nTotal: ${total} PKR (COD)`; window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank'); }
+        function openInfoModal(edit){ const info=getCustomerInfo(); if(info){ document.getElementById('modalName').value=info.name||''; document.getElementById('modalPhone').value=info.phone||''; document.getElementById('modalAddress').value=info.address||''; } document.getElementById('infoModalOverlay').classList.add('open'); window._pendingCheckout=!edit; }
+        function closeInfoModal(){ document.getElementById('infoModalOverlay').classList.remove('open'); }
+        function saveCustomerInfo(){ const name=document.getElementById('modalName').value.trim(); const phone=document.getElementById('modalPhone').value.trim(); const addr=document.getElementById('modalAddress').value.trim(); if(!name||!phone) return alert('Naam aur Phone zaroori'); setCustomerInfo(name,phone,addr); closeInfoModal(); renderContactBox(); if(window._pendingCheckout){ window._pendingCheckout=false; doWhatsappCheckout(); } }
+        function skipInfoModal(){ closeInfoModal(); if(window._pendingCheckout){ window._pendingCheckout=false; doWhatsappCheckout(); } }
+        function sendDirectOrder(){ const n=document.getElementById('orderName')?.value; const p=document.getElementById('orderPhone')?.value; const a=document.getElementById('orderAddress')?.value; const prod=document.getElementById('orderProducts')?.value; if(!n||!p) return alert('Fill name & phone'); let msg=`New Order\nName:${n}\nPhone:${p}\nAddress:${a}\nProducts:${prod}`; window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank'); }
+        function renderProducts(filter='all'){ const filtered=filter==='all'?productsDB:productsDB.filter(p=>p.cat===filter); document.getElementById('productGrid').innerHTML=filtered.map(p=>`<div class="product-card"><div class="product-img-box"><img src="${p.img}" style="width:100%;height:170px;object-fit:cover;"><span class="product-cat-label">${p.cat==='dxn'?'DXN':'Clinic'}</span></div><div class="product-info"><h4>${p.name}</h4><p>${p.desc}</p><div class="product-price-row"><span>PKR ${p.price}</span></div><button class="add-cart" onclick="addToCart(${p.id})">Add to Cart</button></div></div>`).join(''); }
+        function renderDXN(){ document.getElementById('dxnProductGrid').innerHTML=productsDB.filter(p=>p.cat==='dxn').map(p=>`<div class="product-card"><div class="product-img-box"><img src="${p.img}"><span class="product-cat-label">DXN</span></div><div class="product-info"><h4>${p.name}</h4><p>${p.desc}</p><div><strong>PKR ${p.price}</strong></div><button class="add-cart" onclick="addToCart(${p.id})">Add</button></div></div>`).join(''); }
+        document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',function(){ document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderProducts(this.dataset.filter); }));
+        window.toggleMobile = ()=>document.getElementById('mobileMenu').classList.toggle('show');
+        renderProducts('all'); renderDXN(); updateCartUI();
+        document.getElementById('infoModalOverlay').addEventListener('click',(e)=>{ if(e.target===document.getElementById('infoModalOverlay')) skipInfoModal(); });
+    </script>
+</body>
+</html>

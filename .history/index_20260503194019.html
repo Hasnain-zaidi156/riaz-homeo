@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
+  <title>Riaz Homeo Clinic — Dr. Syed Fawad Ahmed Zaidi | Homeopathy & DXN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b1a12;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Typography & helpers */
+    .gold-text {
+      color: #c9a84c;
+    }
+
+    .section {
+      padding: 5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.12);
+      color: #e8c96b;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .section-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background: rgba(201,168,76,0.4);
+    }
+    .divider-star {
+      color: #c9a84c;
+      font-size: 0.8rem;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #c9a84c;
+      color: #0b1a12;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary:hover {
+      background: #e0bc5e;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -10px rgba(201,168,76,0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(201,168,76,0.5);
+      color: #c9a84c;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-outline:hover {
+      border-color: #c9a84c;
+      background: rgba(201,168,76,0.08);
+    }
+    .btn-wa {
+      background: #25D366;
+      color: white;
+      border: none;
+      font-weight: 600;
+    }
+    .btn-wa:hover {
+      background: #1ebc57;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11,26,18,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      height: 70px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #c9a84c, #e8c96b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(201,168,76,0.3);
+    }
+    .logo-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .logo-text p {
+      font-size: 0.65rem;
+      letter-spacing: 1.2px;
+      color: #c9a84c;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.2rem;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      background: rgba(201,168,76,0.1);
+      color: #e8c96b;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cart-btn {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: #e8c96b;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cart-count {
+      background: #c9a84c;
+      color: #0b1a12;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: white;
+      border-radius: 4px;
+    }
+    .mobile-menu {
+      display: none;
+      background: #0f2219;
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 4rem 1rem;
+    }
+    .hero-badge {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 10vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .hero h1 span {
+      color: #c9a84c;
+    }
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.8rem 0 2rem;
+    }
+    .pill {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+    }
+
+    /* about grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .doctor-card {
+      background: #132b1e;
+      border-radius: 32px;
+      padding: 1.8rem;
+      position: relative;
+      border: 1px solid rgba(201,168,76,0.15);
+      text-align: center;
+    }
+    .doctor-avatar {
+      width: 140px;
+      height: 140px;
+      background: #2a5a42;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border: 2px solid #c9a84c;
+    }
+    .info-chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+    .chip-item {
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* products grid */
+    .filter-group {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: #c9a84c;
+      color: #0b1a12;
+      border-color: #c9a84c;
+    }
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      background: #f4f9f0;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .product-info {
+      padding: 1.2rem;
+    }
+    .product-info h4 {
+      color: #1e2a21;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .product-info p {
+      color: #5c6e5f;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .add-cart {
+      background: #0b1a12;
+      color: white;
+      width: 100%;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    /* DXN Banner */
+    .dxn-banner {
+      background: linear-gradient(125deg, #8b1a1a, #b52b2b);
+      border-radius: 32px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      background: #132b1e;
+      border-radius: 20px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    /* Cart Sidebar */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 90%;
+      max-width: 380px;
+      height: 100vh;
+      background: #0f2219;
+      border-left: 1px solid rgba(201,168,76,0.2);
+      z-index: 1001;
+      transition: 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-sidebar.open {
+      right: 0;
+    }
+    .cart-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* order & location */
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Responsive perfection */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .mobile-menu.show {
+        display: flex;
+      }
+      .about-grid, .dxn-banner, .order-grid, .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 3rem 1.2rem;
+      }
+      .hero-tags {
+        gap: 0.5rem;
+      }
+    }
+    @media (max-width: 560px) {
+      .prod-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-chips {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-actions .nav-wa-text {
+        display: none;
+      }
+      .cart-btn span:first-child {
+        display: none;
+      }
+      .cart-btn {
+        padding: 0.5rem 0.9rem;
+      }
+    }
+
+    footer {
+      background: #0a1811;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+    .float-wa {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 16px rgba(37,211,102,0.4);
+      z-index: 99;
+      transition: 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🌿</div>
+      <div class="logo-text">
+        <h1>Riaz Homeo Clinic</h1>
+        <p>Rohri · Sindh</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#dxn">DXN</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#order">Order</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://wa.me/923337189748" target="_blank" class="btn-outline" style="padding:0.5rem 1rem; font-size:0.8rem;"><i class="fab fa-whatsapp"></i> <span class="nav-wa-text">WhatsApp</span></a>
+      <button class="cart-btn" onclick="openCart()"><i class="fas fa-shopping-cart"></i> <span>Cart</span> <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+    <div class="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMobileMenu()">About Doctor</a>
+    <a href="#products" onclick="toggleMobileMenu()">Products</a>
+    <a href="#dxn" onclick="toggleMobileMenu()">DXN</a>
+    <a href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
+    <a href="#location" onclick="toggleMobileMenu()">Location</a>
+    <a href="#order" onclick="toggleMobileMenu()">Order</a>
+    <a href="https://wa.me/923337189748" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge"><i class="fas fa-leaf"></i> Since 2015 · Rohri</div>
+      <h1>RIAZ <span>HOMEO</span><br>CLINIC</h1>
+      <div class="divider" style="justify-content: center;"><div class="divider-line"></div><span class="divider-star">✦</span><div class="divider-line"></div></div>
+      <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Homeopathic Medicines | DXN Ganoderma | Natural Healing</p>
+      <div class="hero-tags">
+        <div class="pill">🌿 100% Natural</div>
+        <div class="pill">🍄 DXN Authorized</div>
+        <div class="pill">🚚 Cash on Delivery</div>
+      </div>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/923337189748?text=Assalamu+Alaikum%2C+I+want+to+order" class="btn-primary"><i class="fab fa-whatsapp"></i> Order Now</a>
+        <a href="#products" class="btn-outline">View Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" style="background: #0f2219;">
+    <div class="container about-grid">
+      <div class="doctor-card">
+        <div class="doctor-avatar"><i class="fas fa-user-md"></i></div>
+        <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.6rem;">Dr. Syed Fawad<br>Ahmed Zaidi</h3>
+        <p style="color: rgba(255,255,255,0.6); font-size: 0.8rem;">BHMS · Homeopathic Consultant</p>
+        <div class="info-chips">
+          <div class="chip-item"><i class="fas fa-stethoscope"></i><span>7+ Years Exp</span></div>
+          <div class="chip-item"><i class="fas fa-map-marker-alt"></i><span>Dhak Bazar, Rohri</span></div>
+          <div class="chip-item"><i class="fab fa-whatsapp"></i><span>0333-7189748</span></div>
+          <div class="chip-item"><i class="fas fa-seedling"></i><span>Homeopathy + DXN</span></div>
+        </div>
+        <a href="https://wa.me/923337189748" class="btn-primary" style="background:#25D366; width: 100%; justify-content: center;">💬 Consult on WhatsApp</a>
+      </div>
+      <div>
+        <span class="badge"><i class="fas fa-heartbeat"></i> Trusted Healer</span>
+        <h2 class="section-title">Holistic Healing<br>with Natural Wisdom</h2>
+        <div class="divider"><div class="divider-line"></div><span class="divider-star">✦</span></div>
+        <p class="section-sub">Dr. Syed Fawad Ahmed Zaidi is a respected homeopathic physician in Rohri, offering side-effect-free treatments for chronic diseases, allergies, and lifestyle disorders. We combine classical homeopathy with premium DXN supplements for complete wellness.</p>
+        <p class="section-sub" style="margin-top: 1rem;"><i class="fas fa-check-circle gold-text"></i> Safe for all ages · Personalized remedies · No chemicals</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="container" style="text-align: center;">
+      <span class="badge"><i class="fas fa-flask"></i> Curated Remedies</span>
+      <h2 class="section-title">Premium Homeopathic & DXN Range</h2>
+      <div class="filter-group" id="filterGroup">
+        <button class="filter-btn active" data-cat="all">All Products</button>
+        <button class="filter-btn" data-cat="clinic">Clinic Products</button>
+        <button class="filter-btn" data-cat="dxn">DXN Products</button>
+      </div>
+      <div class="prod-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <section id="dxn" class="section" style="background: #0f2219;">
+    <div class="container">
+      <div class="dxn-banner">
+        <div><span class="badge" style="background:#fff1d0; color:#8b1a1a;">🍄 Authorized Seller</span>
+          <h2 class="section-title" style="color:white;">DXN Ganoderma World</h2>
+          <p style="color: rgba(255,255,255,0.7);">100% organic Reishi mushroom supplements — immune support, vitality, and holistic health.</p>
+          <a href="https://wa.me/923337189748" class="btn-primary" style="background:white; color:#b52b2b; margin-top:1rem;"><i class="fab fa-whatsapp"></i> Order DXN Now</a>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center;"><i class="fas fa-mushroom" style="font-size: 5rem; color:#ffd966;"></i></div>
+      </div>
+      <div class="prod-grid" id="dxnGrid"></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container" style="text-align: center;">
+      <span class="badge">Memories</span>
+      <h2 class="section-title">Clinic & Product Gallery</h2>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section id="order" class="section" style="background: #0f2219;">
+    <div class="container order-grid">
+      <div><span class="badge"><i class="fab fa-whatsapp"></i> Quick Order</span>
+        <h2 class="section-title">Place Your Order Easily</h2>
+        <p style="color: rgba(255,255,255,0.6); margin: 1rem 0;">Send product name, quantity, and address on WhatsApp. Delivery across Pakistan — Cash on Delivery.</p>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div><i class="fab fa-whatsapp gold-text"></i> <strong>0333-7189748</strong></div>
+          <a href="https://wa.me/923337189748" class="btn-primary btn-wa" style="width: fit-content;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border-radius: 28px; padding: 1.8rem;">
+        <h3 style="font-family: 'Cormorant Garamond'; font-size: 1.6rem;">📋 Order Form</h3>
+        <input type="text" id="orderName" placeholder="Full Name" class="input-field" style="width:100%; margin:0.5rem 0; padding:0.8rem; border-radius:40px; border:1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color:white;">
+        <input type="text" id="orderPhone" placeholder="Phone Number" class="input-field" style="width:100%; margin:0.5rem 0; padding:0.8rem; border-radius:40px;">
+        <textarea id="orderDetail" placeholder="Product details & quantity" rows="2" style="width:100%; margin:0.5rem 0; padding:0.8rem; border-radius:20px;"></textarea>
+        <button class="btn-primary" style="width:100%; background:#25D366;" onclick="sendOrderForm()"><i class="fab fa-whatsapp"></i> Send Order via WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="section">
+    <div class="container location-grid">
+      <div><span class="badge"><i class="fas fa-map-pin"></i> Visit Clinic</span>
+        <h2 class="section-title">Riaz Homeo Clinic</h2>
+        <div style="margin: 1rem 0;"><i class="fas fa-location-dot gold-text"></i> Near Zaidi Homeo Clinic, Dhak Bazar, Rohri, Sindh</div>
+        <div><i class="fas fa-clock gold-text"></i> Morning & Evening (Call for appointment)</div>
+        <div><i class="fas fa-phone-alt gold-text"></i> 0333-7189748</div>
+        <a href="https://maps.google.com/?q=Rohri+Sindh" class="btn-outline" style="margin-top: 1rem; display: inline-flex;">Open Maps</a>
+      </div>
+      <div style="background:#11261c; border-radius: 28px; height: 240px; display: flex; align-items: center; justify-content: center;"><i class="fas fa-map-marked-alt" style="font-size: 3rem; opacity: 0.6;"></i> <p style="margin-left: 1rem;">📍 Rohri, Sindh — Near Dhak Bazar</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3 style="font-family: 'Cormorant Garamond';">Riaz Homeo Clinic</h3><p style="font-size:0.75rem; opacity:0.7;">Dr. Syed Fawad Ahmed Zaidi · Trusted Homeopathy</p></div>
+    <div><strong>Quick Links</strong><br><a href="#about" style="color: #aaa; text-decoration: none;">About</a><br><a href="#products" style="color: #aaa;">Products</a></div>
+    <div><strong>Contact</strong><br>📞 0333-7189748<br>📍 Dhak Bazar, Rohri</div>
+    <div><strong>Payment</strong><br>Cash on Delivery<br>Easy returns</div>
+  </div>
+  <div class="container" style="text-align: center; margin-top: 2rem; opacity: 0.5; font-size: 0.7rem;">© 2025 Riaz Homeo Clinic — All rights reserved</div>
+</footer>
+
+<a href="https://wa.me/923337189748" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar"><div style="padding:1.5rem;"><h3>🛒 Your Cart</h3><div id="cartItemsList"></div><div id="cartTotal"></div><button class="btn-primary" style="width:100%; margin-top:1rem;" onclick="checkoutCart()">Proceed on WhatsApp</button></div></div>
+
+<script>
+  const products = [
+    { id:1, cat:'clinic', name:'Classic Homeo Set', desc:'Common ailments kit', icon:'💊' },
+    { id:2, cat:'clinic', name:'Liver Detox Drops', desc:'Natural liver support', icon:'🌿' },
+    { id:3, cat:'clinic', name:'Immunity Boost', desc:'Strengthen defense', icon:'🛡️' },
+    { id:4, cat:'dxn', name:'DXN RG/GL Caps', desc:'Ganoderma vigor', icon:'🍄' },
+    { id:5, cat:'dxn', name:'DXN Spirulina', desc:'Superfood powder', icon:'🟢' },
+    { id:6, cat:'dxn', name:'DXN Lingzhi Coffee', desc:'Energy + wellness', icon:'☕' },
+    { id:7, cat:'clinic', name:'Joint Pain Formula', desc:'Arthritis relief', icon:'🦵' },
+    { id:8, cat:'dxn', name:'DXN Morinzhi', desc:'Noni juice', icon:'🍹' },
+  ];
+
+  let cart = [];
+
+  function renderProducts(filter = 'all') {
+    let filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+    const container = document.getElementById('productsGrid');
+    if(container) container.innerHTML = filtered.map(p => `
+      <div class="product-card"><div class="product-img">${p.icon}</div><div class="product-info"><h4>${p.name}</h4><p>${p.desc}</p><button class="add-cart" onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div>
+    `).join('');
+  }
+
+  function renderDXN() {
+    const dxnOnly = products.filter(p => p.cat === 'dxn');
+    const dxnGrid = document.getElementById('dxnGrid');
+    if(dxnGrid) dxnGrid.innerHTML = dxnOnly.map(p => `
+      <div class="product-card"><div class="product-img">${p.icon}</div><div class="product-info"><h4>${p.name}</h4><p>${p.desc}</p><button class="add-cart" onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Add</button></div></div>
+    `).join('');
+  }
+
+  function addToCart(id) {
+    const prod = products.find(p => p.id === id);
+    const existing = cart.find(i => i.id === id);
+    if(existing) existing.qty++; else cart.push({...prod, qty:1});
+    updateCartUI();
+    openCart();
+  }
+
+  function updateCartUI() {
+    const count = cart.reduce((s,i)=> s+i.qty,0);
+    document.getElementById('cartCount').innerText = count;
+    const cartItemsDiv = document.getElementById('cartItemsList');
+    if(cartItemsDiv){
+      if(cart.length === 0) cartItemsDiv.innerHTML = '<p>Cart is empty</p>';
+      else cartItemsDiv.innerHTML = cart.map(i => `<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;"><span>${i.name} x${i.qty}</span> <button onclick="removeItem(${i.id})" style="background:none; color:#e74c3c;">🗑️</button></div>`).join('');
+      const total = cart.reduce((s,i)=> s + (i.qty*250), 0);
+      document.getElementById('cartTotal').innerHTML = `<strong>Total: ${total + 150} PKR (inc delivery)</strong>`;
+    }
+  }
+
+  function removeItem(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
+  function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
+  function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+  function checkoutCart() {
+    if(cart.length===0) return alert('Cart empty');
+    let msg = "🛒 Order from Riaz Clinic:\n";
+    cart.forEach(i => msg += `• ${i.name} x${i.qty}\n`);
+    msg += `Total: ${cart.reduce((s,i)=> s+(i.qty*250),0)+150} PKR`;
+    window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank');
+  }
+
+  function sendOrderForm() {
+    let name = document.getElementById('orderName')?.value;
+    let phone = document.getElementById('orderPhone')?.value;
+    let detail = document.getElementById('orderDetail')?.value;
+    if(!name || !phone) return alert("Please fill name & phone");
+    let msg = `Order from ${name} (${phone}) : ${detail}`;
+    window.open(`https://wa.me/923337189748?text=${encodeURIComponent(msg)}`,'_blank');
+  }
+
+  function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('show'); }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      renderProducts(this.dataset.cat);
+    });
+  });
+
+  // Gallery mock
+  const galleryGrid = document.getElementById('galleryGrid');
+  if(galleryGrid) galleryGrid.innerHTML = ['🏥 Clinic', '👨‍⚕️ Doctor', '💊 Remedies', '🍄 DXN Display','🌿 Herbal','📦 Products'].map(i=> `<div class="gallery-item">${i}</div>`).join('');
+  renderProducts('all');
+  renderDXN();
+  updateCartUI();
+</script>
+</body>
+</html>
