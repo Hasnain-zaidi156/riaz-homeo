@@ -348,26 +348,6 @@
             padding: 0 1rem;
         }
 
-        /* Doctor image + name wrapper in hero */
-        .hero-person-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .hero-person-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--gold-light);
-            letter-spacing: 0.5px;
-            text-align: center;
-            line-height: 1.4;
-            max-width: 200px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-        }
-
         .hero-doctor-img {
             width: 220px;
             height: 320px;
@@ -384,6 +364,14 @@
         .hero-doctor-img:hover {
             transform: translateY(-8px) scale(1.02);
         }
+
+        /* .hero-doctor-img.mirror {
+            transform: scaleX(-1);
+        }
+
+        .hero-doctor-img.mirror:hover {
+            transform: scaleX(-1) translateY(-8px) scale(1.02);
+        } */
 
         .hero-img-left {
             display: flex;
@@ -573,6 +561,7 @@
             gap: 1.5rem;
         }
 
+        /* Section divider for All view */
         .section-divider {
             grid-column: 1 / -1;
             display: flex;
@@ -613,10 +602,12 @@
             box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4), 6px 6px 0 rgba(201, 168, 76, 0.2);
         }
 
+        /* Hidden states */
         .product-card.hidden {
             display: none !important;
         }
 
+        /* Show More Wrappers */
         .show-more-wrapper {
             grid-column: 1 / -1;
             display: flex;
@@ -776,6 +767,7 @@
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
 
+        /* Slider */
         .img-slider {
             position: relative;
             width: 100%;
@@ -904,7 +896,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.2);
             cursor: pointer;
-
         }
 
         .gallery-tile:hover {
@@ -922,34 +913,6 @@
 
         .gallery-tile:hover img {
             transform: scale(1.05);
-        }
-
-        /* Placeholder gallery tile for future images */
-        .gallery-tile-placeholder {
-            background: rgba(201, 168, 76, 0.04);
-            border-radius: 1.2rem;
-            aspect-ratio: 1/1;
-            border: 1.5px dashed rgba(201, 168, 76, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            cursor: default;
-        }
-
-        .gallery-tile-placeholder i {
-            font-size: 1.6rem;
-            color: rgba(201, 168, 76, 0.35);
-        }
-
-        .gallery-tile-placeholder span {
-            font-size: 0.62rem;
-            color: rgba(201, 168, 76, 0.4);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
         }
 
         .order-loc-grid {
@@ -1396,10 +1359,9 @@
         .hero-mobile-imgs {
             display: none;
             justify-content: center;
-            align-items: flex-start;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            flex-wrap: wrap;
         }
 
         .hero-mobile-imgs .hero-doctor-img {
@@ -1415,11 +1377,13 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Hide desktop side images */
             .hero-img-left,
             .hero-img-right {
                 display: none;
             }
 
+            /* Show mobile images row above the title */
             .hero-mobile-imgs {
                 display: flex;
             }
@@ -1636,31 +1600,17 @@
 
                 <!-- Mobile: two doctor images shown above title -->
                 <div class="hero-mobile-imgs">
-                    <div class="hero-person-wrap">
-                        <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Syed Maqbool Ahmed Zaidi"
-                            class="hero-doctor-img">
-                        <p class="hero-person-name">Syed Maqbool Ahmed Zaidi<br><span
-                                style="color:rgba(255,255,255,0.5);font-size:0.78rem;">(Shaheed)</span></p>
-                    </div>
-                    <div class="hero-person-wrap">
-                        <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Syed Fawad Ahmed Zaidi"
-                            class="hero-doctor-img">
-                        <p class="hero-person-name">Syed Fawad Ahmed Zaidi</p>
-                    </div>
+                    <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Dr. Syed Fawad Ahmed Zaidi"
+                        class="hero-doctor-img">
+                    <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Dr. Syed Fawad Ahmed Zaidi"
+                        class="hero-doctor-img mirror">
                 </div>
 
                 <div class="hero-layout">
-                    <!-- Left image: no beard — Syed Maqbool Ahmed Zaidi (Shaheed) -->
                     <div class="hero-img-left">
-                        <div class="hero-person-wrap">
-                            <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Syed Maqbool Ahmed Zaidi"
-                                class="hero-doctor-img">
-                            <p class="hero-person-name">Syed Maqbool Ahmed Zaidi<br><span
-                                    style="color:rgba(255,255,255,0.5);font-size:0.78rem;">(Shaheed)</span></p>
-                        </div>
+                        <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Dr. Syed Fawad Ahmed Zaidi"
+                            class="hero-doctor-img">
                     </div>
-
-                    <!-- Centre title & buttons -->
                     <div>
                         <h1 class="hero-title-3d">RIAZ <span class="gold">HOMEO</span><br>CLINIC</h1>
                         <div class="pill-group">
@@ -1679,14 +1629,9 @@
                             <a href="#products" class="btn-outline">View Products</a>
                         </div>
                     </div>
-
-                    <!-- Right image: beard — Syed Fawad Ahmed Zaidi -->
                     <div class="hero-img-right">
-                        <div class="hero-person-wrap">
-                            <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Syed Fawad Ahmed Zaidi"
-                                class="hero-doctor-img">
-                            <p class="hero-person-name">Syed Fawad Ahmed Zaidi</p>
-                        </div>
+                        <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Dr. Syed Fawad Ahmed Zaidi"
+                            class="hero-doctor-img">
                     </div>
                 </div>
             </div>
@@ -1698,13 +1643,13 @@
                     <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Dr. Syed Fawad Ahmed Zaidi"
                         class="doctor-photo-about">
                     <h3 style="font-family:'Cormorant Garamond';font-size:1.8rem;">Dr. Syed Fawad<br>Ahmed Zaidi</h3>
-                    <p style="color:var(--gold);font-weight:500;margin-bottom:1rem;">DHMS-RHMP-BA · Homoeopathic
+                    <p style="color:var(--gold);font-weight:500;margin-bottom:1rem;">DHMS-RHMP-BA · Homeopathic
                         Consultant</p>
                     <div class="info-row">
                         <div class="info-item"><i class="fas fa-stethoscope gold"></i> 30+ Years experience</div>
                         <div class="info-item"><i class="fas fa-map-marker-alt gold"></i> Dhak Bazar, Rohri</div>
                         <div class="info-item"><i class="fab fa-whatsapp gold"></i> 0333-7189748</div>
-                        <div class="info-item"><i class="fas fa-seedling gold"></i> Homoeopathy & DXN Specialist</div>
+                        <div class="info-item"><i class="fas fa-seedling gold"></i> Homeopathy & DXN Specialist</div>
                     </div>
                     <a href="https://wa.me/923337189748?text=Doctor+Sahab+consultation+chahiye" class="btn-primary"
                         style="background:linear-gradient(135deg,#1aaa4a,#25D366);width:100%;justify-content:center;">
@@ -1716,15 +1661,14 @@
                     <div class="badge"><i class="fas fa-heartbeat"></i> Holistic Healing</div>
                     <h2 class="section-title">Natural Medicine <br>Trusted Since <span class="gold">1967</span></h2>
                     <div class="divider-line"></div>
-                    <p class="section-desc">Dr. Syed Fawad Ahmed Zaidi provides premium homoeopathic treatments in
-                        Rohri,
-                        specializing in chronic diseases, Kidney, Liver diseases, Stones, Gallbladder, Warts &amp; Skin
-                        growths, Hidden Male &amp; Female diseases, Children diseases, immune support, and other
+                    <p class="section-desc">Dr. Syed Fawad Ahmed Zaidi provides premium homeopathic treatments in Rohri,
+                        specializing in chronic diseases, Kidney, Liver diseases, Stones, Gallbladder, Warts & Skin
+                        growths, Hidden Male & Female diseases, Children diseases, immune support, and other
                         diseases.<br> We also offer authentic DXN Ganoderma products for complete wellness — safe,
                         natural, side-effect-free.</p>
                     <p class="section-desc" style="margin-top:1rem;"><i class="fas fa-check-circle gold"></i> 100%
                         natural remedies <br> · You Contact them before visiting the Clinic to have medicine delivered
-                        to your home. This service is available for areas other than Rohri &amp; Sukkur. <br> · Online
+                        to your home. This service is available for areas other than Rohri & Sukkur. <br> · Online
                         Payment Easypaisa (0333-7189748) <br>· All over Pakistan</p>
                     <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
                         <a href="https://www.facebook.com/profile.php?id=61586065381859" target="_blank"
@@ -1754,8 +1698,7 @@
                     <div>
                         <div class="badge" style="background:#fff0d0;color:#a23b2e;">🍄 Authorized Seller</div>
                         <h2 class="section-title" style="color:white;">DXN Ganoderma</h2>
-                        <p style="color:rgba(255,255,255,0.75);">Reishi mushroom based supplements — immunity, energy
-                            &amp;
+                        <p style="color:rgba(255,255,255,0.75);">Reishi mushroom based supplements — immunity, energy &
                             longevity</p>
                         <a href="https://wa.me/923337189748" class="btn-primary"
                             style="background:white;color:#b13b3b;margin-top:1rem;">
@@ -1775,78 +1718,33 @@
         <section id="gallery">
             <div class="container" style="text-align:center;">
                 <div class="badge">Moments</div>
-                <h2 class="section-title">Clinic &amp; Product Gallery</h2>
+                <h2 class="section-title">Clinic & Product Gallery</h2>
                 <div class="gallery-grid">
-                    <!-- Existing images -->
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/Z1m8VqN9/Whats-App-Image-2026-05-05-at-1-14-15-PM.jpg','Clinic Front')">
                         <img src="https://i.ibb.co/Z1m8VqN9/Whats-App-Image-2026-05-05-at-1-14-15-PM.jpg"
-                            alt="Clinic Front" loading="lazy">
+                            alt="Clinic Front">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/KphVKBms/Whats-App-Image-2026-05-05-at-1-14-14-PM.jpg','Dr. Fawad')">
                         <img src="https://i.ibb.co/KphVKBms/Whats-App-Image-2026-05-05-at-1-14-14-PM.jpg"
-                            alt="Dr. Fawad" loading="lazy">
+                            alt="Dr. Fawad">
                     </div>
                     <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg','Homoeopathy')">
+                        onclick="openLightbox('https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg','Homeopathy')">
                         <img src="https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg"
-                            alt="Homoeopathy" loading="lazy">
+                            alt="Homeopathy">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/kgcY7GtT/Whats-App-Image-2026-05-05-at-1-14-16-PM.jpg','DXN Range')">
                         <img src="https://i.ibb.co/kgcY7GtT/Whats-App-Image-2026-05-05-at-1-14-16-PM.jpg"
-                            alt="DXN Range" loading="lazy">
+                            alt="DXN Range">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/zHjPmyf0/Whats-App-Image-2026-05-05-at-1-14-13-PM.jpg','Herbal Meds')">
                         <img src="https://i.ibb.co/zHjPmyf0/Whats-App-Image-2026-05-05-at-1-14-13-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
+                            alt="Herbal Meds">
                     </div>
-
-                    <!-- New Certificates and trophy -->
-
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/gLZqpBGW/Whats-App-Image-2026-05-10-at-3-12-26-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/gLZqpBGW/Whats-App-Image-2026-05-10-at-3-12-26-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/39VpX6BG/Whats-App-Image-2026-05-10-at-3-12-27-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/39VpX6BG/Whats-App-Image-2026-05-10-at-3-12-27-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/mVT5Pb88/Whats-App-Image-2026-05-10-at-3-12-27.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/mVT5Pb88/Whats-App-Image-2026-05-10-at-3-12-27.jpg" alt="Herbal Meds"
-                            loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/MjKSZTC/Whats-App-Image-2026-05-10-at-3-12-27-P.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/MjKSZTC/Whats-App-Image-2026-05-10-at-3-12-27-P.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/gZVwXR9p/Whats-App-Image-2026-05-10-at-3-19-33-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/gZVwXR9p/Whats-App-Image-2026-05-10-at-3-19-33-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/pj8tZtTx/Whats-App-Image-2026-05-10-at-3-19-34-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/pj8tZtTx/Whats-App-Image-2026-05-10-at-3-19-34-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/YTZX7dcg/Whats-App-Image-2026-05-10-at-5-38-49-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/YTZX7dcg/Whats-App-Image-2026-05-10-at-5-38-49-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/TDjbcP4L/Whats-App-Image-2026-05-10-at-5-38-50-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/TDjbcP4L/Whats-App-Image-2026-05-10-at-5-38-50-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -1879,7 +1777,7 @@
                     <input type="tel" id="orderPhone" class="input-field" placeholder="Phone Number">
                     <input type="text" id="orderAddress" class="input-field" placeholder="Delivery Address">
                     <textarea id="orderProducts" class="input-field" rows="2"
-                        placeholder="Product name &amp; quantity"></textarea>
+                        placeholder="Product name & quantity"></textarea>
                     <button class="btn-primary" style="width:100%;background:linear-gradient(135deg,#1aaa4a,#25D366);"
                         onclick="sendDirectOrder()">
                         <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit">
@@ -1896,30 +1794,20 @@
                     <h2 class="section-title">Riaz Homeo Clinic</h2>
                     <br><br>
                     <p><img src="https://cdn-icons-png.flaticon.com/128/2991/2991231.png" alt="Location" class="visit">
-                        <br>
                         Dhak Bazar, Rohri, Sindh</p>
                     <br><br>
-                    <p>
-                        <img src="https://cdn-icons-png.flaticon.com/128/862/862358.png" alt="Timing" class="visit">
-                        <br>
-                        Morning 10:00(AM) - 1:30(PM)<br><br>
-                        Evening 5:30(PM) - 9:30(PM)<br><br>
-                        Please call before visiting.<br><br>
-                        <strong>Friday is off</strong>
-                    </p>
-                    <br>
+                    <p><img src="https://cdn-icons-png.flaticon.com/128/862/862358.png" alt="Timing" class="visit">
+                        Morning 10:00(AM) - 1:30(PM)<br><br>Evening 5:30(PM) - 9:30(PM)<br><br>
                     <h4>(Call for appointment)</h4>
+                    </p>
                     <br><br>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="Phone" class="visit">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Q--Z8wWsQKPi1wPkH33pIuvKxnmgEoFYA&s"
-                            alt="" class="visit">
-                            <br> 0333-7189748<br><br>
+                            alt="" class="visit"> 0333-7189748<br><br>
                         <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Phone" class="visit">
-                        <br>
                         0312-3875580<br><br>
                         <img src="https://cdn-icons-png.flaticon.com/128/4782/4782351.png" alt="" class="visit">
-                        <br>
                         0308-3773026
                     </p>
                     <br><br>
@@ -1994,7 +1882,7 @@
                 maxlength="20">
             <textarea id="modalAddress" class="modal-input" rows="2"
                 placeholder="Delivery Address (ghar, gali, sheher)"></textarea>
-            <button class="modal-save-btn" onclick="saveCustomerInfo()"><i class="fas fa-save"></i> Save &amp;
+            <button class="modal-save-btn" onclick="saveCustomerInfo()"><i class="fas fa-save"></i> Save &
                 Continue</button>
             <button class="modal-skip-btn" onclick="skipInfoModal()">Skip (order without saving)</button>
         </div>
@@ -2276,15 +2164,6 @@
         }
 
         // =====================================================
-        // DXN SECTION
-        // =====================================================
-        function renderDXNProducts() {
-            const dxnOnly = productsDB.filter(p => p.cat === 'dxn');
-            const dxnGrid = document.getElementById('dxnProductGrid');
-            if (dxnGrid) dxnGrid.innerHTML = dxnOnly.map(p => buildProductCard(p)).join('');
-        }
-
-        // =====================================================
         // SHOW MORE ACTIONS
         // =====================================================
         function showMoreDXN() {
@@ -2332,6 +2211,15 @@
                     wrap.querySelector('.show-more-progress').innerHTML = `Showing <span>${clinicVisible}</span> of <span>${clinicProducts.length}</span> clinic products`;
                 }
             }
+        }
+
+        // =====================================================
+        // DXN SECTION
+        // =====================================================
+        function renderDXNProducts() {
+            const dxnOnly = productsDB.filter(p => p.cat === 'dxn');
+            const dxnGrid = document.getElementById('dxnProductGrid');
+            if (dxnGrid) dxnGrid.innerHTML = dxnOnly.map(p => buildProductCard(p)).join('');
         }
 
         // =====================================================

@@ -14,7 +14,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         :root {
@@ -22,7 +22,7 @@
             --gold-light: #e3bc5e;
             --dark: #0a1510;
             --dark2: #0f1c16;
-            --green: #1e4a33;
+            --green: #1e4a33
         }
 
         body {
@@ -30,30 +30,30 @@
             background: var(--dark);
             color: #fff;
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            scroll-behavior: smooth
         }
 
         ::-webkit-scrollbar {
-            width: 4px;
+            width: 4px
         }
 
         ::-webkit-scrollbar-track {
-            background: #1a2a20;
+            background: #1a2a20
         }
 
         ::-webkit-scrollbar-thumb {
             background: var(--gold);
-            border-radius: 10px;
+            border-radius: 10px
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1.25rem;
+            padding: 0 1.25rem
         }
 
         section {
-            padding: 4rem 0;
+            padding: 4rem 0
         }
 
         .glass-card {
@@ -61,12 +61,11 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(201, 168, 76, 0.2);
             border-radius: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 0 rgba(201, 168, 76, 0.15) inset, 0 -2px 0 rgba(0, 0, 0, 0.3) inset;
-            transform-style: preserve-3d;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 0 rgba(201, 168, 76, 0.15) inset, 0 -2px 0 rgba(0, 0, 0, 0.3) inset
         }
 
         .gold {
-            color: var(--gold-light);
+            color: var(--gold-light)
         }
 
         .badge {
@@ -74,15 +73,15 @@
             align-items: center;
             gap: 8px;
             background: rgba(201, 168, 76, 0.12);
-            padding: 0.3rem 1rem;
+            padding: .3rem 1rem;
             border-radius: 40px;
-            font-size: 0.7rem;
+            font-size: .7rem;
             letter-spacing: 1.2px;
             font-weight: 500;
             text-transform: uppercase;
             color: var(--gold-light);
             margin-bottom: 1rem;
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.15);
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.15)
         }
 
         .section-title {
@@ -90,23 +89,23 @@
             font-size: clamp(2rem, 7vw, 3.4rem);
             font-weight: 700;
             line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: -.02em;
+            margin-bottom: .75rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5)
         }
 
         .section-desc {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: .9rem;
             line-height: 1.5;
-            max-width: 520px;
+            max-width: 520px
         }
 
         .divider-line {
             width: 50px;
             height: 2px;
             background: linear-gradient(90deg, var(--gold), transparent);
-            margin: 1rem 0 1.5rem 0;
+            margin: 1rem 0 1.5rem
         }
 
         .waves-bg {
@@ -114,24 +113,24 @@
             inset: 0;
             overflow: hidden;
             pointer-events: none;
-            z-index: 0;
+            z-index: 0
         }
 
         .waves-bg svg {
             position: absolute;
             bottom: 0;
             width: 100%;
-            animation: waveMove 8s ease-in-out infinite;
+            animation: waveMove 8s ease-in-out infinite
         }
 
         .waves-bg svg:nth-child(2) {
             animation: waveMove2 10s ease-in-out infinite;
-            opacity: 0.5;
+            opacity: .5
         }
 
         .waves-bg svg:nth-child(3) {
             animation: waveMove 12s ease-in-out infinite reverse;
-            opacity: 0.3;
+            opacity: .3
         }
 
         @keyframes waveMove {
@@ -165,23 +164,23 @@
             background: rgba(10, 21, 16, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(201, 168, 76, 0.25);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(201, 168, 76, 0.1) inset;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(201, 168, 76, 0.1) inset
         }
 
         .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.8rem 1.25rem;
+            padding: .8rem 1.25rem;
             max-width: 1280px;
-            margin: 0 auto;
+            margin: 0 auto
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
+            text-decoration: none
         }
 
         .logo-img-circle {
@@ -191,7 +190,7 @@
             object-fit: cover;
             object-position: top;
             border: 2px solid var(--gold);
-            box-shadow: 0 0 12px rgba(201, 168, 76, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 12px rgba(201, 168, 76, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5)
         }
 
         .logo-text h2 {
@@ -199,63 +198,63 @@
             font-size: 1.3rem;
             font-weight: 700;
             line-height: 1.2;
-            color: white;
+            color: white
         }
 
         .logo-text p {
-            font-size: 0.58rem;
+            font-size: .58rem;
             letter-spacing: 1px;
-            color: var(--gold-light);
+            color: var(--gold-light)
         }
 
         .logo-since {
-            font-size: 0.55rem;
+            font-size: .55rem;
             color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.5px;
+            letter-spacing: .5px
         }
 
         .nav-links {
             display: flex;
-            gap: 0.2rem;
+            gap: .2rem
         }
 
         .nav-links a {
             color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: .78rem;
             font-weight: 500;
-            padding: 0.45rem 0.9rem;
+            padding: .45rem .9rem;
             border-radius: 40px;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .nav-links a:hover {
             background: rgba(201, 168, 76, 0.1);
-            color: var(--gold-light);
+            color: var(--gold-light)
         }
 
         .nav-links a.fb-link {
-            color: #7aabff;
+            color: #7aabff
         }
 
         .nav-links a.fb-link:hover {
             background: rgba(66, 103, 178, 0.15);
-            color: #a8c8ff;
+            color: #a8c8ff
         }
 
         .cart-icon {
             background: rgba(201, 168, 76, 0.12);
             border: 1px solid rgba(201, 168, 76, 0.3);
-            padding: 0.45rem 1rem;
+            padding: .45rem 1rem;
             border-radius: 40px;
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.8rem;
+            font-size: .8rem;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: .2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3)
         }
 
         .cart-count {
@@ -264,25 +263,25 @@
             border-radius: 30px;
             width: 20px;
             height: 20px;
-            font-size: 0.7rem;
+            font-size: .7rem;
             font-weight: 800;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
-            cursor: pointer;
+            cursor: pointer
         }
 
         .hamburger span {
             width: 24px;
             height: 2px;
             background: white;
-            border-radius: 4px;
+            border-radius: 4px
         }
 
         .mobile-menu {
@@ -290,14 +289,14 @@
             flex-direction: column;
             background: #0e1c16;
             padding: 1rem 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05)
         }
 
         .mobile-menu a {
             color: #ddd;
-            padding: 0.7rem 0;
+            padding: .7rem 0;
             text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05)
         }
 
         .hero {
@@ -307,13 +306,13 @@
             text-align: center;
             position: relative;
             background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201, 168, 76, 0.06), transparent);
-            overflow: hidden;
+            overflow: hidden
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            width: 100%;
+            width: 100%
         }
 
         .since-badge {
@@ -321,14 +320,14 @@
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.05));
             border: 1px solid rgba(201, 168, 76, 0.4);
             border-radius: 60px;
-            padding: 0.4rem 1.5rem;
-            font-size: 0.75rem;
+            padding: .4rem 1.5rem;
+            font-size: .75rem;
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--gold-light);
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2), 0 0 0 1px rgba(201, 168, 76, 0.1) inset;
-            text-transform: uppercase;
+            text-transform: uppercase
         }
 
         .hero h1 {
@@ -336,8 +335,8 @@
             font-size: clamp(2.5rem, 10vw, 5rem);
             font-weight: 700;
             line-height: 1.1;
-            margin: 0.5rem 0 1.5rem;
-            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
+            margin: .5rem 0 1.5rem;
+            text-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8)
         }
 
         .hero-layout {
@@ -345,27 +344,25 @@
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
             gap: 2rem;
-            padding: 0 1rem;
+            padding: 0 1rem
         }
 
-        /* Doctor image + name wrapper in hero */
-        .hero-person-wrap {
+        .hero-img-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.6rem;
+            gap: .7rem
         }
 
-        .hero-person-name {
+        .hero-img-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
+            font-size: .88rem;
             font-weight: 600;
             color: var(--gold-light);
-            letter-spacing: 0.5px;
             text-align: center;
             line-height: 1.4;
-            max-width: 200px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            max-width: 200px
         }
 
         .hero-doctor-img {
@@ -376,71 +373,70 @@
             border-radius: 8rem 8rem 5rem 5rem;
             border: 2px solid rgba(201, 168, 76, 0.5);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 6px rgba(201, 168, 76, 0.08), 0 0 80px rgba(201, 168, 76, 0.1), 8px 8px 0 rgba(201, 168, 76, 0.15);
-            transition: transform 0.4s ease;
+            transition: transform .4s ease;
             filter: brightness(0.95) contrast(1.05);
-            animation: glowPulse 3s ease-in-out infinite;
+            animation: glowPulse 3s ease-in-out infinite
         }
 
         .hero-doctor-img:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-8px) scale(1.02)
         }
 
         .hero-img-left {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-end
         }
 
         .hero-img-right {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-start
         }
 
         .hero-title-3d {
-            text-shadow: 0 1px 0 rgba(201, 168, 76, 0.6), 0 2px 0 rgba(201, 168, 76, 0.4), 0 3px 0 rgba(201, 168, 76, 0.3),
-                0 4px 0 rgba(201, 168, 76, 0.2), 0 5px 0 rgba(201, 168, 76, 0.1), 0 8px 20px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 1px 0 rgba(201, 168, 76, 0.6), 0 2px 0 rgba(201, 168, 76, 0.4), 0 3px 0 rgba(201, 168, 76, 0.3), 0 4px 0 rgba(201, 168, 76, 0.2), 0 5px 0 rgba(201, 168, 76, 0.1), 0 8px 20px rgba(0, 0, 0, 0.8)
         }
 
         .pill-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.7rem;
-            margin: 1.5rem 0;
+            gap: .7rem;
+            margin: 1.5rem 0
         }
 
         .pill {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(201, 168, 76, 0.3);
             border-radius: 100px;
-            padding: 0.4rem 1rem;
-            font-size: 0.75rem;
+            padding: .4rem 1rem;
+            font-size: .75rem;
             font-weight: 500;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .pill:hover {
             border-color: rgba(201, 168, 76, 0.6);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #d4a832, #c9a84c, #b8952e);
             color: var(--dark);
             border: none;
-            padding: 0.8rem 1.8rem;
+            padding: .8rem 1.8rem;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: .9rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.2s;
+            transition: all .2s;
             text-decoration: none;
             box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35), 0 2px 0 rgba(255, 255, 255, 0.2) inset, 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .btn-primary::before {
@@ -449,40 +445,40 @@
             inset: 0;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
             opacity: 0;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .btn-primary:hover::before {
-            opacity: 1;
+            opacity: 1
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.45);
+            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.45)
         }
 
         .btn-outline {
             background: transparent;
             border: 1.5px solid rgba(201, 168, 76, 0.6);
             color: var(--gold-light);
-            padding: 0.75rem 1.6rem;
+            padding: .75rem 1.6rem;
             border-radius: 60px;
             font-weight: 600;
             text-decoration: none;
-            transition: 0.2s;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            transition: .2s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3)
         }
 
         .btn-outline:hover {
             background: rgba(201, 168, 76, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
-            align-items: center;
+            align-items: center
         }
 
         .doctor-profile {
@@ -493,7 +489,7 @@
             border: 1px solid rgba(201, 168, 76, 0.25);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(201, 168, 76, 0.2) inset, 12px 12px 0 rgba(0, 0, 0, 0.2);
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .doctor-profile::before {
@@ -504,7 +500,7 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(ellipse at 70% 30%, rgba(201, 168, 76, 0.05), transparent 60%);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .doctor-photo-about {
@@ -516,46 +512,46 @@
             margin: 0 auto 1rem;
             border: 3px solid var(--gold);
             box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.12), 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 168, 76, 0.2);
-            display: block;
+            display: block
         }
 
         .info-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
+            gap: .8rem;
+            margin: 1.5rem 0
         }
 
         .info-item {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 1rem;
-            padding: 0.7rem;
-            font-size: 0.75rem;
+            padding: .7rem;
+            font-size: .75rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05) inset
         }
 
         .filter-bar {
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
+            gap: .8rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            margin: 2rem 0
         }
 
         .filter-btn {
             background: transparent;
             border: 1px solid rgba(201, 168, 76, 0.35);
-            padding: 0.5rem 1.2rem;
+            padding: .5rem 1.2rem;
             border-radius: 40px;
             color: rgba(255, 255, 255, 0.7);
             font-weight: 500;
-            transition: 0.2s;
+            transition: .2s;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
         }
 
         .filter-btn.active,
@@ -563,95 +559,94 @@
             background: linear-gradient(135deg, #d4a832, #c9a84c);
             color: var(--dark);
             border-color: transparent;
-            box-shadow: 0 6px 16px rgba(201, 168, 76, 0.3);
+            box-shadow: 0 6px 16px rgba(201, 168, 76, 0.3)
         }
 
-        /* ===== PRODUCT GRID ===== */
         .prod-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 1.5rem
         }
 
         .section-divider {
-            grid-column: 1 / -1;
+            grid-column: 1/-1;
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin: 1rem 0 0.5rem;
+            margin: 1rem 0 .5rem
         }
 
         .section-divider-line {
             flex: 1;
             height: 1px;
-            background: rgba(201, 168, 76, 0.2);
+            background: rgba(201, 168, 76, 0.2)
         }
 
         .section-divider-label {
-            font-size: 0.72rem;
+            font-size: .72rem;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--gold);
             background: rgba(201, 168, 76, 0.1);
             border: 1px solid rgba(201, 168, 76, 0.25);
-            padding: 0.3rem 0.9rem;
-            border-radius: 20px;
+            padding: .3rem .9rem;
+            border-radius: 20px
         }
 
         .product-card {
-            background: #ffffff;
+            background: #fff;
             border-radius: 1.5rem;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform .3s ease, box-shadow .3s ease;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 6px 6px 0 rgba(0, 0, 0, 0.15);
-            position: relative;
+            position: relative
         }
 
         .product-card:hover {
             transform: translateY(-8px) rotateX(2deg);
-            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4), 6px 6px 0 rgba(201, 168, 76, 0.2);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4), 6px 6px 0 rgba(201, 168, 76, 0.2)
         }
 
         .product-card.hidden {
-            display: none !important;
+            display: none !important
         }
 
         .show-more-wrapper {
-            grid-column: 1 / -1;
+            grid-column: 1/-1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.6rem;
-            margin-top: 1rem;
+            gap: .6rem;
+            margin-top: 1rem
         }
 
         .show-more-wrapper.hidden {
-            display: none !important;
+            display: none !important
         }
 
         .show-more-btn {
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.08));
             border: 1.5px solid rgba(201, 168, 76, 0.55);
             color: var(--gold-light);
-            padding: 0.75rem 2rem;
+            padding: .75rem 2rem;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: .88rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 9px;
-            transition: all 0.25s;
+            transition: all .25s;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(201, 168, 76, 0.15) inset;
-            letter-spacing: 0.3px;
-            font-family: 'Inter', sans-serif;
+            letter-spacing: .3px;
+            font-family: 'Inter', sans-serif
         }
 
         .show-more-btn:hover {
             background: linear-gradient(135deg, rgba(201, 168, 76, 0.3), rgba(201, 168, 76, 0.12));
             transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(201, 168, 76, 0.2);
+            box-shadow: 0 8px 28px rgba(201, 168, 76, 0.2)
         }
 
         .show-more-btn .sm-icon {
@@ -662,40 +657,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: .75rem;
             flex-shrink: 0;
-            transition: transform 0.25s;
+            transition: transform .25s
         }
 
         .show-more-btn:hover .sm-icon {
-            transform: translateY(2px);
+            transform: translateY(2px)
         }
 
         .show-more-progress {
-            font-size: 0.72rem;
+            font-size: .72rem;
             color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.5px;
+            letter-spacing: .5px
         }
 
         .show-more-progress span {
             color: var(--gold);
-            font-weight: 600;
+            font-weight: 600
         }
 
         @keyframes cardReveal {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(20px)
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
         .product-card.just-revealed {
-            animation: cardReveal 0.4s ease both;
+            animation: cardReveal .4s ease both
         }
 
         .product-img-box {
@@ -703,7 +698,7 @@
             height: 320px;
             overflow: hidden;
             background: #eef4ea;
-            position: relative;
+            position: relative
         }
 
         .product-cat-label {
@@ -712,44 +707,44 @@
             left: 10px;
             background: rgba(10, 21, 16, 0.8);
             color: var(--gold-light);
-            font-size: 0.6rem;
+            font-size: .6rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 0.25rem 0.6rem;
+            padding: .25rem .6rem;
             border-radius: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            z-index: 5;
+            z-index: 5
         }
 
         .product-info {
-            padding: 1rem;
+            padding: 1rem
         }
 
         .product-info h4 {
             color: #1a2a1f;
             font-weight: 700;
             font-size: 1rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: .25rem
         }
 
         .product-info .product-desc {
             color: #5a6e5b;
-            font-size: 0.72rem;
-            margin-bottom: 0.5rem;
+            font-size: .72rem;
+            margin-bottom: .5rem
         }
 
         .product-price-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 0.75rem;
+            margin-bottom: .75rem
         }
 
         .product-price {
             color: #1a2a1f;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: .95rem
         }
 
         .add-cart {
@@ -758,28 +753,28 @@
             width: 100%;
             border: none;
             border-radius: 60px;
-            padding: 0.6rem;
+            padding: .6rem;
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: .82rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
             cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+            transition: .2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1) inset
         }
 
         .add-cart:hover {
             background: linear-gradient(135deg, #1e4a33, #2a6644);
             transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3)
         }
 
         .img-slider {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 100%
         }
 
         .img-slider img {
@@ -790,12 +785,12 @@
             top: 0;
             left: 0;
             opacity: 0;
-            transition: opacity 0.35s ease;
+            transition: opacity .35s ease
         }
 
         .img-slider img.active {
             opacity: 1;
-            position: relative;
+            position: relative
         }
 
         .slider-btn {
@@ -814,21 +809,21 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: 0.2s;
+            transition: .2s;
             padding: 0;
-            line-height: 1;
+            line-height: 1
         }
 
         .slider-btn:hover {
-            background: rgba(201, 168, 76, 0.85);
+            background: rgba(201, 168, 76, 0.85)
         }
 
         .slider-btn.prev {
-            left: 7px;
+            left: 7px
         }
 
         .slider-btn.next {
-            right: 7px;
+            right: 7px
         }
 
         .slider-dots {
@@ -838,7 +833,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 5px;
-            z-index: 10;
+            z-index: 10
         }
 
         .sdot {
@@ -846,14 +841,14 @@
             height: 6px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.45);
-            transition: 0.25s;
-            cursor: pointer;
+            transition: .25s;
+            cursor: pointer
         }
 
         .sdot.active {
             background: var(--gold);
             width: 14px;
-            border-radius: 4px;
+            border-radius: 4px
         }
 
         .single-img {
@@ -861,11 +856,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform .3s ease
         }
 
         .product-card:hover .single-img {
-            transform: scale(1.06);
+            transform: scale(1.06)
         }
 
         .dxn-banner {
@@ -878,7 +873,7 @@
             margin-bottom: 2rem;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(255, 255, 255, 0.1) inset, 8px 8px 0 rgba(0, 0, 0, 0.2);
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .dxn-banner::before {
@@ -886,13 +881,13 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
+            gap: 1rem
         }
 
         .gallery-tile {
@@ -901,15 +896,14 @@
             aspect-ratio: 1/1;
             overflow: hidden;
             border: 1px solid rgba(201, 168, 76, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform .3s, box-shadow .3s;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 4px 4px 0 rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-
+            cursor: pointer
         }
 
         .gallery-tile:hover {
             transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.1);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.1)
         }
 
         .gallery-tile img {
@@ -917,45 +911,38 @@
             height: 100%;
             object-fit: cover;
             border-radius: 1.2rem;
-            transition: transform 0.3s ease;
+            transition: transform .3s ease
         }
 
         .gallery-tile:hover img {
-            transform: scale(1.05);
+            transform: scale(1.05)
         }
 
-        /* Placeholder gallery tile for future images */
-        .gallery-tile-placeholder {
-            background: rgba(201, 168, 76, 0.04);
+        .gallery-tile-empty {
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 1.2rem;
             aspect-ratio: 1/1;
-            border: 1.5px dashed rgba(201, 168, 76, 0.3);
+            border: 2px dashed rgba(201, 168, 76, 0.25);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            cursor: default;
+            gap: .5rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .5px
         }
 
-        .gallery-tile-placeholder i {
-            font-size: 1.6rem;
-            color: rgba(201, 168, 76, 0.35);
-        }
-
-        .gallery-tile-placeholder span {
-            font-size: 0.62rem;
-            color: rgba(201, 168, 76, 0.4);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
+        .gallery-tile-empty i {
+            font-size: 1.5rem;
+            color: rgba(201, 168, 76, 0.2)
         }
 
         .order-loc-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 2rem
         }
 
         .input-field {
@@ -963,27 +950,27 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 60px;
-            padding: 0.8rem 1rem;
+            padding: .8rem 1rem;
             color: white;
-            margin: 0.5rem 0;
+            margin: .5rem 0;
             outline: none;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .input-field:focus {
             border-color: rgba(201, 168, 76, 0.5);
-            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1)
         }
 
         textarea.input-field {
-            border-radius: 1.2rem;
+            border-radius: 1.2rem
         }
 
         .map {
             width: 100%;
             border-radius: 40px 5px 40px 5px;
             border: 0;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 8px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 8px 8px 0 rgba(0, 0, 0, 0.2)
         }
 
         .cart-overlay {
@@ -993,13 +980,13 @@
             z-index: 1100;
             opacity: 0;
             visibility: hidden;
-            transition: 0.25s;
-            backdrop-filter: blur(4px);
+            transition: .25s;
+            backdrop-filter: blur(4px)
         }
 
         .cart-overlay.open {
             opacity: 1;
-            visibility: visible;
+            visibility: visible
         }
 
         .cart-sidebar {
@@ -1012,73 +999,73 @@
             background: linear-gradient(160deg, #0f2018, #0a1510);
             border-left: 1px solid rgba(201, 168, 76, 0.3);
             z-index: 1101;
-            transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            transition: .3s cubic-bezier(.2, .9, .4, 1.1);
             display: flex;
             flex-direction: column;
             padding: 1.2rem;
             overflow-y: auto;
-            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6)
         }
 
         .cart-sidebar.open {
-            right: 0;
+            right: 0
         }
 
         .contact-box {
             background: rgba(201, 168, 76, 0.08);
             border: 1px solid rgba(201, 168, 76, 0.35);
             border-radius: 1rem;
-            padding: 0.9rem 1rem;
-            margin: 0.8rem 0 1rem 0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(201, 168, 76, 0.1) inset;
+            padding: .9rem 1rem;
+            margin: .8rem 0 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(201, 168, 76, 0.1) inset
         }
 
         .contact-box-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
+            margin-bottom: .5rem
         }
 
         .contact-box-header span {
-            font-size: 0.7rem;
+            font-size: .7rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--gold)
         }
 
         .edit-info-btn {
             background: none;
             border: 1px solid rgba(201, 168, 76, 0.5);
             color: var(--gold);
-            font-size: 0.65rem;
-            padding: 0.2rem 0.6rem;
+            font-size: .65rem;
+            padding: .2rem .6rem;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .edit-info-btn:hover {
-            background: rgba(201, 168, 76, 0.15);
+            background: rgba(201, 168, 76, 0.15)
         }
 
         .contact-detail-line {
-            font-size: 0.78rem;
+            font-size: .78rem;
             color: rgba(255, 255, 255, 0.85);
             display: flex;
             align-items: flex-start;
             gap: 7px;
-            margin-bottom: 0.3rem;
-            line-height: 1.4;
+            margin-bottom: .3rem;
+            line-height: 1.4
         }
 
         .contact-detail-line i {
             color: var(--gold);
             margin-top: 2px;
             flex-shrink: 0;
-            width: 14px;
+            width: 14px
         }
 
         .qty-btn {
@@ -1093,20 +1080,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.15s;
+            transition: all .15s;
             flex-shrink: 0;
-            line-height: 1;
+            line-height: 1
         }
 
         .qty-btn:hover {
             background: rgba(201, 168, 76, 0.25);
             border-color: rgba(201, 168, 76, 0.5);
-            transform: scale(1.1);
+            transform: scale(1.1)
         }
 
         .qty-btn.minus:hover {
             background: rgba(231, 76, 60, 0.2);
-            border-color: rgba(231, 76, 60, 0.4);
+            border-color: rgba(231, 76, 60, 0.4)
         }
 
         .trash-btn {
@@ -1120,13 +1107,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.15s;
-            flex-shrink: 0;
+            transition: all .15s;
+            flex-shrink: 0
         }
 
         .trash-btn:hover {
             background: rgba(231, 76, 60, 0.3);
-            transform: scale(1.1);
+            transform: scale(1.1)
         }
 
         #addedToast {
@@ -1136,24 +1123,24 @@
             transform: translateX(-50%);
             background: linear-gradient(135deg, #1aaa4a, #25D366);
             color: white;
-            padding: 0.65rem 1.5rem;
+            padding: .65rem 1.5rem;
             border-radius: 60px;
-            font-size: 0.82rem;
+            font-size: .82rem;
             font-weight: 700;
             z-index: 9999;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 0 rgba(255, 255, 255, 0.15) inset;
-            transition: opacity 0.35s, transform 0.35s;
+            transition: opacity .35s, transform .35s;
             white-space: nowrap;
             display: flex;
             align-items: center;
             gap: 8px;
             opacity: 0;
-            pointer-events: none;
+            pointer-events: none
         }
 
         #addedToast.show {
             opacity: 1;
-            pointer-events: auto;
+            pointer-events: auto
         }
 
         .info-modal-overlay {
@@ -1167,13 +1154,13 @@
             padding: 1rem;
             opacity: 0;
             visibility: hidden;
-            transition: 0.25s;
-            backdrop-filter: blur(8px);
+            transition: .25s;
+            backdrop-filter: blur(8px)
         }
 
         .info-modal-overlay.open {
             opacity: 1;
-            visibility: visible;
+            visibility: visible
         }
 
         .info-modal {
@@ -1183,25 +1170,25 @@
             padding: 1.8rem;
             width: 100%;
             max-width: 380px;
-            transform: scale(0.95);
-            transition: 0.25s;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 2px 0 rgba(201, 168, 76, 0.2) inset;
+            transform: scale(.95);
+            transition: .25s;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 2px 0 rgba(201, 168, 76, 0.2) inset
         }
 
         .info-modal-overlay.open .info-modal {
-            transform: scale(1);
+            transform: scale(1)
         }
 
         .info-modal h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            margin-bottom: 0.3rem;
+            margin-bottom: .3rem
         }
 
         .info-modal p {
-            font-size: 0.78rem;
+            font-size: .78rem;
             color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.2rem
         }
 
         .modal-input {
@@ -1209,27 +1196,27 @@
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(201, 168, 76, 0.25);
             border-radius: 50px;
-            padding: 0.75rem 1rem;
+            padding: .75rem 1rem;
             color: white;
-            margin-bottom: 0.7rem;
+            margin-bottom: .7rem;
             outline: none;
-            font-size: 0.85rem;
+            font-size: .85rem;
             font-family: 'Inter', sans-serif;
-            transition: 0.2s;
+            transition: .2s
         }
 
         .modal-input:focus {
             border-color: rgba(201, 168, 76, 0.7);
-            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1)
         }
 
         .modal-input::placeholder {
-            color: rgba(255, 255, 255, 0.35);
+            color: rgba(255, 255, 255, 0.35)
         }
 
         textarea.modal-input {
             border-radius: 1rem;
-            resize: none;
+            resize: none
         }
 
         .modal-save-btn {
@@ -1237,36 +1224,36 @@
             color: var(--dark);
             border: none;
             width: 100%;
-            padding: 0.8rem;
+            padding: .8rem;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: .9rem;
             cursor: pointer;
-            margin-top: 0.3rem;
-            transition: 0.2s;
-            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+            margin-top: .3rem;
+            transition: .2s;
+            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3)
         }
 
         .modal-save-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 10px 28px rgba(201, 168, 76, 0.4);
+            box-shadow: 0 10px 28px rgba(201, 168, 76, 0.4)
         }
 
         .modal-skip-btn {
             background: transparent;
             border: none;
             color: rgba(255, 255, 255, 0.4);
-            font-size: 0.75rem;
+            font-size: .75rem;
             cursor: pointer;
             width: 100%;
-            margin-top: 0.6rem;
-            padding: 0.4rem;
-            text-decoration: underline;
+            margin-top: .6rem;
+            padding: .4rem;
+            text-decoration: underline
         }
 
         .visit {
             width: 20px;
-            height: 20px;
+            height: 20px
         }
 
         footer {
@@ -1275,7 +1262,7 @@
             margin-top: 1rem;
             border-top: 1px solid rgba(201, 168, 76, 0.15);
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         footer::before {
@@ -1283,20 +1270,20 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201, 168, 76, 0.04), transparent);
-            pointer-events: none;
+            pointer-events: none
         }
 
         .footer-inner {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.5rem
         }
 
         .footer-social {
             display: flex;
-            gap: 0.8rem;
-            justify-content: flex-end;
+            gap: .8rem;
+            justify-content: flex-end
         }
 
         .footer-social a {
@@ -1307,30 +1294,27 @@
             align-items: center;
             justify-content: center;
             font-size: 1rem;
-            transition: 0.2s;
-            text-decoration: none;
+            transition: .2s;
+            text-decoration: none
         }
 
         .footer-social a.wa {
             background: rgba(37, 211, 102, 0.12);
             border: 1px solid rgba(37, 211, 102, 0.3);
-            color: #25D366;
+            color: #25D366
         }
 
         .footer-social a.fb {
             background: rgba(66, 103, 178, 0.12);
             border: 1px solid rgba(66, 103, 178, 0.3);
-            color: #7aabff;
+            color: #7aabff
         }
 
         .footer-social a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4)
         }
 
-        /* =====================================================
-           LIGHTBOX
-           ===================================================== */
         .lightbox-overlay {
             position: fixed;
             inset: 0;
@@ -1341,14 +1325,14 @@
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
+            transition: opacity .3s, visibility .3s;
             backdrop-filter: blur(12px);
-            padding: 1rem;
+            padding: 1rem
         }
 
         .lightbox-overlay.open {
             opacity: 1;
-            visibility: visible;
+            visibility: visible
         }
 
         .lightbox-img {
@@ -1358,12 +1342,12 @@
             border-radius: 1rem;
             border: 2px solid rgba(201, 168, 76, 0.4);
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(201, 168, 76, 0.1);
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(.9);
+            transition: transform .3s cubic-bezier(.34, 1.56, .64, 1)
         }
 
         .lightbox-overlay.open .lightbox-img {
-            transform: scale(1);
+            transform: scale(1)
         }
 
         .lightbox-close {
@@ -1381,129 +1365,126 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 0.2s;
-            z-index: 2001;
+            transition: .2s;
+            z-index: 2001
         }
 
         .lightbox-close:hover {
             background: rgba(201, 168, 76, 0.3);
-            border-color: var(--gold);
+            border-color: var(--gold)
         }
 
-        /* =====================================================
-           MOBILE HERO IMAGES
-           ===================================================== */
         .hero-mobile-imgs {
             display: none;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-end;
             gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+            margin-bottom: 1.5rem
         }
 
-        .hero-mobile-imgs .hero-doctor-img {
+        .hero-mobile-imgs .hero-img-wrapper .hero-doctor-img {
             width: 130px;
-            height: 190px;
+            height: 190px
         }
 
-        /* =====================================================
-           RESPONSIVE
-           ===================================================== */
+        .hero-mobile-imgs .hero-img-name {
+            font-size: .72rem
+        }
+
         @media(max-width:900px) {
             .hero-layout {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .hero-img-left,
             .hero-img-right {
-                display: none;
+                display: none
             }
 
             .hero-mobile-imgs {
-                display: flex;
+                display: flex
             }
         }
 
         @media(max-width:820px) {
             .nav-links {
-                display: none;
+                display: none
             }
 
             .hamburger {
-                display: flex;
+                display: flex
             }
 
             .mobile-menu.show {
-                display: flex;
+                display: flex
             }
 
             .about-grid,
             .order-loc-grid,
             .dxn-banner {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             section {
-                padding: 2.8rem 0;
+                padding: 2.8rem 0
             }
 
             .hero {
                 min-height: 70vh;
-                padding: 1rem 0;
+                padding: 1rem 0
             }
 
             .prod-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1rem
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr)
             }
 
             .info-row {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .container {
-                padding: 0 1rem;
+                padding: 0 1rem
             }
 
             .footer-inner {
                 grid-template-columns: 1fr;
-                text-align: center;
+                text-align: center
             }
 
             .footer-social {
-                justify-content: center;
+                justify-content: center
             }
         }
 
         @media(max-width:480px) {
             .pill-group {
-                gap: 0.5rem;
+                gap: .5rem
             }
 
             .pill {
-                font-size: 0.7rem;
+                font-size: .7rem
             }
 
             .cart-icon span:first-child {
-                display: none;
+                display: none
             }
 
             .cart-icon {
-                padding: 0.45rem 0.8rem;
+                padding: .45rem .8rem
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.8rem
             }
 
-            .hero-mobile-imgs .hero-doctor-img {
+            .hero-mobile-imgs .hero-img-wrapper .hero-doctor-img {
                 width: 110px;
-                height: 160px;
+                height: 160px
             }
         }
 
@@ -1520,44 +1501,42 @@
         }
 
         .hero-content>* {
-            animation: fadeUp 0.7s ease both;
+            animation: fadeUp .7s ease both
         }
 
         .hero-content .since-badge {
-            animation-delay: 0.1s;
+            animation-delay: .1s
         }
 
         .hero-content h1 {
-            animation-delay: 0.25s;
+            animation-delay: .25s
         }
 
         .hero-content .pill-group {
-            animation-delay: 0.4s;
+            animation-delay: .4s
         }
 
         .hero-content .hero-btns {
-            animation-delay: 0.55s;
+            animation-delay: .55s
         }
 
         @keyframes glowPulse {
 
             0%,
             100% {
-                box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+                box-shadow: 0 0 20px rgba(201, 168, 76, 0.2)
             }
 
             50% {
-                box-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+                box-shadow: 0 0 40px rgba(201, 168, 76, 0.4)
             }
         }
     </style>
 </head>
 
 <body>
-
     <div id="addedToast"><i class="fas fa-check-circle"></i><span id="toastText">Cart mein add ho gaya!</span></div>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
         <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
@@ -1634,33 +1613,30 @@
             <div class="container hero-content">
                 <div class="since-badge">✦ Legacy Since 1967 ✦</div>
 
-                <!-- Mobile: two doctor images shown above title -->
+                <!-- Mobile images above title -->
                 <div class="hero-mobile-imgs">
-                    <div class="hero-person-wrap">
+                    <div class="hero-img-wrapper">
                         <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Syed Maqbool Ahmed Zaidi"
                             class="hero-doctor-img">
-                        <p class="hero-person-name">Syed Maqbool Ahmed Zaidi<br><span
-                                style="color:rgba(255,255,255,0.5);font-size:0.78rem;">(Shaheed)</span></p>
+                        <div class="hero-img-name">Syed Maqbool Ahmed Zaidi<br><span
+                                style="color:rgba(255,255,255,0.5);font-size:0.85em;">(Shaheed)</span></div>
                     </div>
-                    <div class="hero-person-wrap">
+                    <div class="hero-img-wrapper">
                         <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Syed Fawad Ahmed Zaidi"
                             class="hero-doctor-img">
-                        <p class="hero-person-name">Syed Fawad Ahmed Zaidi</p>
+                        <div class="hero-img-name">Syed Fawad Ahmed Zaidi</div>
                     </div>
                 </div>
 
                 <div class="hero-layout">
-                    <!-- Left image: no beard — Syed Maqbool Ahmed Zaidi (Shaheed) -->
                     <div class="hero-img-left">
-                        <div class="hero-person-wrap">
+                        <div class="hero-img-wrapper">
                             <img src="https://i.ibb.co/20JMZVz8/Untitled-design-2.png" alt="Syed Maqbool Ahmed Zaidi"
                                 class="hero-doctor-img">
-                            <p class="hero-person-name">Syed Maqbool Ahmed Zaidi<br><span
-                                    style="color:rgba(255,255,255,0.5);font-size:0.78rem;">(Shaheed)</span></p>
+                            <div class="hero-img-name">Syed Maqbool Ahmed Zaidi<br><span
+                                    style="color:rgba(255,255,255,0.5);font-size:0.85em;">(Shaheed)</span></div>
                         </div>
                     </div>
-
-                    <!-- Centre title & buttons -->
                     <div>
                         <h1 class="hero-title-3d">RIAZ <span class="gold">HOMEO</span><br>CLINIC</h1>
                         <div class="pill-group">
@@ -1679,13 +1655,11 @@
                             <a href="#products" class="btn-outline">View Products</a>
                         </div>
                     </div>
-
-                    <!-- Right image: beard — Syed Fawad Ahmed Zaidi -->
                     <div class="hero-img-right">
-                        <div class="hero-person-wrap">
+                        <div class="hero-img-wrapper">
                             <img src="https://i.ibb.co/5xFHc6T7/Fawad.jpg" alt="Syed Fawad Ahmed Zaidi"
                                 class="hero-doctor-img">
-                            <p class="hero-person-name">Syed Fawad Ahmed Zaidi</p>
+                            <div class="hero-img-name">Syed Fawad Ahmed Zaidi</div>
                         </div>
                     </div>
                 </div>
@@ -1717,10 +1691,9 @@
                     <h2 class="section-title">Natural Medicine <br>Trusted Since <span class="gold">1967</span></h2>
                     <div class="divider-line"></div>
                     <p class="section-desc">Dr. Syed Fawad Ahmed Zaidi provides premium homoeopathic treatments in
-                        Rohri,
-                        specializing in chronic diseases, Kidney, Liver diseases, Stones, Gallbladder, Warts &amp; Skin
-                        growths, Hidden Male &amp; Female diseases, Children diseases, immune support, and other
-                        diseases.<br> We also offer authentic DXN Ganoderma products for complete wellness — safe,
+                        Rohri, specializing in chronic diseases, Kidney, Liver diseases, Stones, Gallbladder, Warts
+                        &amp; Skin growths, Hidden Male &amp; Female diseases, Children diseases, immune support, and
+                        other diseases.<br> We also offer authentic DXN Ganoderma products for complete wellness — safe,
                         natural, side-effect-free.</p>
                     <p class="section-desc" style="margin-top:1rem;"><i class="fas fa-check-circle gold"></i> 100%
                         natural remedies <br> · You Contact them before visiting the Clinic to have medicine delivered
@@ -1755,8 +1728,7 @@
                         <div class="badge" style="background:#fff0d0;color:#a23b2e;">🍄 Authorized Seller</div>
                         <h2 class="section-title" style="color:white;">DXN Ganoderma</h2>
                         <p style="color:rgba(255,255,255,0.75);">Reishi mushroom based supplements — immunity, energy
-                            &amp;
-                            longevity</p>
+                            &amp; longevity</p>
                         <a href="https://wa.me/923337189748" class="btn-primary"
                             style="background:white;color:#b13b3b;margin-top:1rem;">
                             <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
@@ -1777,76 +1749,35 @@
                 <div class="badge">Moments</div>
                 <h2 class="section-title">Clinic &amp; Product Gallery</h2>
                 <div class="gallery-grid">
-                    <!-- Existing images -->
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/Z1m8VqN9/Whats-App-Image-2026-05-05-at-1-14-15-PM.jpg','Clinic Front')">
                         <img src="https://i.ibb.co/Z1m8VqN9/Whats-App-Image-2026-05-05-at-1-14-15-PM.jpg"
-                            alt="Clinic Front" loading="lazy">
+                            alt="Clinic Front">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/KphVKBms/Whats-App-Image-2026-05-05-at-1-14-14-PM.jpg','Dr. Fawad')">
                         <img src="https://i.ibb.co/KphVKBms/Whats-App-Image-2026-05-05-at-1-14-14-PM.jpg"
-                            alt="Dr. Fawad" loading="lazy">
+                            alt="Dr. Fawad">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg','Homoeopathy')">
                         <img src="https://i.ibb.co/ZRhvX3g7/Whats-App-Image-2026-05-05-at-1-14-17-PM.jpg"
-                            alt="Homoeopathy" loading="lazy">
+                            alt="Homoeopathy">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/kgcY7GtT/Whats-App-Image-2026-05-05-at-1-14-16-PM.jpg','DXN Range')">
                         <img src="https://i.ibb.co/kgcY7GtT/Whats-App-Image-2026-05-05-at-1-14-16-PM.jpg"
-                            alt="DXN Range" loading="lazy">
+                            alt="DXN Range">
                     </div>
                     <div class="gallery-tile"
                         onclick="openLightbox('https://i.ibb.co/zHjPmyf0/Whats-App-Image-2026-05-05-at-1-14-13-PM.jpg','Herbal Meds')">
                         <img src="https://i.ibb.co/zHjPmyf0/Whats-App-Image-2026-05-05-at-1-14-13-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
+                            alt="Herbal Meds">
                     </div>
-
-                    <!-- New Certificates and trophy -->
-
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/gLZqpBGW/Whats-App-Image-2026-05-10-at-3-12-26-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/gLZqpBGW/Whats-App-Image-2026-05-10-at-3-12-26-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/39VpX6BG/Whats-App-Image-2026-05-10-at-3-12-27-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/39VpX6BG/Whats-App-Image-2026-05-10-at-3-12-27-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/mVT5Pb88/Whats-App-Image-2026-05-10-at-3-12-27.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/mVT5Pb88/Whats-App-Image-2026-05-10-at-3-12-27.jpg" alt="Herbal Meds"
-                            loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/MjKSZTC/Whats-App-Image-2026-05-10-at-3-12-27-P.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/MjKSZTC/Whats-App-Image-2026-05-10-at-3-12-27-P.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/gZVwXR9p/Whats-App-Image-2026-05-10-at-3-19-33-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/gZVwXR9p/Whats-App-Image-2026-05-10-at-3-19-33-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/pj8tZtTx/Whats-App-Image-2026-05-10-at-3-19-34-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/pj8tZtTx/Whats-App-Image-2026-05-10-at-3-19-34-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/YTZX7dcg/Whats-App-Image-2026-05-10-at-5-38-49-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/YTZX7dcg/Whats-App-Image-2026-05-10-at-5-38-49-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-                    <div class="gallery-tile"
-                        onclick="openLightbox('https://i.ibb.co/TDjbcP4L/Whats-App-Image-2026-05-10-at-5-38-50-PM.jpg','Herbal Meds')">
-                        <img src="https://i.ibb.co/TDjbcP4L/Whats-App-Image-2026-05-10-at-5-38-50-PM.jpg"
-                            alt="Herbal Meds" loading="lazy">
-                    </div>
-
+                    <!-- Placeholder tiles for future images -->
+                    <div class="gallery-tile-empty"><i class="fas fa-image"></i><span>Coming Soon</span></div>
+                    <div class="gallery-tile-empty"><i class="fas fa-image"></i><span>Coming Soon</span></div>
+                    <div class="gallery-tile-empty"><i class="fas fa-image"></i><span>Coming Soon</span></div>
                 </div>
             </div>
         </section>
@@ -1860,9 +1791,8 @@
                     <p style="color:#b9c7bd;margin:1rem 0;">Send product name, quantity, address — delivery across
                         Pakistan, Online Payment Easypaisa (0333-7189748).</p>
                     <div style="margin:1.2rem 0;"><i class="fab fa-whatsapp gold" style="font-size:1.4rem;"></i>
-                        <strong>0333-7189748</strong>
-                    </div>
-                    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+                        <strong>0333-7189748</strong></div>
+                    <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
                         <a href="https://wa.me/923337189748" class="btn-primary"
                             style="background:linear-gradient(135deg,#1aaa4a,#25D366);">
                             <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp"
@@ -1896,30 +1826,23 @@
                     <h2 class="section-title">Riaz Homeo Clinic</h2>
                     <br><br>
                     <p><img src="https://cdn-icons-png.flaticon.com/128/2991/2991231.png" alt="Location" class="visit">
-                        <br>
                         Dhak Bazar, Rohri, Sindh</p>
                     <br><br>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/128/862/862358.png" alt="Timing" class="visit">
-                        <br>
                         Morning 10:00(AM) - 1:30(PM)<br><br>
                         Evening 5:30(PM) - 9:30(PM)<br><br>
                         Please call before visiting.<br><br>
-                        <strong>Friday is off</strong>
+                        <strong>Friday is off.</strong>
                     </p>
-                    <br>
-                    <h4>(Call for appointment)</h4>
                     <br><br>
                     <p>
                         <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="Phone" class="visit">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Q--Z8wWsQKPi1wPkH33pIuvKxnmgEoFYA&s"
-                            alt="" class="visit">
-                            <br> 0333-7189748<br><br>
+                            alt="" class="visit"> 0333-7189748<br><br>
                         <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Phone" class="visit">
-                        <br>
                         0312-3875580<br><br>
                         <img src="https://cdn-icons-png.flaticon.com/128/4782/4782351.png" alt="" class="visit">
-                        <br>
                         0308-3773026
                     </p>
                     <br><br>
@@ -1940,14 +1863,14 @@
                 <div
                     style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold-light);">
                     Riaz Homeo Clinic</div>
-                <div style="font-size:0.65rem;color:rgba(255,255,255,0.35);margin-top:0.3rem;">Est. Since 1967 · Rohri,
+                <div style="font-size:.65rem;color:rgba(255,255,255,0.35);margin-top:.3rem;">Est. Since 1967 · Rohri,
                     Sindh</div>
             </div>
-            <div style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.4);">
+            <div style="text-align:center;font-size:.72rem;color:rgba(255,255,255,0.4);">
                 © 2025 Riaz Homeo Clinic · Dr. Syed Fawad Ahmed Zaidi<br>
-                <span style="color:var(--gold);font-size:0.65rem;">Since 1967 — 2026</span><br>
-                <span style="color:var(--gold);font-size:0.65rem;"><a href="https://hasnain-zaidi.netlify.app/"
-                        target="_blank" style="color:var(--gold);font-size:0.65rem;">Hasnain Zaidi</a></span>
+                <span style="color:var(--gold);font-size:.65rem;">Since 1967 — 2026</span><br>
+                <span style="color:var(--gold);font-size:.65rem;"><a href="https://hasnain-zaidi.netlify.app/"
+                        target="_blank" style="color:var(--gold);font-size:.65rem;">Hasnain Zaidi</a></span>
             </div>
             <div class="footer-social">
                 <a href="https://wa.me/923337189748" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
@@ -1973,7 +1896,7 @@
             </div>
             <div id="contactInfoLines"></div>
         </div>
-        <div id="cartItemsList" style="flex:1;margin:0.5rem 0;overflow-y:auto;"></div>
+        <div id="cartItemsList" style="flex:1;margin:.5rem 0;overflow-y:auto;"></div>
         <div id="cartTotalBox" style="margin-top:auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;">
         </div>
         <button class="btn-primary"
@@ -1982,7 +1905,7 @@
             <img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="WhatsApp" class="visit"> Complete
             Order
         </button>
-        <button class="btn-outline" style="width:100%;margin-top:0.5rem;" onclick="closeCart()">Close</button>
+        <button class="btn-outline" style="width:100%;margin-top:.5rem;" onclick="closeCart()">Close</button>
     </div>
 
     <div class="info-modal-overlay" id="infoModalOverlay">
@@ -2001,36 +1924,10 @@
     </div>
 
     <script>
-        // =====================================================
-        // LIGHTBOX
-        // =====================================================
-        function openLightbox(src, alt) {
-            const overlay = document.getElementById('lightboxOverlay');
-            const img = document.getElementById('lightboxImg');
-            img.src = src;
-            img.alt = alt || '';
-            overlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox(e) {
-            if (e && e.target !== document.getElementById('lightboxOverlay') && !e.target.closest('.lightbox-close')) return;
-            document.getElementById('lightboxOverlay').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                document.getElementById('lightboxOverlay').classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // =====================================================
-        // PRODUCTS DATABASE
-        // =====================================================
+        function openLightbox(src, alt) { const o = document.getElementById('lightboxOverlay'), i = document.getElementById('lightboxImg'); i.src = src; i.alt = alt || ''; o.classList.add('open'); document.body.style.overflow = 'hidden' }
+        function closeLightbox(e) { if (e && e.target !== document.getElementById('lightboxOverlay') && !e.target.closest('.lightbox-close')) return; document.getElementById('lightboxOverlay').classList.remove('open'); document.body.style.overflow = '' }
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { document.getElementById('lightboxOverlay').classList.remove('open'); document.body.style.overflow = '' } });
         const productsDB = [
-            // ===== CLINIC RANGE =====
             { id: 1, cat: 'clinic', name: 'For Asthma', desc: 'Relief in Asthma Problem', price: 800, img: 'https://i.ibb.co/C3jgsv80/asthama.png' },
             { id: 2, cat: 'clinic', name: 'For Bladder Stone', desc: 'Remove pain from Bladder and Stone', price: 800, img: 'https://i.ibb.co/rGwbtD3t/bladdar-stone.png' },
             { id: 3, cat: 'clinic', name: 'For Both Sides Stones', desc: 'Effective stone removal formula', price: 800, img: 'https://i.ibb.co/Dgfrm6mD/both-sides.png' },
@@ -2084,8 +1981,6 @@
             { id: 63, cat: 'clinic', name: 'For Worms', desc: 'Relief from Worms Symptoms', price: 800, img: 'https://i.ibb.co/QF4g9Bxs/Worms.png' },
             { id: 64, cat: 'clinic', name: 'For Gout', desc: 'Relief from Gout Symptoms', price: 800, img: 'https://i.ibb.co/PvpyPxxm/Gout.png' },
             { id: 65, cat: 'clinic', name: 'Power-X Neuro Drops', desc: 'Nervous system support supplement', price: 1850, img: 'https://i.ibb.co/gMT9gYwW/Whats-App-Image-2026-03-06-at-6-13-38-PM.jpg' },
-
-            // ===== DXN RANGE =====
             { id: 4, cat: 'dxn', name: 'Lemonzhi Ganoderma', desc: 'Tea Mix with Lemon and Ganoderma Extract', price: 2020, imgs: ['https://i.ibb.co/wFp3KNR0/lemonzhi.jpg'] },
             { id: 5, cat: 'dxn', name: 'Morinzhi', desc: 'Morinda Citrifolia juice', price: 4220, imgs: ['https://i.ibb.co/V0nWDQky/morinzhi-1.png'] },
             { id: 6, cat: 'dxn', name: 'Cocozhi box', desc: 'Cocoa Drink Mix with Ganoderma Extract', price: 4395, imgs: ['https://i.ibb.co/Y7mTHXzn/Cocozhi.jpg'] },
@@ -2099,426 +1994,44 @@
             { id: 15, cat: 'dxn', name: '3 in 1 coffee Box', desc: 'Premix Coffee with Ganoderma extract', price: 2505, imgs: ['https://i.ibb.co/m5T2gz08/3-in-1-coffee.jpg'] },
             { id: 16, cat: 'dxn', name: 'Roselle 120 Tablets', desc: 'Providing a rich source of Vitamin C and antioxidants', price: 3220, imgs: ['https://i.ibb.co/q3Td2zpD/Roselle.jpg'] }
         ];
-
-        // =====================================================
-        // CONFIGURATION
-        // =====================================================
-        const DXN_INITIAL = 4;
-        const CLINIC_PAGE = 8;
-
-        let currentFilter = 'all';
-        let dxnAllVisible = false;
-        let clinicVisible = CLINIC_PAGE;
-
-        // =====================================================
-        // SLIDER LOGIC
-        // =====================================================
+        const DXN_INITIAL = 4, CLINIC_PAGE = 8;
+        let currentFilter = 'all', dxnAllVisible = false, clinicVisible = CLINIC_PAGE;
         const sliderState = {};
-
-        function slideImg(productId, dir) {
-            const slider = document.getElementById('slider-' + productId);
-            if (!slider) return;
-            const imgs = slider.querySelectorAll('img');
-            const dots = slider.querySelectorAll('.sdot');
-            if (imgs.length <= 1) return;
-            if (sliderState[productId] === undefined) sliderState[productId] = 0;
-            imgs[sliderState[productId]].classList.remove('active');
-            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.remove('active');
-            sliderState[productId] = (sliderState[productId] + dir + imgs.length) % imgs.length;
-            imgs[sliderState[productId]].classList.add('active');
-            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.add('active');
+        function slideImg(id, dir) { const s = document.getElementById('slider-' + id); if (!s) return; const imgs = s.querySelectorAll('img'), dots = s.querySelectorAll('.sdot'); if (imgs.length <= 1) return; if (sliderState[id] === undefined) sliderState[id] = 0; imgs[sliderState[id]].classList.remove('active'); if (dots[sliderState[id]]) dots[sliderState[id]].classList.remove('active'); sliderState[id] = (sliderState[id] + dir + imgs.length) % imgs.length; imgs[sliderState[id]].classList.add('active'); if (dots[sliderState[id]]) dots[sliderState[id]].classList.add('active') }
+        function goToSlide(id, idx) { const s = document.getElementById('slider-' + id); if (!s) return; const imgs = s.querySelectorAll('img'), dots = s.querySelectorAll('.sdot'); if (sliderState[id] === undefined) sliderState[id] = 0; imgs[sliderState[id]].classList.remove('active'); if (dots[sliderState[id]]) dots[sliderState[id]].classList.remove('active'); sliderState[id] = idx; imgs[idx].classList.add('active'); if (dots[idx]) dots[idx].classList.add('active') }
+        function buildProductCard(p) {
+            const cl = p.cat === 'dxn' ? 'DXN Range' : 'Clinic'; let imgHTML = ''; if (p.imgs && p.imgs.length > 0) { const im = p.imgs.map((s, i) => `<img src="${s}" alt="${p.name}" loading="lazy" class="${i === 0 ? 'active' : ''}" onerror="this.src=''">`).join(''); const dt = p.imgs.length > 1 ? `<div class="slider-dots">${p.imgs.map((_, i) => `<span class="sdot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${p.id},${i})"></span>`).join('')}</div>` : ''; const ar = p.imgs.length > 1 ? `<button class="slider-btn prev" onclick="slideImg(${p.id},-1)">&#8249;</button><button class="slider-btn next" onclick="slideImg(${p.id},1)">&#8250;</button>` : ''; imgHTML = `<div class="img-slider" id="slider-${p.id}">${im}${ar}${dt}</div>` } else if (p.img) { imgHTML = `<img src="${p.img}" alt="${p.name}" loading="lazy" class="single-img" onerror="this.src=''">` } else { imgHTML = `<img src="" alt="${p.name}" class="single-img">` }
+            return `<div class="product-card" data-cat="${p.cat}" data-id="${p.id}"><div class="product-img-box">${imgHTML}<span class="product-cat-label">${cl}</span></div><div class="product-info"><h4>${p.name}</h4><p class="product-desc">${p.desc}</p><div class="product-price-row"><span class="product-price">PKR ${p.price}</span></div><button class="add-cart" onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Add to Cart</button></div></div>`
         }
-
-        function goToSlide(productId, index) {
-            const slider = document.getElementById('slider-' + productId);
-            if (!slider) return;
-            const imgs = slider.querySelectorAll('img');
-            const dots = slider.querySelectorAll('.sdot');
-            if (sliderState[productId] === undefined) sliderState[productId] = 0;
-            imgs[sliderState[productId]].classList.remove('active');
-            if (dots[sliderState[productId]]) dots[sliderState[productId]].classList.remove('active');
-            sliderState[productId] = index;
-            imgs[index].classList.add('active');
-            if (dots[index]) dots[index].classList.add('active');
-        }
-
-        // =====================================================
-        // BUILD PRODUCT CARD HTML
-        // =====================================================
-        function buildProductCard(product) {
-            const catLabel = product.cat === 'dxn' ? 'DXN Range' : 'Clinic';
-            let imgHTML = '';
-            if (product.imgs && product.imgs.length > 0) {
-                const imgsMarkup = product.imgs.map((src, i) =>
-                    `<img src="${src}" alt="${product.name}" loading="lazy" class="${i === 0 ? 'active' : ''}" onerror="this.src=''">`
-                ).join('');
-                const dotsMarkup = product.imgs.length > 1
-                    ? `<div class="slider-dots">${product.imgs.map((_, i) => `<span class="sdot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${product.id},${i})"></span>`).join('')}</div>`
-                    : '';
-                const arrowsMarkup = product.imgs.length > 1
-                    ? `<button class="slider-btn prev" onclick="slideImg(${product.id},-1)">&#8249;</button><button class="slider-btn next" onclick="slideImg(${product.id},1)">&#8250;</button>`
-                    : '';
-                imgHTML = `<div class="img-slider" id="slider-${product.id}">${imgsMarkup}${arrowsMarkup}${dotsMarkup}</div>`;
-            } else if (product.img) {
-                imgHTML = `<img src="${product.img}" alt="${product.name}" loading="lazy" class="single-img" onerror="this.src=''">`;
-            } else {
-                imgHTML = `<img src="" alt="${product.name}" class="single-img">`;
-            }
-
-            return `<div class="product-card" data-cat="${product.cat}" data-id="${product.id}">
-        <div class="product-img-box">
-            ${imgHTML}
-            <span class="product-cat-label">${catLabel}</span>
-        </div>
-        <div class="product-info">
-            <h4>${product.name}</h4>
-            <p class="product-desc">${product.desc}</p>
-            <div class="product-price-row"><span class="product-price">PKR ${product.price}</span></div>
-            <button class="add-cart" onclick="addToCart(${product.id})">
-                <i class="fas fa-cart-plus"></i> Add to Cart
-            </button>
-        </div>
-    </div>`;
-        }
-
-        // =====================================================
-        // SHOW-MORE BUTTON HTML BUILDERS
-        // =====================================================
-        function buildDxnShowMoreBtn(shown, total) {
-            const remaining = total - shown;
-            return `<div class="show-more-wrapper" id="dxnShowMoreWrap">
-        <button class="show-more-btn" onclick="showMoreDXN()">
-            <span class="sm-icon"><i class="fas fa-chevron-down"></i></span>
-            Show ${remaining} More DXN Products
-        </button>
-        <div class="show-more-progress">Showing <span>${shown}</span> of <span>${total}</span> DXN products</div>
-    </div>`;
-        }
-
-        function buildClinicShowMoreBtn(shown, total) {
-            const remaining = total - shown;
-            return `<div class="show-more-wrapper" id="clinicShowMoreWrap">
-        <button class="show-more-btn" onclick="showMoreClinic()">
-            <span class="sm-icon"><i class="fas fa-chevron-down"></i></span>
-            Show ${Math.min(CLINIC_PAGE, remaining)} More Clinic Products
-        </button>
-        <div class="show-more-progress">Showing <span>${shown}</span> of <span>${total}</span> clinic products</div>
-    </div>`;
-        }
-
-        // =====================================================
-        // RENDER PRODUCTS
-        // =====================================================
-        function renderProducts(filter) {
-            currentFilter = filter;
-            const grid = document.getElementById('productGrid');
-            let html = '';
-
-            const dxnProducts = productsDB.filter(p => p.cat === 'dxn');
-            const clinicProducts = productsDB.filter(p => p.cat === 'clinic');
-
-            if (filter === 'all') {
-                dxnAllVisible = false;
-                html = '';
-                html += `<div class="section-divider">
-            <div class="section-divider-line"></div>
-            <div class="section-divider-label">🍄 DXN Range</div>
-            <div class="section-divider-line"></div>
-        </div>`;
-                dxnProducts.forEach((p, i) => {
-                    const card = buildProductCard(p);
-                    if (i >= DXN_INITIAL) {
-                        html += card.replace('class="product-card"', 'class="product-card hidden" data-dxn-card');
-                    } else {
-                        html += card;
-                    }
-                });
-                if (dxnProducts.length > DXN_INITIAL) {
-                    html += buildDxnShowMoreBtn(DXN_INITIAL, dxnProducts.length);
-                }
-                clinicVisible = CLINIC_PAGE;
-                html += `<div class="section-divider" style="margin-top:1.5rem;">
-            <div class="section-divider-line"></div>
-            <div class="section-divider-label">💊 Clinic Range</div>
-            <div class="section-divider-line"></div>
-        </div>`;
-                clinicProducts.forEach((p, i) => {
-                    if (i >= clinicVisible) {
-                        html += buildProductCard(p).replace('class="product-card"', 'class="product-card hidden"');
-                    } else {
-                        html += buildProductCard(p);
-                    }
-                });
-                if (clinicProducts.length > clinicVisible) {
-                    html += buildClinicShowMoreBtn(clinicVisible, clinicProducts.length);
-                }
-
-            } else if (filter === 'clinic') {
-                clinicVisible = CLINIC_PAGE;
-                clinicProducts.forEach((p, i) => {
-                    if (i >= clinicVisible) {
-                        html += buildProductCard(p).replace('class="product-card"', 'class="product-card hidden"');
-                    } else {
-                        html += buildProductCard(p);
-                    }
-                });
-                if (clinicProducts.length > clinicVisible) {
-                    html += buildClinicShowMoreBtn(clinicVisible, clinicProducts.length);
-                }
-
-            } else if (filter === 'dxn') {
-                dxnProducts.forEach(p => {
-                    html += buildProductCard(p);
-                });
-            }
-
-            grid.innerHTML = html;
-        }
-
-        // =====================================================
-        // DXN SECTION
-        // =====================================================
-        function renderDXNProducts() {
-            const dxnOnly = productsDB.filter(p => p.cat === 'dxn');
-            const dxnGrid = document.getElementById('dxnProductGrid');
-            if (dxnGrid) dxnGrid.innerHTML = dxnOnly.map(p => buildProductCard(p)).join('');
-        }
-
-        // =====================================================
-        // SHOW MORE ACTIONS
-        // =====================================================
-        function showMoreDXN() {
-            const grid = document.getElementById('productGrid');
-            const allCards = grid.querySelectorAll('.product-card.hidden');
-            let revealed = 0;
-            allCards.forEach(card => {
-                if (card.dataset.cat === 'dxn') {
-                    card.classList.remove('hidden');
-                    card.classList.add('just-revealed');
-                    card.style.animationDelay = (revealed * 0.07) + 's';
-                    revealed++;
-                }
-            });
-            const wrap = document.getElementById('dxnShowMoreWrap');
-            if (wrap) wrap.remove();
-            dxnAllVisible = true;
-        }
-
-        function showMoreClinic() {
-            const grid = document.getElementById('productGrid');
-            const clinicProducts = productsDB.filter(p => p.cat === 'clinic');
-            const prevVisible = clinicVisible;
-            clinicVisible = Math.min(clinicVisible + CLINIC_PAGE, clinicProducts.length);
-
-            let revealed = 0;
-            const allClinicCards = grid.querySelectorAll('.product-card[data-cat="clinic"]');
-
-            allClinicCards.forEach((card, i) => {
-                if (i >= prevVisible && i < clinicVisible) {
-                    card.classList.remove('hidden');
-                    card.classList.add('just-revealed');
-                    card.style.animationDelay = (revealed * 0.07) + 's';
-                    revealed++;
-                }
-            });
-
-            const wrap = document.getElementById('clinicShowMoreWrap');
-            if (clinicVisible >= clinicProducts.length) {
-                if (wrap) wrap.remove();
-            } else {
-                if (wrap) {
-                    const remaining = clinicProducts.length - clinicVisible;
-                    wrap.querySelector('.show-more-btn').innerHTML = `<span class="sm-icon"><i class="fas fa-chevron-down"></i></span> Show ${Math.min(CLINIC_PAGE, remaining)} More Clinic Products`;
-                    wrap.querySelector('.show-more-progress').innerHTML = `Showing <span>${clinicVisible}</span> of <span>${clinicProducts.length}</span> clinic products`;
-                }
-            }
-        }
-
-        // =====================================================
-        // CART
-        // =====================================================
-        let cart = [];
-        const INFO_KEY = 'rhc_customer_info';
-        let toastTimer = null;
-
-        function getCustomerInfo() { try { const s = localStorage.getItem(INFO_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
-        function setCustomerInfo(name, phone, address) { localStorage.setItem(INFO_KEY, JSON.stringify({ name, phone, address })); }
-
-        function renderContactBox() {
-            const info = getCustomerInfo();
-            const linesDiv = document.getElementById('contactInfoLines');
-            if (!linesDiv) return;
-            if (info && (info.name || info.phone || info.address)) {
-                linesDiv.innerHTML = `
-            ${info.name ? `<div class="contact-detail-line"><i class="fas fa-user"></i><span>${info.name}</span></div>` : ''}
-            ${info.phone ? `<div class="contact-detail-line"><i class="fas fa-phone"></i><span>${info.phone}</span></div>` : ''}
-            ${info.address ? `<div class="contact-detail-line"><i class="fas fa-map-marker-alt"></i><span>${info.address}</span></div>` : ''}
-        `;
-            } else {
-                linesDiv.innerHTML = `<div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.2rem;"><i class="fas fa-info-circle" style="margin-right:5px;"></i>Abhi koi info save nahi</div>`;
-            }
-        }
-
+        function buildDxnShowMoreBtn(shown, total) { const r = total - shown; return `<div class="show-more-wrapper" id="dxnShowMoreWrap"><button class="show-more-btn" onclick="showMoreDXN()"><span class="sm-icon"><i class="fas fa-chevron-down"></i></span>Show ${r} More DXN Products</button><div class="show-more-progress">Showing <span>${shown}</span> of <span>${total}</span> DXN products</div></div>` }
+        function buildClinicShowMoreBtn(shown, total) { const r = total - shown; return `<div class="show-more-wrapper" id="clinicShowMoreWrap"><button class="show-more-btn" onclick="showMoreClinic()"><span class="sm-icon"><i class="fas fa-chevron-down"></i></span>Show ${Math.min(CLINIC_PAGE, r)} More Clinic Products</button><div class="show-more-progress">Showing <span>${shown}</span> of <span>${total}</span> clinic products</div></div>` }
+        function renderProducts(filter) { currentFilter = filter; const grid = document.getElementById('productGrid'); let html = ''; const dxn = productsDB.filter(p => p.cat === 'dxn'), cl = productsDB.filter(p => p.cat === 'clinic'); if (filter === 'all') { dxnAllVisible = false; html += `<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-label">🍄 DXN Range</div><div class="section-divider-line"></div></div>`; dxn.forEach((p, i) => { const c = buildProductCard(p); html += i >= DXN_INITIAL ? c.replace('class="product-card"', 'class="product-card hidden" data-dxn-card') : c }); if (dxn.length > DXN_INITIAL) html += buildDxnShowMoreBtn(DXN_INITIAL, dxn.length); clinicVisible = CLINIC_PAGE; html += `<div class="section-divider" style="margin-top:1.5rem;"><div class="section-divider-line"></div><div class="section-divider-label">💊 Clinic Range</div><div class="section-divider-line"></div></div>`; cl.forEach((p, i) => { html += i >= clinicVisible ? buildProductCard(p).replace('class="product-card"', 'class="product-card hidden"') : buildProductCard(p) }); if (cl.length > clinicVisible) html += buildClinicShowMoreBtn(clinicVisible, cl.length) } else if (filter === 'clinic') { clinicVisible = CLINIC_PAGE; cl.forEach((p, i) => { html += i >= clinicVisible ? buildProductCard(p).replace('class="product-card"', 'class="product-card hidden"') : buildProductCard(p) }); if (cl.length > clinicVisible) html += buildClinicShowMoreBtn(clinicVisible, cl.length) } else if (filter === 'dxn') { dxn.forEach(p => { html += buildProductCard(p) }) } grid.innerHTML = html }
+        function showMoreDXN() { const grid = document.getElementById('productGrid'), cards = grid.querySelectorAll('.product-card.hidden'); let r = 0; cards.forEach(c => { if (c.dataset.cat === 'dxn') { c.classList.remove('hidden'); c.classList.add('just-revealed'); c.style.animationDelay = (r * .07) + 's'; r++ } }); const w = document.getElementById('dxnShowMoreWrap'); if (w) w.remove(); dxnAllVisible = true }
+        function showMoreClinic() { const grid = document.getElementById('productGrid'), cl = productsDB.filter(p => p.cat === 'clinic'), prev = clinicVisible; clinicVisible = Math.min(clinicVisible + CLINIC_PAGE, cl.length); let r = 0; const cards = grid.querySelectorAll('.product-card[data-cat="clinic"]'); cards.forEach((c, i) => { if (i >= prev && i < clinicVisible) { c.classList.remove('hidden'); c.classList.add('just-revealed'); c.style.animationDelay = (r * .07) + 's'; r++ } }); const w = document.getElementById('clinicShowMoreWrap'); if (clinicVisible >= cl.length) { if (w) w.remove() } else { if (w) { const rem = cl.length - clinicVisible; w.querySelector('.show-more-btn').innerHTML = `<span class="sm-icon"><i class="fas fa-chevron-down"></i></span> Show ${Math.min(CLINIC_PAGE, rem)} More Clinic Products`; w.querySelector('.show-more-progress').innerHTML = `Showing <span>${clinicVisible}</span> of <span>${cl.length}</span> clinic products` } } }
+        function renderDXNProducts() { const d = productsDB.filter(p => p.cat === 'dxn'), g = document.getElementById('dxnProductGrid'); if (g) g.innerHTML = d.map(p => buildProductCard(p)).join('') }
+        let cart = []; const INFO_KEY = 'rhc_customer_info'; let toastTimer = null;
+        function getCustomerInfo() { try { const s = localStorage.getItem(INFO_KEY); return s ? JSON.parse(s) : null } catch (e) { return null } }
+        function setCustomerInfo(n, p, a) { localStorage.setItem(INFO_KEY, JSON.stringify({ name: n, phone: p, address: a })) }
+        function renderContactBox() { const info = getCustomerInfo(), d = document.getElementById('contactInfoLines'); if (!d) return; if (info && (info.name || info.phone || info.address)) { d.innerHTML = `${info.name ? `<div class="contact-detail-line"><i class="fas fa-user"></i><span>${info.name}</span></div>` : ''}${info.phone ? `<div class="contact-detail-line"><i class="fas fa-phone"></i><span>${info.phone}</span></div>` : ''}${info.address ? `<div class="contact-detail-line"><i class="fas fa-map-marker-alt"></i><span>${info.address}</span></div>` : ''}` } else { d.innerHTML = '<div style="font-size:.75rem;color:rgba(255,255,255,0.4);margin-top:.2rem;"><i class="fas fa-info-circle" style="margin-right:5px;"></i>Abhi koi info save nahi</div>' } }
         let _pendingCheckout = false;
-
-        function openInfoModal(editMode = false) {
-            _pendingCheckout = !editMode;
-            const info = getCustomerInfo();
-            if (info) {
-                document.getElementById('modalName').value = info.name || '';
-                document.getElementById('modalPhone').value = info.phone || '';
-                document.getElementById('modalAddress').value = info.address || '';
-            } else {
-                document.getElementById('modalName').value = '';
-                document.getElementById('modalPhone').value = '';
-                document.getElementById('modalAddress').value = '';
-            }
-            document.getElementById('infoModalOverlay').classList.add('open');
-        }
-
-        function closeInfoModal() { document.getElementById('infoModalOverlay').classList.remove('open'); }
-
-        function saveCustomerInfo() {
-            const name = document.getElementById('modalName').value.trim();
-            const phone = document.getElementById('modalPhone').value.trim();
-            const address = document.getElementById('modalAddress').value.trim();
-            if (!name || !phone) { alert('Name aur Phone number zaroori hain'); return; }
-            setCustomerInfo(name, phone, address);
-            closeInfoModal();
-            renderContactBox();
-            if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout(); }
-        }
-
-        function skipInfoModal() { closeInfoModal(); if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout(); } }
-
-        function showAddedToast(productName) {
-            const toast = document.getElementById('addedToast');
-            document.getElementById('toastText').textContent = productName + ' — Cart mein add ho gaya!';
-            toast.classList.add('show');
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
-        }
-
-        function buildCartItemHTML(item) {
-            return `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;padding:10px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
-        <div style="flex:1;min-width:0;">
-            <div style="font-size:0.83rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div>
-            <div style="font-size:0.78rem;color:var(--gold);margin-top:3px;font-weight:600;">${item.price * item.qty} PKR</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">
-            <button class="qty-btn minus" onclick="changeQty(${item.id},-1)">−</button>
-            <span style="font-size:0.9rem;font-weight:700;min-width:22px;text-align:center;">${item.qty}</span>
-            <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
-            <button class="trash-btn" onclick="removeItem(${item.id})"><i class="fas fa-trash-alt" style="font-size:0.65rem;"></i></button>
-        </div>
-    </div>`;
-        }
-
-        function addToCart(id) {
-            const product = productsDB.find(p => p.id === id);
-            const existing = cart.find(i => i.id === id);
-            if (existing) { existing.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
-            updateCartUI();
-            renderContactBox();
-            openCart();
-        }
-
-        function changeQty(id, delta) {
-            const item = cart.find(i => i.id === id);
-            if (!item) return;
-            item.qty += delta;
-            if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
-            updateCartUI();
-        }
-
-        function removeItem(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
-
-        function updateCartUI() {
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cartCount').innerText = totalQty;
-            const cartList = document.getElementById('cartItemsList');
-            if (cartList) {
-                if (cart.length === 0) {
-                    cartList.innerHTML = '<p style="opacity:0.5;margin-top:1.5rem;font-size:0.85rem;text-align:center;"><i class="fas fa-shopping-basket" style="font-size:2rem;display:block;margin-bottom:0.5rem;opacity:0.3;"></i>Cart khali hai</p>';
-                } else {
-                    cartList.innerHTML = cart.map(item => buildCartItemHTML(item)).join('');
-                }
-            }
-            const subtotal = cart.reduce((sum, item) => sum + (item.qty * item.price), 0);
-            const delivery = 250;
-            const total = subtotal + delivery;
-            document.getElementById('cartTotalBox').innerHTML = `
-        <div style="font-size:0.85rem;line-height:2.2;">
-            <div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Subtotal</span><span>${subtotal} PKR</span></div>
-            <div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Delivery</span><span>${delivery} PKR</span></div>
-            <div style="display:flex;justify-content:space-between;font-weight:700;font-size:0.95rem;color:var(--gold);border-top:1px solid rgba(201,168,76,0.2);padding-top:6px;margin-top:4px;"><span>Total</span><span>${total} PKR</span></div>
-        </div>`;
-        }
-
-        function openCart() { renderContactBox(); document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
-        function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
-
-        function checkoutCartWhatsapp() {
-            if (cart.length === 0) { alert('Cart khali hai — pehle koi product add karein'); return; }
-            const info = getCustomerInfo();
-            if (!info || !info.name || !info.phone) { openInfoModal(false); return; }
-            doWhatsappCheckout();
-        }
-
-        function doWhatsappCheckout() {
-            const info = getCustomerInfo();
-            const subtotal = cart.reduce((sum, i) => sum + (i.qty * i.price), 0);
-            const delivery = 250;
-            const total = subtotal + delivery;
-            let msg = '*Order - Riaz Homeo Clinic*\n--------------------------------\n';
-            if (info && info.name) msg += `*Name:* ${info.name}\n`;
-            if (info && info.phone) msg += `*Phone:* ${info.phone}\n`;
-            if (info && info.address) msg += `*Address:* ${info.address}\n`;
-            msg += '--------------------------------\n*Products:*\n';
-            cart.forEach(item => { msg += `- ${item.name} x${item.qty} = ${item.price * item.qty} PKR\n`; });
-            msg += `--------------------------------\nSubtotal: ${subtotal} PKR\nDelivery: ${delivery} PKR\n*Total: ${total} PKR*\n--------------------------------\nPayment: Online Payment Easypaisa (0333-7189748)`;
-            const anchor = document.createElement('a');
-            anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
-            anchor.target = '_blank';
-            anchor.click();
-        }
-
-        function sendDirectOrder() {
-            const name = document.getElementById('orderName')?.value.trim();
-            const phone = document.getElementById('orderPhone')?.value.trim();
-            const address = document.getElementById('orderAddress')?.value.trim();
-            const products = document.getElementById('orderProducts')?.value.trim();
-            if (!name || !phone) { alert('Please fill name and phone number'); return; }
-            let msg = `New Order - Riaz Homeo Clinic\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nProducts: ${products}`;
-            const anchor = document.createElement('a');
-            anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`;
-            anchor.target = '_blank';
-            anchor.click();
-        }
-
-        function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('show'); }
-
-        // =====================================================
-        // FILTER BUTTONS
-        // =====================================================
-        document.querySelectorAll('.filter-btn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                renderProducts(this.dataset.filter);
-            });
-        });
-
-        document.getElementById('infoModalOverlay').addEventListener('click', function (e) {
-            if (e.target === this) skipInfoModal();
-        });
-
-        // =====================================================
-        // INIT
-        // =====================================================
-        renderProducts('all');
-        renderDXNProducts();
-        updateCartUI();
+        function openInfoModal(editMode = false) { _pendingCheckout = !editMode; const info = getCustomerInfo(); if (info) { document.getElementById('modalName').value = info.name || ''; document.getElementById('modalPhone').value = info.phone || ''; document.getElementById('modalAddress').value = info.address || '' } else { document.getElementById('modalName').value = ''; document.getElementById('modalPhone').value = ''; document.getElementById('modalAddress').value = '' } document.getElementById('infoModalOverlay').classList.add('open') }
+        function closeInfoModal() { document.getElementById('infoModalOverlay').classList.remove('open') }
+        function saveCustomerInfo() { const n = document.getElementById('modalName').value.trim(), p = document.getElementById('modalPhone').value.trim(), a = document.getElementById('modalAddress').value.trim(); if (!n || !p) { alert('Name aur Phone number zaroori hain'); return } setCustomerInfo(n, p, a); closeInfoModal(); renderContactBox(); if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout() } }
+        function skipInfoModal() { closeInfoModal(); if (_pendingCheckout) { _pendingCheckout = false; doWhatsappCheckout() } }
+        function buildCartItemHTML(item) { return `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;padding:10px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);"><div style="flex:1;min-width:0;"><div style="font-size:.83rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div><div style="font-size:.78rem;color:var(--gold);margin-top:3px;font-weight:600;">${item.price * item.qty} PKR</div></div><div style="display:flex;align-items:center;gap:5px;flex-shrink:0;"><button class="qty-btn minus" onclick="changeQty(${item.id},-1)">−</button><span style="font-size:.9rem;font-weight:700;min-width:22px;text-align:center;">${item.qty}</span><button class="qty-btn" onclick="changeQty(${item.id},1)">+</button><button class="trash-btn" onclick="removeItem(${item.id})"><i class="fas fa-trash-alt" style="font-size:.65rem;"></i></button></div></div>` }
+        function addToCart(id) { const p = productsDB.find(p => p.id === id), e = cart.find(i => i.id === id); if (e) { e.qty += 1 } else { cart.push({ ...p, qty: 1 }) } updateCartUI(); renderContactBox(); openCart() }
+        function changeQty(id, delta) { const item = cart.find(i => i.id === id); if (!item) return; item.qty += delta; if (item.qty <= 0) { cart = cart.filter(i => i.id !== id) } updateCartUI() }
+        function removeItem(id) { cart = cart.filter(i => i.id !== id); updateCartUI() }
+        function updateCartUI() { const tq = cart.reduce((s, i) => s + i.qty, 0); document.getElementById('cartCount').innerText = tq; const cl = document.getElementById('cartItemsList'); if (cl) { if (cart.length === 0) { cl.innerHTML = '<p style="opacity:.5;margin-top:1.5rem;font-size:.85rem;text-align:center;"><i class="fas fa-shopping-basket" style="font-size:2rem;display:block;margin-bottom:.5rem;opacity:.3;"></i>Cart khali hai</p>' } else { cl.innerHTML = cart.map(i => buildCartItemHTML(i)).join('') } } const sub = cart.reduce((s, i) => s + (i.qty * i.price), 0), del = 250, tot = sub + del; document.getElementById('cartTotalBox').innerHTML = `<div style="font-size:.85rem;line-height:2.2;"><div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Subtotal</span><span>${sub} PKR</span></div><div style="display:flex;justify-content:space-between;color:rgba(255,255,255,0.6);"><span>Delivery</span><span>${del} PKR</span></div><div style="display:flex;justify-content:space-between;font-weight:700;font-size:.95rem;color:var(--gold);border-top:1px solid rgba(201,168,76,0.2);padding-top:6px;margin-top:4px;"><span>Total</span><span>${tot} PKR</span></div></div>` }
+        function openCart() { renderContactBox(); document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open') }
+        function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open') }
+        function checkoutCartWhatsapp() { if (cart.length === 0) { alert('Cart khali hai — pehle koi product add karein'); return } const info = getCustomerInfo(); if (!info || !info.name || !info.phone) { openInfoModal(false); return } doWhatsappCheckout() }
+        function doWhatsappCheckout() { const info = getCustomerInfo(), sub = cart.reduce((s, i) => s + (i.qty * i.price), 0), del = 250, tot = sub + del; let msg = '*Order - Riaz Homeo Clinic*\n--------------------------------\n'; if (info && info.name) msg += `*Name:* ${info.name}\n`; if (info && info.phone) msg += `*Phone:* ${info.phone}\n`; if (info && info.address) msg += `*Address:* ${info.address}\n`; msg += '--------------------------------\n*Products:*\n'; cart.forEach(i => { msg += `- ${i.name} x${i.qty} = ${i.price * i.qty} PKR\n` }); msg += `--------------------------------\nSubtotal: ${sub} PKR\nDelivery: ${del} PKR\n*Total: ${tot} PKR*\n--------------------------------\nPayment: Online Payment Easypaisa (0333-7189748)`; const a = document.createElement('a'); a.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`; a.target = '_blank'; a.click() }
+        function sendDirectOrder() { const n = document.getElementById('orderName')?.value.trim(), p = document.getElementById('orderPhone')?.value.trim(), a = document.getElementById('orderAddress')?.value.trim(), pr = document.getElementById('orderProducts')?.value.trim(); if (!n || !p) { alert('Please fill name and phone number'); return } let msg = `New Order - Riaz Homeo Clinic\n\nName: ${n}\nPhone: ${p}\nAddress: ${a}\nProducts: ${pr}`; const anchor = document.createElement('a'); anchor.href = `https://wa.me/923337189748?text=${encodeURIComponent(msg)}`; anchor.target = '_blank'; anchor.click() }
+        function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('show') }
+        document.querySelectorAll('.filter-btn').forEach(function (btn) { btn.addEventListener('click', function () { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); renderProducts(this.dataset.filter) }) });
+        document.getElementById('infoModalOverlay').addEventListener('click', function (e) { if (e.target === this) skipInfoModal() });
+        renderProducts('all'); renderDXNProducts(); updateCartUI();
     </script>
 </body>
 
